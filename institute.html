@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SATA Institute | Training & Leiderschapsontwikkeling</title>
+    <link rel="icon" type="image/png" href="assets/images/The_Label.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+           HAMBURGER MENU
+           ============================================ */
+        .hamburger-menu {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1000;
+            width: 50px;
+            height: 50px;
+            background: rgba(40, 166, 154, 0.1);
+            border: 1px solid rgba(40, 166, 154, 0.3);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-menu:hover {
+            background: #28a69a;
+            border-color: #28a69a;
+        }
+
+        .hamburger-line {
+            width: 24px;
+            height: 2px;
+            background: #28a69a;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-menu:hover .hamburger-line {
+            background: #ffffff;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu-overlay.active {
+            display: flex;
+        }
+
+        .menu-content {
+            text-align: center;
+        }
+
+        .menu-content a {
+            display: block;
+            font-size: 32px;
+            color: #ffffff;
+            text-decoration: none;
+            margin: 20px 0;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .menu-content a:hover {
+            color: #28a69a;
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 120px 40px 80px;
+            text-align: center;
+        }
+
+        .vinyl-background {
+            position: absolute;
+            top: 50%;
+            right: -15%;
+            transform: translateY(-50%);
+            width: 60%;
+            height: 100%;
+            background-image: url('assets/images/The_vinyl.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center right;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+        }
+
+        .hero-label {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #28a69a;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 7vw, 72px);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: clamp(18px, 2.5vw, 22px);
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 18px 48px;
+            background: #28a69a;
+            border: 2px solid #28a69a;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .hero-cta:hover {
+            background: #1f8275;
+            border-color: #1f8275;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(40, 166, 154, 0.4);
+        }
+
+        /* ============================================
+           PROGRAMS SECTION
+           ============================================ */
+        .programs-section {
+            padding: 100px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-label {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #28a69a;
+            margin-bottom: 20px;
+        }
+
+        .section-headline {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            line-height: 1.3;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .section-intro {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 100px;
+        }
+
+        .program-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(40, 166, 154, 0.3);
+            border-left: 4px solid #28a69a;
+            padding: 50px 40px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #28a69a;
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-8px);
+            background: rgba(40, 166, 154, 0.08);
+            box-shadow: 0 20px 60px rgba(40, 166, 154, 0.2);
+        }
+
+        .program-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .program-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #28a69a;
+            background: rgba(40, 166, 154, 0.1);
+            padding: 6px 12px;
+            margin-bottom: 20px;
+        }
+
+        .program-card h3 {
+            font-size: 28px;
+            color: #ffffff;
+            margin-bottom: 16px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .program-card p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.7;
+            font-weight: 300;
+            margin-bottom: 24px;
+        }
+
+        .program-details {
+            font-size: 14px;
+            color: #28a69a;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .program-topics {
+            border-top: 1px solid rgba(40, 166, 154, 0.3);
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .program-topics h4 {
+            font-size: 13px;
+            color: #28a69a;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .program-topics ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .program-topics li {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 2;
+            padding-left: 20px;
+            position: relative;
+            font-weight: 300;
+        }
+
+        .program-topics li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #28a69a;
+            font-weight: 600;
+        }
+
+        /* ============================================
+           CONTACT CTA SECTION
+           ============================================ */
+        .contact-cta-section {
+            background: rgba(40, 166, 154, 0.08);
+            border-top: 1px solid rgba(40, 166, 154, 0.3);
+            border-bottom: 1px solid rgba(40, 166, 154, 0.3);
+            padding: 100px 40px;
+            text-align: center;
+        }
+
+        .contact-cta-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-cta-content h2 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .contact-cta-content p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .contact-person {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-person img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #28a69a;
+        }
+
+        .contact-person-info h3 {
+            font-size: 24px;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .contact-person-info p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.75);
+            font-weight: 300;
+            margin-bottom: 0;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: #28a69a;
+            border: 2px solid #28a69a;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background: #1f8275;
+            border-color: #1f8275;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(40, 166, 154, 0.4);
+        }
+
+        .contact-button.secondary {
+            background: transparent;
+            color: #28a69a;
+        }
+
+        .contact-button.secondary:hover {
+            background: #28a69a;
+            color: #ffffff;
+        }
+
+        /* ============================================
+           FOOTER MINIMAL
+           ============================================ */
+        .footer-minimal {
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-minimal p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 15px;
+        }
+
+        .footer-minimal a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-minimal a:hover {
+            color: #ffffff;
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                top: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .hero {
+                padding: 100px 24px 60px;
+            }
+
+            .programs-section {
+                padding: 60px 24px;
+            }
+
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-cta-section {
+                padding: 60px 24px;
+            }
+
+            .contact-person {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-button {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .menu-content a {
+                font-size: 24px;
+                margin: 15px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hamburger Menu -->
+<div class="hamburger-menu" onclick="toggleMenu()">
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+</div>
+
+<!-- Menu Overlay -->
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()">
+    <div class="menu-content">
+        <a href="complete-site-grid.html">Home</a>
+        <a href="complete-site-grid.html#team">Team</a>
+        <a href="complete-site-grid.html#vraagstukken">Vraagstukken</a>
+        <a href="institute.html">SATA Institute</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="vinyl-background"></div>
+    <div class="hero-content">
+        <div class="hero-label">SATA Institute</div>
+        <h1>Training en leiderschapsontwikkeling</h1>
+        <p>
+            Voor leiders die niet alleen advies willen, maar zelf sterker willen worden. SATA Institute ontwikkelt bestuurders en teams in de vaardigheden die nodig zijn wanneer draagvlak onder druk staat.
+        </p>
+        <a href="#contact" class="hero-cta">Plan een kennismaking</a>
+    </div>
+</section>
+
+<!-- Programs Section -->
+<section class="programs-section">
+    <div class="section-header">
+        <p class="section-label">Ons aanbod</p>
+        <h2 class="section-headline">Trainingen & Programma's</h2>
+        <p class="section-intro">
+            Elk programma is maatwerk. We stemmen de inhoud af op uw specifieke uitdagingen, organisatie en context. Onderstaande programma's geven een indicatie van wat mogelijk is.
+        </p>
+    </div>
+
+    <div class="programs-grid">
+        <!-- Program 1: Invloedrijk Leiderschap -->
+        <div class="program-card">
+            <div class="program-tag">Leiderschap</div>
+            <h3>Invloedrijk Leiderschap</h3>
+            <p>
+                Voor leiders die draagvlak willen opbouwen voor moeilijke beslissingen. Leer hoe u gelijk krijgt, niet alleen gelijk heeft.
+            </p>
+            <div class="program-details">8 sessies • 6 maanden • On location of online</div>
+            <div class="program-topics">
+                <h4>Onderwerpen</h4>
+                <ul>
+                    <li>Van gelijk hebben naar gelijk krijgen</li>
+                    <li>De psychologie van overtuigen en meenemen</li>
+                    <li>Coalitievorming en stakeholder management</li>
+                    <li>Omgaan met weerstand en oppositie</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Program 2: Media Training -->
+        <div class="program-card">
+            <div class="program-tag">Communicatie</div>
+            <h3>Media Training for Executives</h3>
+            <p>
+                Blijf overeind wanneer media de druk opvoeren. Praktische training voor bestuurders die het publieke debat moeten aangaan.
+            </p>
+            <div class="program-details">2 dagen • Intensief • Met camera simulaties</div>
+            <div class="program-topics">
+                <h4>Onderwerpen</h4>
+                <ul>
+                    <li>Interview technieken en framing</li>
+                    <li>Omgaan met kritische journalisten</li>
+                    <li>Crisis communicatie onder druk</li>
+                    <li>Social media en reputatie management</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Program 3: Het Spel van de Populist -->
+        <div class="program-card">
+            <div class="program-tag">Politiek & Strategie</div>
+            <h3>Het Spel van de Populist</h3>
+            <p>
+                Begrijp hoe populisme werkt en hoe u erop reageert. Gebaseerd op Tom's bestseller en Klaas' politieke ervaring.
+            </p>
+            <div class="program-details">1 dag • Masterclass • Interactief</div>
+            <div class="program-topics">
+                <h4>Onderwerpen</h4>
+                <ul>
+                    <li>De mechanismen van populisme herkennen</li>
+                    <li>Emotionele frames en narratieven</li>
+                    <li>Effectief reageren zonder in de val te lopen</li>
+                    <li>Behoud draagvlak in gepolariseerde tijden</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Program 4: Framing and Debating -->
+        <div class="program-card">
+            <div class="program-tag">Communicatie</div>
+            <h3>Framing and Debating</h3>
+            <p>
+                Beheers de taal van de boardroom en het publieke debat. Leer uw verhaal te framen zodat het landt en blijft hangen.
+            </p>
+            <div class="program-details">3 dagen • Praktijk • Met debat oefeningen</div>
+            <div class="program-topics">
+                <h4>Onderwerpen</h4>
+                <ul>
+                    <li>De kracht van framing en reframing</li>
+                    <li>Debattechnieken voor bestuurders</li>
+                    <li>Omgaan met retorische tactieken</li>
+                    <li>Storytelling dat overtuigt</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Program 5: Habits of High Performance Teams -->
+        <div class="program-card">
+            <div class="program-tag">Team Development</div>
+            <h3>Habits of High Performance Teams</h3>
+            <p>
+                Transformeer uw team van goed naar excellent. Ontwikkel de gewoontes die high performance teams onderscheiden.
+            </p>
+            <div class="program-details">6 sessies • 4 maanden • Team training</div>
+            <div class="program-topics">
+                <h4>Onderwerpen</h4>
+                <ul>
+                    <li>Psychologische veiligheid creëren</li>
+                    <li>Effectieve besluitvorming onder druk</li>
+                    <li>Constructieve conflicthantering</li>
+                    <li>Feedback cultuur en continuous improvement</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Program 6: Designing Culture & Wellbeing -->
+        <div class="program-card">
+            <div class="program-tag">Organisatie</div>
+            <h3>Designing Culture & Wellbeing</h3>
+            <p>
+                Ontwerp een organisatiecultuur waarin mensen floreren en presteren. Van strategie naar gedrag en systemen.
+            </p>
+            <div class="program-details">Workshop serie • Op maat • Inclusief interventie design</div>
+            <div class="program-topics">
+                <h4>Onderwerpen</h4>
+                <ul>
+                    <li>Cultuur als strategisch instrument</li>
+                    <li>Gedragsdesign voor organisaties</li>
+                    <li>Wellbeing en duurzame performance</li>
+                    <li>Meten en sturen op cultuur</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Program 7: Systeemverandering -->
+        <div class="program-card">
+            <div class="program-tag">Change Management</div>
+            <h3>Systeemverandering</h3>
+            <p>
+                Voor complexe veranderingen die meerdere lagen en stakeholders raken. Leer systemen te veranderen, niet alleen mensen.
+            </p>
+            <div class="program-details">Traject op maat • 3-12 maanden • Strategisch</div>
+            <div class="program-topics">
+                <h4>Onderwerpen</h4>
+                <ul>
+                    <li>Systeemdenken en leverage points</li>
+                    <li>Stakeholder ecosystemen in kaart brengen</li>
+                    <li>Interventie design voor complexe systemen</li>
+                    <li>Draagvlak opbouwen over organisatie grenzen heen</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact CTA Section -->
+<section class="contact-cta-section" id="contact">
+    <div class="contact-cta-content">
+        <h2>Klaar om te beginnen?</h2>
+        <p>
+            Elk programma wordt op maat gemaakt voor uw specifieke situatie. Laten we kennismaken om te bespreken wat u nodig heeft.
+        </p>
+
+        <div class="contact-person">
+            <img src="documentatie/personeel/tom de bruyne.jpeg" alt="Tom De Bruyne">
+            <div class="contact-person-info">
+                <h3>Tom De Bruyne</h3>
+                <p>Uw contactpersoon voor SATA Institute</p>
+                <p>Gedragspsycholoog & Auteur</p>
+                <p><a href="mailto:tom@wearesata.com" style="color: #28a69a; text-decoration: none;">tom@wearesata.com</a></p>
+            </div>
+        </div>
+
+        <div class="contact-buttons">
+            <a href="mailto:tom@wearesata.com?subject=Kennismaking SATA Institute" class="contact-button">
+                Plan een kennismaking
+            </a>
+            <a href="tel:+31851302113" class="contact-button secondary">
+                Bel +31 85 130 21 13
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Minimal -->
+<footer class="footer-minimal">
+    <p>&copy; 2026 SATA - SUE & The Alchemists. Alle rechten voorbehouden.</p>
+    <p>
+        <a href="complete-site-grid.html">Terug naar home</a> |
+        <a href="mailto:info@wearesata.com">info@wearesata.com</a>
+    </p>
+</footer>
+
+<script>
+function toggleMenu() {
+    const overlay = document.getElementById('menuOverlay');
+    overlay.classList.toggle('active');
+}
+
+// Close menu when clicking a link
+document.querySelectorAll('.menu-content a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('menuOverlay').classList.remove('active');
+    });
+});
+
+// Smooth scroll to contact section
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+</script>
+
+</body>
+</html>

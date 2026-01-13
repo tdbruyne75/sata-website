@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUE & The Alchemists | Van gelijk hebben naar gelijk krijgen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #0A0E27;
+            --accent-gold: #C9A96E;
+            --text-light: #E8E8E8;
+            --text-dim: #A0A0A0;
+            --background-dark: #111827;
+            --border-subtle: rgba(201, 169, 110, 0.2);
+            --warm-accent: #B89968;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            line-height: 1.15;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 39, 0.97);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-subtle);
+            z-index: 1000;
+            padding: 1.5rem 5%;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            color: var(--accent-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            letter-spacing: 0.03em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .cta-button {
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            padding: 0.8rem 2rem;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: var(--warm-accent);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 5% 4rem;
+            background: 
+                linear-gradient(135deg, rgba(10, 14, 39, 0.97) 0%, rgba(17, 24, 39, 0.95) 100%),
+                var(--primary-dark);
+        }
+
+        .hero-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            line-height: 1.15;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--text-dim);
+            line-height: 1.8;
+            margin: 0 auto 3rem;
+            max-width: 800px;
+        }
+
+        /* Reason to Believe Section */
+        .rtb-section {
+            padding: 5rem 5%;
+            background: var(--background-dark);
+        }
+
+        .rtb-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .rtb-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .rtb-label {
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .rtb-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .rtb-left {
+            padding-right: 2rem;
+        }
+
+        .rtb-left p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+        }
+
+        .rtb-right {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .founder-mini {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(201, 169, 110, 0.03);
+            border-left: 2px solid rgba(201, 169, 110, 0.3);
+            transition: all 0.3s;
+        }
+
+        .founder-mini:hover {
+            background: rgba(201, 169, 110, 0.08);
+            border-left-color: var(--accent-gold);
+            transform: translateX(5px);
+        }
+
+        .founder-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(201, 169, 110, 0.3);
+            flex-shrink: 0;
+        }
+
+        .founder-info h4 {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+
+        .founder-info p {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .team-stat {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(201, 169, 110, 0.05);
+            margin-top: 1rem;
+        }
+
+        .team-stat .number {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-stat .label {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        /* Pattern Recognition Wall */
+        .situations-section {
+            padding: 6rem 5%;
+            background: var(--primary-dark);
+        }
+
+        .situations-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .situations-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .situations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .situation-card {
+            background: rgba(201, 169, 110, 0.03);
+            border: 1px solid var(--border-subtle);
+            padding: 1.75rem 1.5rem;
+            transition: all 0.3s;
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .situation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: var(--accent-gold);
+            transition: height 0.3s ease;
+        }
+
+        .situation-card:hover {
+            background: rgba(201, 169, 110, 0.08);
+            border-color: var(--accent-gold);
+            transform: translateY(-3px);
+        }
+
+        .situation-card:hover::before {
+            height: 100%;
+        }
+
+        .situation-category {
+            font-size: 0.75rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .situation-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-light);
+        }
+
+        .situations-conclusion {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: rgba(201, 169, 110, 0.05);
+            border-left: 3px solid var(--accent-gold);
+            border-right: 3px solid var(--accent-gold);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .situations-conclusion h3 {
+            margin-bottom: 1rem;
+        }
+
+        .situations-conclusion p {
+            font-size: 1.15rem;
+            color: var(--text-dim);
+            line-height: 1.8;
+        }
+
+        /* Thought Leadership Section */
+        .thought-leadership {
+            padding: 6rem 5%;
+            background: var(--background-dark);
+        }
+
+        .tl-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tl-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tl-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .tl-card {
+            background: rgba(201, 169, 110, 0.03);
+            border: 1px solid var(--border-subtle);
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .tl-card:hover {
+            background: rgba(201, 169, 110, 0.08);
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+
+        .tl-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .tl-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .tl-card p {
+            color: var(--text-dim);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .tl-link {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .tl-link:hover {
+            color: var(--warm-accent);
+        }
+
+        .tl-link::after {
+            content: " →";
+        }
+
+        /* Newsletter CTA */
+        .newsletter-cta {
+            background: rgba(201, 169, 110, 0.08);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 3rem;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .newsletter-cta h3 {
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-cta p {
+            color: var(--text-dim);
+            margin-bottom: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .rtb-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .rtb-left {
+                padding-right: 0;
+            }
+
+            .situations-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 7rem 5% 3rem;
+            }
+
+            .situations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tl-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Subtle pulse animation for situation cards */
+        @keyframes subtlePulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(201, 169, 110, 0);
+            }
+            50% {
+                box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.1);
+            }
+        }
+
+        .situation-card {
+            animation: subtlePulse 4s ease-in-out infinite;
+        }
+
+        /* Stagger animation delays for cards */
+        .situation-card:nth-child(1) { animation-delay: 0s; }
+        .situation-card:nth-child(2) { animation-delay: 0.3s; }
+        .situation-card:nth-child(3) { animation-delay: 0.6s; }
+        .situation-card:nth-child(4) { animation-delay: 0.9s; }
+        .situation-card:nth-child(5) { animation-delay: 1.2s; }
+        .situation-card:nth-child(6) { animation-delay: 1.5s; }
+        .situation-card:nth-child(7) { animation-delay: 1.8s; }
+        .situation-card:nth-child(8) { animation-delay: 2.1s; }
+        .situation-card:nth-child(9) { animation-delay: 2.4s; }
+        .situation-card:nth-child(10) { animation-delay: 2.7s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">SATA</div>
+            <ul class="nav-links">
+                <li><a href="#waarom">Waarom wij</a></li>
+                <li><a href="#vraagstukken">Vraagstukken</a></li>
+                <li><a href="#thought-leadership">Inzichten</a></li>
+                <li><a href="#team">Het team</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Gesprek plannen</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1 class="hero-title">Van gelijk hebben naar gelijk krijgen</h1>
+            <p class="hero-description">
+                SUE & The Alchemists wordt gebeld wanneer draagvlak opgebouwd moet worden, 
+                of wanneer het aangevallen wordt. En dat doen we voor overheden, bedrijven, 
+                branches, NGO's en artiesten, in Nederland en daarbuiten.
+            </p>
+        </div>
+    </section>
+
+    <!-- Reason to Believe Section -->
+    <section class="rtb-section" id="waarom">
+        <div class="rtb-container">
+            <div class="rtb-intro">
+                <div class="rtb-label">Waarom SUE & The Alchemists</div>
+                <h2>De combinatie die niemand anders heeft</h2>
+            </div>
+
+            <div class="rtb-content">
+                <div class="rtb-left">
+                    <p>
+                        Wij verenigen drie werelden die elkaar zelden ontmoeten: de politieke arena 
+                        waar reputatie en draagvlak dagelijkse gevechten zijn, de gedragswetenschap 
+                        die onthult waarom mensen bewegen, en de communicatie-expertise die verhalen 
+                        laat landen.
+                    </p>
+                    <p>
+                        Drie oprichters die het spel zelf gespeeld hebben op het hoogste niveau. 
+                        Een oud-minister die wetten door de Tweede Kamer loodste. Een campagnestrateeg 
+                        die acht verkiezingen won—waaronder vier keer de VVD naar de grootste partij 
+                        maakte. Een gedragspsycholoog die duizenden professionals trainde in 
+                        systematische beïnvloeding.
+                    </p>
+                </div>
+
+                <div class="rtb-right">
+                    <div class="founder-mini">
+                        <img src="https://www.genspark.ai/api/files/s/7UQTbSrv" alt="Klaas Dijkhoff" class="founder-photo">
+                        <div class="founder-info">
+                            <h4>Klaas Dijkhoff</h4>
+                            <p>Oud-minister, fractievoorzitter VVD, jurist. Navigeerde door de meest 
+                            polariserende politieke debatten van het afgelopen decennium.</p>
+                        </div>
+                    </div>
+
+                    <div class="founder-mini">
+                        <img src="https://www.genspark.ai/api/files/s/6hK5OcXs" alt="Bas Erlings" class="founder-photo">
+                        <div class="founder-info">
+                            <h4>Bas Erlings</h4>
+                            <p>Campagnestrateeg achter acht winnende verkiezingen. Weet hoe je massa's 
+                            mensen beweegt in tijden van polarisatie en wantrouwen.</p>
+                        </div>
+                    </div>
+
+                    <div class="founder-mini">
+                        <img src="https://www.genspark.ai/api/files/s/WA6WnZye" alt="Tom De Bruyne" class="founder-photo">
+                        <div class="founder-info">
+                            <h4>Tom De Bruyne</h4>
+                            <p>Oprichter Behavioural Design Academy. Maakt gedragswetenschap praktisch 
+                            toepasbaar voor organisaties die systemische verandering willen.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-stat">
+                        <span class="number">25</span>
+                        <span class="label">Consultants gespecialiseerd in gedragswetenschap</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Situations Pattern Wall -->
+    <section class="situations-section" id="vraagstukken">
+        <div class="situations-container">
+            <div class="situations-intro">
+                <div class="rtb-label">De vraagstukken</div>
+                <h2>Wanneer rationele plannen vastlopen in menselijke dynamiek</h2>
+                <p style="color: var(--text-dim); font-size: 1.15rem; margin-top: 1rem; max-width: 750px; margin-left: auto; margin-right: auto;">
+                    Dit zijn de momenten waarop bestuurders ons bellen. Herkenbaar?
+                </p>
+            </div>
+
+            <div class="situations-grid">
+                <div class="situation-card">
+                    <div class="situation-category">Interne Stakeholders</div>
+                    <div class="situation-text">Werknemers blokkeren noodzakelijke reorganisatie</div>
+                </div>
+
+                <div class="situation-card">
+                    <div class="situation-category">Interne Stakeholders</div>
+                    <div class="situation-text">Managementteam verzet zich tegen koerswijziging</div>
+                </div>
+
+                <div class="situation-card">
+                    <div class="situation-category">Interne Stakeholders</div>
+                    <div class="situation-text">OR/vakbond mobiliseert tegen objectief nodig beleid</div>
+                </div>
+
+                <div class="situation-card">
+                    <div class="situation-category">Interne Stakeholders</div>
+                    <div class="situation-text">Fusie-integratie loopt vast op cultuurbotsing</div>
+                </div>
+
+                <div class="situation-card">
+                    <div class="situation-category">Externe Stakeholders</div>
+                    <div class="situation-text">Project geblokkeerd door bezwaarmakers en omwonenden</div>
+                </div>
+
+                <div class="situation-card">
+                    <div class="situation-category">Externe Stakeholders</div>
+                    <div class="situation-text">Coalitie vormen tussen tegengestelde partijen lukt niet</div>
+                </div>
+
+                <div class="situation-card">
+                    <div class="situation-category">Externe Stakeholders</div>
+                    <div class="situation-text">Leveranciers/partners zeggen vertrouwen op</div>
+                </div>
+
+                <div class="situation-card">
+                    <div class="situation-category">Media & Publiek</div>
+                    <div class="situation-text">Nieuwscyclus escaleert ondanks correcte communicatie</div>
+                </div>
+
+                <div class="situation-card">
+                    <div class="situation-category">Media & Publiek</div>
+                    <div class="situation-text">Social media storm ondermijnt legitieme actie</div>
+                </div>
+
+                <div class="situation-card">
+                    <div class="situation-category">Politieke Arena</div>
+                    <div class="situation-text">Raad/Kamer draait tegen terwijl beleid procedureel klopt</div>
+                </div>
+
+                <div class="situation-card">
+                    <div class="situation-category">Politieke Arena</div>
+                    <div class="situation-text">Politieke steun verdampt door publieke druk</div>
+                </div>
+
+                <div class="situation-card">
+                    <div class="situation-category">Activisme</div>
+                    <div class="situation-text">Actiegroepen mobiliseren sentiment tegen haalbaar plan</div>
+                </div>
+            </div>
+
+            <div class="situations-conclusion">
+                <h3>Het patroon dat u herkent</h3>
+                <p>
+                    Twaalf verschillende situaties. Eén overeenkomst: rationeel juiste plannen 
+                    die vastlopen omdat mensen—werknemers, bestuurders, politici, media, activisten—
+                    niet meebewegen. Niet omdat uw analyse fout is, maar omdat draagvlak opbouwen 
+                    een ander vak is dan gelijk hebben.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thought Leadership Section -->
+    <section class="thought-leadership" id="thought-leadership">
+        <div class="tl-container">
+            <div class="tl-intro">
+                <div class="rtb-label">Thought Leadership</div>
+                <h2>Inzichten over invloed, gedrag en draagvlak</h2>
+                <p style="color: var(--text-dim); font-size: 1.1rem; margin-top: 1rem;">
+                    Wat we leren in de praktijk, delen we met de wereld. Van boeken tot podcasts, 
+                    van columns tot Substacks—onze principals zijn publieke denkers over strategische beïnvloeding.
+                </p>
+            </div>
+
+            <div class="tl-grid">
+                <div class="tl-card">
+                    <span class="tl-icon">🎙️</span>
+                    <h3>Wat gebeurt er eigenlijk in je hoofd?</h3>
+                    <p>
+                        De podcast van SUE & The Alchemists waarin Klaas, Bas en Tom je meenemen 
+                        in de wereld van gedragspsychologie. Waarom doen mensen wat ze doen—en hoe 
+                        beïnvloed je dat?
+                    </p>
+                    <a href="https://open.spotify.com/show/3DwPBL0Db2pIhmUAU6lvZz" target="_blank" class="tl-link">Beluister op Spotify</a>
+                </div>
+
+                <div class="tl-card">
+                    <span class="tl-icon">🎙️</span>
+                    <h3>Dijkhoff & Segers</h3>
+                    <p>
+                        Klaas Dijkhoff en Gert-Jan Segers kijken met een ongefilterde blik naar 
+                        wat er gebeurt in de Nederlandse politiek. De oud-politici vertellen jou 
+                        wat er écht speelt.
+                    </p>
+                    <a href="https://open.spotify.com/show/59EKTmNFbbuUT88Ju6t1ws" target="_blank" class="tl-link">Beluister op Spotify</a>
+                </div>
+
+                <div class="tl-card">
+                    <span class="tl-icon">✍️</span>
+                    <h3>Fun Lovin' Liberal</h3>
+                    <p>
+                        Klaas Dijkhoff's Substack. Eeuwig nieuwsgierig, vaak optimistisch, soms 
+                        geërgerd. Nooit te beroerd een mening te geven—altijd een tussenstand van denken.
+                    </p>
+                    <a href="https://dijkhoff.substack.com/" target="_blank" class="tl-link">Lees de nieuwsbrief</a>
+                </div>
+
+                <div class="tl-card">
+                    <span class="tl-icon">📚</span>
+                    <h3>Het Spel van de Populist</h3>
+                    <p>
+                        Bas Erlings' bestseller over hoe populisme werkt en hoe je ermee omgaat. 
+                        Gebaseerd op acht verkiezingscampagnes en de strijd tegen politieke polarisatie.
+                    </p>
+                    <a href="https://www.bol.com/nl/nl/f/het-spel-van-de-populist/9300000206597366/" target="_blank" class="tl-link">Bestel het boek</a>
+                </div>
+
+                <div class="tl-card">
+                    <span class="tl-icon">📚</span>
+                    <h3>Gamechangers</h3>
+                    <p>
+                        Tom De Bruyne's boek over hoe kleine gerichte ingrepen grote veranderingen 
+                        kunnen bewerkstelligen. Voor iedereen die systemische verandering wil realiseren.
+                    </p>
+                    <a href="https://www.bol.com/nl/nl/f/gamechangers/9300000212266845/" target="_blank" class="tl-link">Bestel het boek</a>
+                </div>
+
+                <div class="tl-card">
+                    <span class="tl-icon">✍️</span>
+                    <h3>The Study of Influence</h3>
+                    <p>
+                        Tom De Bruyne's Substack over hoe invloed werkt en hoe we dat kunnen 
+                        inzetten voor positieve verandering in werk, politiek en maatschappij.
+                    </p>
+                    <a href="https://tomdebruyne.substack.com/" target="_blank" class="tl-link">Lees de nieuwsbrief</a>
+                </div>
+
+                <div class="tl-card">
+                    <span class="tl-icon">💼</span>
+                    <h3>Volg ons op LinkedIn</h3>
+                    <p>
+                        Dagelijkse inzichten, projecten en gedachten van ons team. Van 
+                        gedragspsychologie tot politieke dynamiek—blijf op de hoogte van wat ons bezighoudt.
+                    </p>
+                    <a href="https://nl.linkedin.com/company/sue-the-alchemists" target="_blank" class="tl-link">Volg ons</a>
+                </div>
+            </div>
+
+            <div class="newsletter-cta">
+                <h3>Blijf op de hoogte</h3>
+                <p>Ontvang onze nieuwsbrief met inzichten over invloed, gedrag en draagvlak</p>
+                <a href="#" class="cta-button">Abonneer je op onze nieuwsbrief</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
