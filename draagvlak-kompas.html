@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draagvlak Kompas - SATA</title>
+    <link rel="icon" type="image/png" href="assets/images/The_Label.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+           TOP NAVIGATION
+           ============================================ */
+        .top-nav {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            gap: 15px;
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 8px;
+        }
+
+        .language-btn {
+            width: 40px;
+            height: 50px;
+            background: rgba(40, 166, 154, 0.05);
+            border: 1px solid rgba(40, 166, 154, 0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 11px;
+            font-weight: 600;
+            color: rgba(40, 166, 154, 0.6);
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .language-btn:hover {
+            background: rgba(40, 166, 154, 0.1);
+            border-color: rgba(40, 166, 154, 0.4);
+            color: #28a69a;
+        }
+
+        .language-btn.active {
+            background: #28a69a;
+            border-color: #28a69a;
+            color: #ffffff;
+        }
+
+        .hamburger-menu {
+            width: 50px;
+            height: 50px;
+            background: rgba(40, 166, 154, 0.1);
+            border: 1px solid rgba(40, 166, 154, 0.3);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-line {
+            width: 24px;
+            height: 2px;
+            background: #28a69a;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-menu:hover {
+            background: rgba(40, 166, 154, 0.2);
+        }
+
+        /* Menu Overlay */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.98);
+            z-index: 999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-overlay.active {
+            display: flex;
+        }
+
+        .menu-content {
+            text-align: center;
+        }
+
+        .menu-content a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 32px;
+            font-weight: 300;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .menu-content a:hover {
+            color: #28a69a;
+            transform: translateX(10px);
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 40px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vinyl-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            opacity: 0.15;
+        }
+
+        .vinyl-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-radial-gradient(
+                circle at center,
+                transparent 0px,
+                transparent 18px,
+                #28a69a 18px,
+                #28a69a 20px
+            );
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            text-align: center;
+        }
+
+        .hero-label {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #28a69a;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 .highlight {
+            color: #28a69a;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 18px 40px;
+            background: #28a69a;
+            color: #000000;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: 2px solid #28a69a;
+        }
+
+        .hero-cta:hover {
+            background: transparent;
+            color: #28a69a;
+            transform: translateY(-2px);
+        }
+
+        /* ============================================
+           PROBLEM SECTION
+           ============================================ */
+        .problem-section {
+            padding: 100px 40px;
+            background: #0a0a0a;
+        }
+
+        .problem-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .problem-text h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .problem-text h2 .highlight {
+            color: #28a69a;
+        }
+
+        .problem-text p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .problem-quote {
+            font-style: italic;
+            font-size: 20px;
+            color: #28a69a;
+            border-left: 3px solid #28a69a;
+            padding-left: 20px;
+            margin: 40px 0;
+        }
+
+        /* ============================================
+           THREE A'S SECTION
+           ============================================ */
+        .three-as-section {
+            padding: 100px 40px;
+            background: #000000;
+        }
+
+        .three-as-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 80px;
+        }
+
+        .section-intro h2 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .section-intro h2 .highlight {
+            color: #28a69a;
+        }
+
+        .section-intro p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        .three-as-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        .a-card {
+            background: #0a0a0a;
+            padding: 50px 40px;
+            border: 1px solid rgba(40, 166, 154, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .a-card:hover {
+            border-color: #28a69a;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(40, 166, 154, 0.2);
+        }
+
+        .a-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .a-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: #28a69a;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .a-card h3 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #28a69a;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .a-card p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+        }
+
+        .a-card ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .a-card ul li {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .a-card ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #28a69a;
+        }
+
+        /* ============================================
+           FRAMEWORK SECTION
+           ============================================ */
+        .framework-section {
+            padding: 100px 40px;
+            background: #0a0a0a;
+        }
+
+        .framework-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .framework-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-top: 60px;
+            align-items: center;
+        }
+
+        .framework-visual {
+            position: relative;
+            padding: 40px;
+        }
+
+        .system-comparison {
+            background: #000000;
+            padding: 60px 40px;
+            border: 1px solid rgba(40, 166, 154, 0.2);
+        }
+
+        .system-box {
+            margin-bottom: 40px;
+        }
+
+        .system-box:last-child {
+            margin-bottom: 0;
+        }
+
+        .system-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .system-percentage {
+            font-size: 48px;
+            font-weight: 700;
+            color: #28a69a;
+        }
+
+        .system-title {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .system-features {
+            list-style: none;
+            margin-left: 68px;
+        }
+
+        .system-features li {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 13px;
+        }
+
+        .three-questions {
+            background: #000000;
+            padding: 50px;
+            border: 1px solid rgba(40, 166, 154, 0.3);
+        }
+
+        .three-questions h3 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #28a69a;
+        }
+
+        .question-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .question-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .question-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #28a69a;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+
+        .question-text {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .question-dutch {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ============================================
+           VISUAL DATA SECTION
+           ============================================ */
+        .visual-data-section {
+            padding: 100px 40px;
+            background: #000000;
+        }
+
+        .visual-data-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .data-example {
+            margin-top: 80px;
+            padding: 60px;
+            background: #0a0a0a;
+            border: 1px solid rgba(40, 166, 154, 0.2);
+        }
+
+        .data-example h3 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .kompas-visual {
+            max-width: 800px;
+            margin: 60px auto;
+            position: relative;
+        }
+
+        .kompas-diagram {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+        }
+
+        .kompas-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            background: #28a69a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .kompas-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid rgba(40, 166, 154, 0.3);
+            border-radius: 50%;
+        }
+
+        .ring-1 { width: 250px; height: 250px; }
+        .ring-2 { width: 350px; height: 350px; }
+        .ring-3 { width: 450px; height: 450px; }
+        .ring-4 { width: 550px; height: 550px; }
+
+        .kompas-label {
+            position: absolute;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.6);
+            white-space: nowrap;
+        }
+
+        .label-top { top: 20px; left: 50%; transform: translateX(-50%); }
+        .label-right { right: 20px; top: 50%; transform: translateY(-50%); }
+        .label-bottom { bottom: 20px; left: 50%; transform: translateX(-50%); }
+        .label-left { left: 20px; top: 50%; transform: translateY(-50%); }
+
+        /* ============================================
+           PROCESS SECTION
+           ============================================ */
+        .process-section {
+            padding: 100px 40px;
+            background: #0a0a0a;
+        }
+
+        .process-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-timeline {
+            margin-top: 60px;
+            padding: 60px 0;
+            position: relative;
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #28a69a, transparent);
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            order: 2;
+        }
+
+        .timeline-item:nth-child(even) .timeline-number {
+            order: 1;
+        }
+
+        .timeline-content {
+            background: #000000;
+            padding: 40px;
+            border: 1px solid rgba(40, 166, 154, 0.2);
+        }
+
+        .timeline-content h4 {
+            font-size: 24px;
+            color: #28a69a;
+            margin-bottom: 15px;
+        }
+
+        .timeline-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .timeline-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 72px;
+            font-weight: 700;
+            color: rgba(40, 166, 154, 0.3);
+        }
+
+        /* ============================================
+           CTA SECTION
+           ============================================ */
+        .cta-section {
+            padding: 120px 40px;
+            background: #000000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            opacity: 0.1;
+        }
+
+        .cta-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-radial-gradient(
+                circle at center,
+                transparent 0px,
+                transparent 18px,
+                #28a69a 18px,
+                #28a69a 20px
+            );
+            border-radius: 50%;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-content h2 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .cta-content p {
+            font-size: 20px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 50px;
+        }
+
+        .contact-person {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .contact-person img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #28a69a;
+        }
+
+        .contact-person-info h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .contact-person-info p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 5px;
+        }
+
+        .contact-person-info a {
+            color: #28a69a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: #28a69a;
+            color: #000000;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: 2px solid #28a69a;
+        }
+
+        .contact-button:hover {
+            background: transparent;
+            color: #28a69a;
+            transform: translateY(-2px);
+        }
+
+        .contact-button.secondary {
+            background: transparent;
+            color: #28a69a;
+        }
+
+        .contact-button.secondary:hover {
+            background: #28a69a;
+            color: #000000;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer-minimal {
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-minimal p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .problem-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .three-as-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .framework-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content {
+                order: 1;
+            }
+
+            .timeline-item:nth-child(even) .timeline-number {
+                order: 2;
+            }
+
+            .kompas-diagram {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 1;
+            }
+
+            .contact-person {
+                flex-direction: column;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Navigation -->
+<div class="top-nav">
+    <div class="language-selector">
+        <a href="draagvlak-kompas.html" class="language-btn active">NL</a>
+        <a href="draagvlak-kompas-en.html" class="language-btn">EN</a>
+        <a href="draagvlak-kompas-de.html" class="language-btn">DE</a>
+    </div>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+    </div>
+</div>
+
+<!-- Menu Overlay -->
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()">
+    <div class="menu-content">
+        <a href="complete-site-grid.html">Home</a>
+        <a href="complete-site-grid.html#team">Team</a>
+        <a href="complete-site-grid.html#vraagstukken">Vraagstukken</a>
+        <a href="institute.html">SATA Institute</a>
+        <a href="draagvlak-kompas.html">Draagvlak Kompas</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="vinyl-background"></div>
+    <div class="hero-content">
+        <div class="hero-label">SATA'S DRAAGVLAK KOMPAS</div>
+        <h1>Grip op <span class="highlight">Draagvlak</span></h1>
+        <p class="hero-subtitle">
+            Zonder data-analist te zijn, weten wat er speelt en wat je kunt doen om grip op draagvlak te behouden en verbeteren.
+        </p>
+        <a href="#contact" class="hero-cta">Ontdek het Draagvlak Kompas</a>
+    </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem-section">
+    <div class="problem-content">
+        <div class="problem-text">
+            <h2>De <span class="highlight">Uitdaging</span></h2>
+            <p>
+                Stakeholders zien de kennis en inzet van organisaties, maar toch is het nog niet vanzelfsprekend dat iedereen jouw organisatie ziet als het stabiele en leidende punt in de keten.
+            </p>
+            <p>
+                In de media klinkt kritiek, wat het vertrouwen van stakeholders onder druk kan zetten. Omdat de media zichzelf zo luid maakt, is het tijd om het juiste geluid hier tegenover te zetten.
+            </p>
+            <div class="problem-quote">
+                "Hoe mooi zou het zijn als je geen data-analist hoeft te zijn om te weten wat er speelt en wat je kunt doen?"
+            </div>
+        </div>
+        <div class="problem-visual">
+            <img src="documentatie/Draagvlak_verpact 121225.pdf" alt="Draagvlak Kompas Concept" style="width: 100%; height: auto; opacity: 0.8;">
+        </div>
+    </div>
+</section>
+
+<!-- Three A's Section -->
+<section class="three-as-section">
+    <div class="three-as-content">
+        <div class="section-intro">
+            <h2>Aantoonbaar <span class="highlight">Inzicht</span></h2>
+            <p>We maken draagvlak meetbaar en actionable aan de hand van drie onderdelen:</p>
+        </div>
+
+        <div class="three-as-grid">
+            <!-- Aantonen -->
+            <div class="a-card">
+                <div class="a-icon">
+                    <svg viewBox="0 0 100 100">
+                        <path d="M50,10 A40,40 0 1,1 49.99,10" stroke-dasharray="5,5"/>
+                        <circle cx="50" cy="50" r="8" fill="#28a69a"/>
+                    </svg>
+                </div>
+                <h3>Aantonen</h3>
+                <p>We maken inzichtelijk wat ervoor zorgt dat draagvlak beweegt door te kijken naar diepere drijfveren en associaties.</p>
+                <ul>
+                    <li>Inzicht in hoe doelgroepen naar je kijken</li>
+                    <li>Verschillen tussen groepen in kaart</li>
+                    <li>Kijken naar toekomstige ontwikkelingen</li>
+                    <li>Systeem-1 associaties meten</li>
+                </ul>
+            </div>
+
+            <!-- Analyseren -->
+            <div class="a-card">
+                <div class="a-icon">
+                    <svg viewBox="0 0 100 100">
+                        <rect x="20" y="60" width="15" height="30" fill="none"/>
+                        <rect x="42" y="40" width="15" height="50" fill="none"/>
+                        <rect x="64" y="25" width="15" height="65" fill="none"/>
+                    </svg>
+                </div>
+                <h3>Analyseren</h3>
+                <p>Onderzoeken hoe verschillende groepen jouw organisatie ervaren en waar draagvlak onder druk staat of juist groeit.</p>
+                <ul>
+                    <li>Draagvlak bij achterban en ketenpartners</li>
+                    <li>Sentiment in de samenleving</li>
+                    <li>Representatief onderzoek via CrowdRock</li>
+                    <li>Structureel monitoren van ontwikkelingen</li>
+                </ul>
+            </div>
+
+            <!-- Actie -->
+            <div class="a-card">
+                <div class="a-icon">
+                    <svg viewBox="0 0 100 100">
+                        <path d="M30,50 L50,30 L70,50 M50,30 L50,80"/>
+                    </svg>
+                </div>
+                <h3>Actie</h3>
+                <p>De data is pas effectief als we het ook op de juiste manier kunnen toepassen. Van reactief naar proactief.</p>
+                <ul>
+                    <li>Communicatie en acties testen</li>
+                    <li>Handelen naar de data</li>
+                    <li>Welke woorden/verhalen aansluiten</li>
+                    <li>Proactief het nieuws bepalen</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Framework Section -->
+<section class="framework-section">
+    <div class="framework-content">
+        <div class="section-intro">
+            <h2>De <span class="highlight">Theorie</span> Achter Draagvlak</h2>
+            <p>Het Systeem-1 bepaalt welke merken jij wel of geen draagvlak geeft</p>
+        </div>
+
+        <div class="framework-grid">
+            <div class="framework-visual">
+                <div class="system-comparison">
+                    <div class="system-box">
+                        <div class="system-header">
+                            <div class="system-percentage">98%</div>
+                            <div class="system-title">SYSTEEM 1</div>
+                        </div>
+                        <ul class="system-features">
+                            <li>Intuïtie, Instinct</li>
+                            <li>Automatisch, Snel</li>
+                            <li>Stuurt suggesties naar Systeem 2</li>
+                        </ul>
+                    </div>
+
+                    <div class="system-box">
+                        <div class="system-header">
+                            <div class="system-percentage">2%</div>
+                            <div class="system-title">SYSTEEM 2</div>
+                        </div>
+                        <ul class="system-features">
+                            <li>Rationele Denken</li>
+                            <li>On Demand, Traag</li>
+                            <li>Zet suggesties om in overtuigingen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="three-questions">
+                <h3>Drie Vragen Waaruit Draagvlak Is Opgebouwd</h3>
+
+                <div class="question-item">
+                    <div class="question-label">Authenticity</div>
+                    <div class="question-text">Do I like you?</div>
+                    <div class="question-dutch">Ben je sympathiek?</div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-label">Logic</div>
+                    <div class="question-text">Do I think that you can get the job done?</div>
+                    <div class="question-dutch">Denk ik dat je het werk goed kan?</div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-label">Empathy</div>
+                    <div class="question-text">Do I believe you care about me?</div>
+                    <div class="question-dutch">Geloof ik dat je om mij geeft?</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Visual Data Section -->
+<section class="visual-data-section">
+    <div class="visual-data-content">
+        <div class="section-intro">
+            <h2>Hoe Ziet Dit Er Uit In De <span class="highlight">Praktijk?</span></h2>
+            <p>We visualiseren draagvlak zodat je direct ziet waar je staat en waar je actie moet ondernemen</p>
+        </div>
+
+        <div class="data-example">
+            <h3>Het Draagvlak Kompas in Actie</h3>
+            <div class="kompas-visual">
+                <div class="kompas-diagram">
+                    <div class="kompas-ring ring-4"></div>
+                    <div class="kompas-ring ring-3"></div>
+                    <div class="kompas-ring ring-2"></div>
+                    <div class="kompas-ring ring-1"></div>
+                    <div class="kompas-center">66</div>
+                    <div class="kompas-label label-top">Authenticity</div>
+                    <div class="kompas-label label-right">Logic</div>
+                    <div class="kompas-label label-bottom">Empathy</div>
+                    <div class="kompas-label label-left">Draagvlak Score</div>
+                </div>
+            </div>
+            <p style="text-align: center; color: rgba(255,255,255,0.6); margin-top: 40px;">
+                We meten draagvlak onder verschillende groepen en visualiseren de resultaten overzichtelijk
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section class="process-section">
+    <div class="process-content">
+        <div class="section-intro">
+            <h2>De <span class="highlight">Aanpak</span></h2>
+            <p>Structureel monitoren en bijsturen gedurende het hele jaar</p>
+        </div>
+
+        <div class="process-timeline">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item">
+                <div class="timeline-number">01</div>
+                <div class="timeline-content">
+                    <h4>Halfjaarlijks Onderzoek</h4>
+                    <p>Onderzoek naar de achterban, ketenpartners en samenleving (500 respondenten). Inclusief aanbevelingen om bij te sturen.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number">02</div>
+                <div class="timeline-content">
+                    <h4>Kwartaal Monitoring</h4>
+                    <p>Onderzoek naar de samenleving (500 respondenten) met concrete aanbevelingen om bij te sturen op basis van de laatste ontwikkelingen.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number">03</div>
+                <div class="timeline-content">
+                    <h4>Tussentijds Onderzoek</h4>
+                    <p>Mogelijkheid voor tussentijds onderzoek (300 respondenten) wanneer er specifieke vragen zijn of er zich urgente situaties voordoen.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number">04</div>
+                <div class="timeline-content">
+                    <h4>Uitvoerende Ondersteuning</h4>
+                    <p>Ondersteunend op acties rondom het sturen op draagvlak. We helpen bij het vertalen van inzichten naar concrete communicatie-interventies.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section" id="contact">
+    <div class="cta-background"></div>
+    <div class="cta-content">
+        <h2>Klaar voor Grip op Draagvlak?</h2>
+        <p>
+            Laten we kennismaken om te bespreken hoe het Draagvlak Kompas jouw organisatie kan helpen om proactief te sturen op draagvlak.
+        </p>
+
+        <div class="contact-person">
+            <img src="documentatie/personeel/tom de bruyne.jpeg" alt="Tom De Bruyne">
+            <div class="contact-person-info">
+                <h3>Tom De Bruyne</h3>
+                <p>Gedragspsycholoog & Partner</p>
+                <p><a href="mailto:tom@wearesata.com">tom@wearesata.com</a></p>
+            </div>
+        </div>
+
+        <div class="contact-buttons">
+            <a href="mailto:tom@wearesata.com?subject=Kennismaking Draagvlak Kompas" class="contact-button">
+                Plan een kennismaking
+            </a>
+            <a href="tel:+31851302113" class="contact-button secondary">
+                Bel +31 85 130 21 13
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer-minimal">
+    <p>&copy; 2026 SUE | Behavioural Design. Alle rechten voorbehouden.</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById('menuOverlay').classList.toggle('active');
+}
+
+// Close menu when clicking a link
+document.querySelectorAll('.menu-content a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('menuOverlay').classList.remove('active');
+    });
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+</script>
+
+</body>
+</html>

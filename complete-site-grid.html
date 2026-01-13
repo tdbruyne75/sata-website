@@ -1482,6 +1482,257 @@
             .newsletter-button {
                 width: 100%;
             }
+
+            .draagvlak-kompas-hero {
+                padding: 40px 24px;
+            }
+
+            .kompas-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .kompas-headline {
+                font-size: 36px;
+            }
+
+            .kompas-subtitle {
+                font-size: 18px;
+            }
+
+            .kompas-features {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        /* ============================================
+           DRAAGVLAK KOMPAS HERO SECTION
+           ============================================ */
+        .draagvlak-kompas-hero {
+            padding: 100px 40px;
+            background: #000000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kompas-vinyl-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 700px;
+            height: 700px;
+            opacity: 0.08;
+        }
+
+        .kompas-vinyl-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-radial-gradient(
+                circle at center,
+                transparent 0px,
+                transparent 18px,
+                #28a69a 18px,
+                #28a69a 20px
+            );
+            border-radius: 50%;
+            animation: rotate 30s linear infinite;
+        }
+
+        .kompas-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .kompas-label {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #28a69a;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .kompas-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .kompas-content h2 {
+            font-size: 56px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
+
+        .kompas-content h2 .highlight {
+            color: #28a69a;
+        }
+
+        .kompas-subtitle {
+            font-size: 20px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+        }
+
+        .kompas-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .kompas-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .kompas-feature-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(40, 166, 154, 0.1);
+            border: 1px solid rgba(40, 166, 154, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border-radius: 50%;
+        }
+
+        .kompas-feature-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: #28a69a;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .kompas-feature-text h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #28a69a;
+            margin-bottom: 5px;
+        }
+
+        .kompas-feature-text p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        .kompas-cta {
+            display: inline-block;
+            padding: 18px 40px;
+            background: #28a69a;
+            color: #000000;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: 2px solid #28a69a;
+        }
+
+        .kompas-cta:hover {
+            background: transparent;
+            color: #28a69a;
+            transform: translateY(-2px);
+        }
+
+        .kompas-visual {
+            position: relative;
+        }
+
+        .kompas-circle {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            aspect-ratio: 1;
+        }
+
+        .kompas-circle-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid rgba(40, 166, 154, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .kompas-circle-center {
+            width: 180px;
+            height: 180px;
+            background: #28a69a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .kompas-circle-number {
+            font-size: 64px;
+            font-weight: 700;
+            color: #000000;
+        }
+
+        .kompas-circle-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .kompas-axis {
+            position: absolute;
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .kompas-axis-top {
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .kompas-axis-right {
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .kompas-axis-bottom {
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .kompas-axis-left {
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
         }
     </style>
 </head>
@@ -1508,6 +1759,7 @@
         <a href="#team">Team</a>
         <a href="#vraagstukken">Vraagstukken</a>
         <a href="institute.html">SATA Institute</a>
+        <a href="draagvlak-kompas.html">Draagvlak Kompas</a>
         <a href="contact.html">Contact</a>
     </div>
 </div>
@@ -1525,6 +1777,94 @@
                 Boardroom adviesbureau voor bestuurders onder vuur. We bouwen draagvlak waar het ontbreekt. Beschermen het waar het aangevallen wordt. Winnen het terug waar het verloren ging. Voor wie het zich niet kan veroorloven om gelijk te hebben zonder gelijk te krijgen.
             </p>
             <a href="contact.html" class="cta-button">Gesprek plannen</a>
+        </div>
+    </div>
+</section>
+
+<!-- Draagvlak Kompas Hero Section -->
+<section class="draagvlak-kompas-hero">
+    <div class="kompas-vinyl-background"></div>
+    <div class="kompas-container">
+        <div class="kompas-label">SATA'S DRAAGVLAK KOMPAS</div>
+
+        <div class="kompas-grid">
+            <div class="kompas-content">
+                <h2>Grip op <span class="highlight">Draagvlak</span></h2>
+                <p class="kompas-subtitle">
+                    Zonder data-analist te zijn, weten wat er speelt en wat je kunt doen om grip op draagvlak te behouden en verbeteren.
+                </p>
+
+                <div class="kompas-features">
+                    <div class="kompas-feature">
+                        <div class="kompas-feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12,2 A10,10 0 1,1 11.99,2" stroke-dasharray="3,3"/>
+                                <circle cx="12" cy="12" r="2"/>
+                            </svg>
+                        </div>
+                        <div class="kompas-feature-text">
+                            <h4>Aantonen</h4>
+                            <p>Inzichtelijk wat draagvlak beweegt</p>
+                        </div>
+                    </div>
+
+                    <div class="kompas-feature">
+                        <div class="kompas-feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="4" y="14" width="4" height="8"/>
+                                <rect x="10" y="10" width="4" height="12"/>
+                                <rect x="16" y="6" width="4" height="16"/>
+                            </svg>
+                        </div>
+                        <div class="kompas-feature-text">
+                            <h4>Analyseren</h4>
+                            <p>Structureel monitoren van sentiment</p>
+                        </div>
+                    </div>
+
+                    <div class="kompas-feature">
+                        <div class="kompas-feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M8,12 L12,8 L16,12 M12,8 L12,20"/>
+                            </svg>
+                        </div>
+                        <div class="kompas-feature-text">
+                            <h4>Actie</h4>
+                            <p>Van reactief naar proactief</p>
+                        </div>
+                    </div>
+
+                    <div class="kompas-feature">
+                        <div class="kompas-feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12,6 L12,12 L16,14"/>
+                            </svg>
+                        </div>
+                        <div class="kompas-feature-text">
+                            <h4>Real-time</h4>
+                            <p>Kwartaal en halfjaarlijks onderzoek</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="draagvlak-kompas.html" class="kompas-cta">Ontdek het Draagvlak Kompas</a>
+            </div>
+
+            <div class="kompas-visual">
+                <div class="kompas-circle">
+                    <div class="kompas-circle-inner">
+                        <div class="kompas-circle-center">
+                            <div class="kompas-circle-number">3A</div>
+                            <div class="kompas-circle-label">Methode</div>
+                        </div>
+                    </div>
+                    <div class="kompas-axis kompas-axis-top">Authenticity</div>
+                    <div class="kompas-axis kompas-axis-right">Logic</div>
+                    <div class="kompas-axis kompas-axis-bottom">Empathy</div>
+                    <div class="kompas-axis kompas-axis-left">Draagvlak</div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
