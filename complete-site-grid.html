@@ -1472,8 +1472,8 @@
 
 <!-- Top Navigation -->
 <div class="top-nav">
-    <div class="language-toggle" title="Taal omschakelen (binnenkort beschikbaar)">
-        NL
+    <div class="language-toggle" onclick="toggleLanguage()" title="Switch language / Wissel taal">
+        <span id="currentLang">NL</span>
     </div>
     <div class="hamburger-menu" onclick="toggleMenu()">
         <div class="hamburger-line"></div>
@@ -2047,6 +2047,33 @@ document.querySelectorAll('.menu-content a').forEach(link => {
     link.addEventListener('click', () => {
         document.getElementById('menuOverlay').classList.remove('active');
     });
+});
+
+// Language toggle functionality
+function toggleLanguage() {
+    const currentLang = document.getElementById('currentLang');
+    const currentPage = window.location.pathname.split('/').pop().replace('.html', '');
+
+    if (currentLang.textContent === 'NL') {
+        // Switch to English
+        const englishPage = currentPage + '-en.html';
+        // Check if English version exists, otherwise show alert
+        window.location.href = englishPage;
+    } else {
+        // Switch to Dutch
+        const dutchPage = currentPage.replace('-en', '') + '.html';
+        window.location.href = dutchPage;
+    }
+}
+
+// Detect current language from URL
+window.addEventListener('DOMContentLoaded', () => {
+    const currentLang = document.getElementById('currentLang');
+    if (window.location.pathname.includes('-en.html')) {
+        currentLang.textContent = 'EN';
+    } else {
+        currentLang.textContent = 'NL';
+    }
 });
 
 // Smooth scroll for anchor links

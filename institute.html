@@ -23,13 +23,43 @@
         }
 
         /* ============================================
-           HAMBURGER MENU
+           TOP NAVIGATION
            ============================================ */
-        .hamburger-menu {
+        .top-nav {
             position: fixed;
             top: 30px;
             right: 30px;
             z-index: 1000;
+            display: flex;
+            gap: 15px;
+        }
+
+        .language-toggle {
+            width: 50px;
+            height: 50px;
+            background: rgba(40, 166, 154, 0.1);
+            border: 1px solid rgba(40, 166, 154, 0.3);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 12px;
+            font-weight: 600;
+            color: #28a69a;
+            text-transform: uppercase;
+        }
+
+        .language-toggle:hover {
+            background: #28a69a;
+            border-color: #28a69a;
+            color: #ffffff;
+        }
+
+        /* ============================================
+           HAMBURGER MENU
+           ============================================ */
+        .hamburger-menu {
             width: 50px;
             height: 50px;
             background: rgba(40, 166, 154, 0.1);
@@ -128,6 +158,14 @@
             position: relative;
             z-index: 1;
             max-width: 1000px;
+        }
+
+        .institute-logo {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto 40px;
+            display: block;
         }
 
         .hero-label {
@@ -459,11 +497,19 @@
            RESPONSIVE
            ============================================ */
         @media (max-width: 768px) {
-            .hamburger-menu {
+            .top-nav {
                 top: 20px;
                 right: 20px;
+            }
+
+            .hamburger-menu,
+            .language-toggle {
                 width: 45px;
                 height: 45px;
+            }
+
+            .language-toggle {
+                font-size: 11px;
             }
 
             .hero {
@@ -506,11 +552,16 @@
 </head>
 <body>
 
-<!-- Hamburger Menu -->
-<div class="hamburger-menu" onclick="toggleMenu()">
-    <div class="hamburger-line"></div>
-    <div class="hamburger-line"></div>
-    <div class="hamburger-line"></div>
+<!-- Top Navigation -->
+<div class="top-nav">
+    <div class="language-toggle" onclick="toggleLanguage()" title="Switch language / Wissel taal">
+        <span id="currentLang">NL</span>
+    </div>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+    </div>
 </div>
 
 <!-- Menu Overlay -->
@@ -528,8 +579,8 @@
 <section class="hero">
     <div class="vinyl-background"></div>
     <div class="hero-content">
-        <div class="hero-label">SATA Institute</div>
-        <h1>Training en leiderschapsontwikkeling</h1>
+        <img src="assets/images/SATA-institute.jpeg" alt="SATA Institute" class="institute-logo">
+        <h1>Training en leiderschaps&shy;ontwikkeling</h1>
         <p>
             Voor leiders die niet alleen advies willen, maar zelf sterker willen worden. SATA Institute ontwikkelt bestuurders en teams in de vaardigheden die nodig zijn wanneer draagvlak onder druk staat.
         </p>
@@ -732,6 +783,32 @@ document.querySelectorAll('.menu-content a').forEach(link => {
     link.addEventListener('click', () => {
         document.getElementById('menuOverlay').classList.remove('active');
     });
+});
+
+// Language toggle functionality
+function toggleLanguage() {
+    const currentLang = document.getElementById('currentLang');
+    const currentPage = window.location.pathname.split('/').pop().replace('.html', '');
+
+    if (currentLang.textContent === 'NL') {
+        // Switch to English
+        const englishPage = currentPage + '-en.html';
+        window.location.href = englishPage;
+    } else {
+        // Switch to Dutch
+        const dutchPage = currentPage.replace('-en', '') + '.html';
+        window.location.href = dutchPage;
+    }
+}
+
+// Detect current language from URL
+window.addEventListener('DOMContentLoaded', () => {
+    const currentLang = document.getElementById('currentLang');
+    if (window.location.pathname.includes('-en.html')) {
+        currentLang.textContent = 'EN';
+    } else {
+        currentLang.textContent = 'NL';
+    }
 });
 
 // Smooth scroll to contact section
