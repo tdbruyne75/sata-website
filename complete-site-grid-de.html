@@ -29,23 +29,35 @@
             gap: 15px;
         }
 
-        .language-toggle {
-            width: 50px;
+        .language-selector {
+            display: flex;
+            gap: 8px;
+        }
+
+        .language-btn {
+            width: 40px;
             height: 50px;
-            background: rgba(40, 166, 154, 0.1);
-            border: 1px solid rgba(40, 166, 154, 0.3);
+            background: rgba(40, 166, 154, 0.05);
+            border: 1px solid rgba(40, 166, 154, 0.2);
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
-            color: #28a69a;
+            color: rgba(40, 166, 154, 0.6);
             text-transform: uppercase;
+            text-decoration: none;
         }
 
-        .language-toggle:hover {
+        .language-btn:hover {
+            background: rgba(40, 166, 154, 0.1);
+            border-color: rgba(40, 166, 154, 0.4);
+            color: #28a69a;
+        }
+
+        .language-btn.active {
             background: #28a69a;
             border-color: #28a69a;
             color: #ffffff;
@@ -1405,14 +1417,19 @@
                 right: 20px;
             }
 
-            .hamburger-menu,
-            .language-toggle {
+            .hamburger-menu {
                 width: 45px;
                 height: 45px;
             }
 
-            .language-toggle {
-                font-size: 11px;
+            .language-selector {
+                gap: 6px;
+            }
+
+            .language-btn {
+                width: 35px;
+                height: 45px;
+                font-size: 10px;
             }
 
             .menu-content a {
@@ -1472,8 +1489,10 @@
 
 <!-- Top Navigation -->
 <div class="top-nav">
-    <div class="language-toggle" onclick="toggleLanguage()" title="Switch language: NL → EN → DE">
-        <span id="currentLang">NL</span>
+    <div class="language-selector">
+        <a href="complete-site-grid.html" class="language-btn">NL</a>
+        <a href="complete-site-grid-en.html" class="language-btn">EN</a>
+        <a href="complete-site-grid-de.html" class="language-btn active">DE</a>
     </div>
     <div class="hamburger-menu" onclick="toggleMenu()">
         <div class="hamburger-line"></div>

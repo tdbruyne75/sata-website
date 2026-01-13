@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SATA - Situations V2 Black Edition</title>
+    <link rel="icon" type="image/png" href="assets/images/The_Label.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #f5f5f5;
+        }
+
+        /* Black Section */
+        .situations-black {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        /* Vinyl background subtle */
+        .situations-black::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -10%;
+            transform: translateY(-50%);
+            width: 50%;
+            height: 80%;
+            background-image: url('assets/images/The_vinyl.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center right;
+            opacity: 0.03;
+            z-index: 0;
+        }
+
+        .situations-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-label {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #28a69a;
+            margin-bottom: 20px;
+        }
+
+        .section-headline {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            line-height: 1.3;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .section-intro {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+        }
+
+        /* Impact Clusters */
+        .impact-cluster {
+            margin-bottom: 60px;
+        }
+
+        .cluster-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            border-left: 6px solid #28a69a;
+        }
+
+        .cluster-subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+            padding-left: 26px;
+            font-weight: 300;
+        }
+
+        .cluster-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .cluster-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(40, 166, 154, 0.2);
+            border-left: 4px solid #28a69a;
+            padding: 24px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .cluster-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: #28a69a;
+            transition: height 0.3s ease;
+        }
+
+        .cluster-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: #28a69a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(40, 166, 154, 0.15);
+        }
+
+        .cluster-card:hover::before {
+            height: 100%;
+        }
+
+        .cluster-card .situation-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+        }
+
+        /* Conclusion Section */
+        .situations-conclusion {
+            text-align: center;
+            padding: 50px 40px;
+            background: rgba(40, 166, 154, 0.1);
+            border-top: 3px solid #28a69a;
+            border-bottom: 3px solid #28a69a;
+            max-width: 900px;
+            margin: 60px auto 0;
+        }
+
+        .situations-conclusion h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .situations-conclusion p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .cluster-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .situations-black {
+                padding: 60px 0;
+            }
+
+            .situations-container {
+                padding: 0 24px;
+            }
+
+            .cluster-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header {
+                margin-bottom: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="situations-black">
+    <div class="situations-container">
+
+        <!-- Section Header -->
+        <div class="section-header">
+            <p class="section-label">Vraagstukken</p>
+            <h2 class="section-headline">Wanneer draagvlak onder druk staat</h2>
+            <p class="section-intro">
+                Dit zijn de vraagstukken waarop we ingehuurd worden. Vier scenario's. Zestien momenten waarop bestuurders ons bellen.
+            </p>
+        </div>
+
+        <!-- Cluster 1: Externe Druk -->
+        <div class="impact-cluster">
+            <h3 class="cluster-title">Externe Druk</h3>
+            <p class="cluster-subtitle">Wanneer de buitenwereld u tegenwerkt</p>
+            <div class="cluster-grid">
+                <div class="cluster-card">
+                    <div class="situation-text">Project geblokkeerd door bezwaarmakers en omwonenden</div>
+                </div>
+                <div class="cluster-card">
+                    <div class="situation-text">Leveranciers en partners zeggen vertrouwen op</div>
+                </div>
+                <div class="cluster-card">
+                    <div class="situation-text">Actiegroepen mobiliseren sentiment tegen haalbaar plan</div>
+                </div>
+                <div class="cluster-card">
+                    <div class="situation-text">Maatschappelijke druk ondermijnt noodzakelijk besluit</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cluster 2: Mediastorm -->
+        <div class="impact-cluster">
+            <h3 class="cluster-title">Mediastorm</h3>
+            <p class="cluster-subtitle">Wanneer het publieke debat escaleert</p>
+            <div class="cluster-grid">
+                <div class="cluster-card">
+                    <div class="situation-text">Nieuwscyclus escaleert ondanks correcte communicatie</div>
+                </div>
+                <div class="cluster-card">
+                    <div class="situation-text">Social media storm ondermijnt legitieme actie</div>
+                </div>
+                <div class="cluster-card">
+                    <div class="situation-text">Raad draait tegen terwijl beleid procedureel klopt</div>
+                </div>
+                <div class="cluster-card">
+                    <div class="situation-text">Politieke steun verdampt door publieke druk</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cluster 3: Bestuurlijke Onderhandelingen -->
+        <div class="impact-cluster">
+            <h3 class="cluster-title">Bestuurlijke Onderhandelingen</h3>
+            <p class="cluster-subtitle">Wanneer stakeholders niet tot overeenstemming komen</p>
+            <div class="cluster-grid">
+                <div class="cluster-card">
+                    <div class="situation-text">Coalitie vormen tussen tegengestelde partijen lukt niet</div>
+                </div>
+                <div class="cluster-card">
+                    <div class="situation-text">Onderhandelingen lopen vast op onverenigbare belangen</div>
+                </div>
+                <div class="cluster-card">
+                    <div class="situation-text">Bestuurlijke impasse blokkeert noodzakelijke besluitvorming</div>
+                </div>
+                <div class="cluster-card">
+                    <div class="situation-text">Verschillende overheidslagen werken elkaar tegen</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cluster 4: Interne Weerstand -->
+        <div class="impact-cluster">
+            <h3 class="cluster-title">Interne Weerstand</h3>
+            <p class="cluster-subtitle">Wanneer uw organisatie niet meebeweegt</p>
+            <div class="cluster-grid">
+                <div class="cluster-card">
+                    <div class="situation-text">Werknemers blokkeren noodzakelijke reorganisatie</div>
+                </div>
+                <div class="cluster-card">
+                    <div class="situation-text">Managementteam verzet zich tegen koerswijziging</div>
+                </div>
+                <div class="cluster-card">
+                    <div class="situation-text">OR/vakbond mobiliseert tegen objectief nodig beleid</div>
+                </div>
+                <div class="cluster-card">
+                    <div class="situation-text">Fusie-integratie loopt vast op cultuurbotsing</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conclusion -->
+        <div class="situations-conclusion">
+            <h3>De overeenkomst</h3>
+            <p>
+                In alle vier de scenario's klopt uw analyse. Maar zonder draagvlak verandert niets.
+                Wij zorgen dat uw gelijk ook werkelijkheid wordt.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<div style="padding: 40px; background: #28a69a; color: white; text-align: center;">
+    <h3 style="color: white; margin-bottom: 15px;">✨ Variant 2 Black Edition - 4 Clusters</h3>
+    <p style="font-size: 16px; max-width: 900px; margin: 0 auto; line-height: 1.7;">
+        Zwarte achtergrond • Externe Druk → Mediastorm → Bestuurlijke Onderhandelingen → Interne Weerstand • 16 vraagstukken • Consistent met notorious team section
+    </p>
+</div>
+
+</body>
+</html>

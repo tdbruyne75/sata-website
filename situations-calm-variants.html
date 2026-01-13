@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SATA - Situations Calm Variants</title>
+    <link rel="icon" type="image/png" href="assets/images/The_Label.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #f5f5f5;
+        }
+
+        .variant-wrapper {
+            background: #ffffff;
+            margin: 60px auto;
+            max-width: 1400px;
+            border: 4px solid #28a69a;
+        }
+
+        .variant-header {
+            background: #28a69a;
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+        }
+
+        .variant-header h2 {
+            color: white;
+            margin: 0;
+        }
+
+        .variant-description {
+            background: #f8f8f8;
+            padding: 20px 40px;
+            border-bottom: 2px solid #28a69a;
+        }
+
+        .variant-description p {
+            margin: 5px 0;
+            color: #333;
+        }
+
+        .variant-description strong {
+            color: #28a69a;
+        }
+
+        /* ========================================
+           VARIANT 2: HERO + HIDDEN GRID
+           ======================================== */
+        .situations-hero-hidden {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .situations-hero-hidden::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -10%;
+            transform: translateY(-50%);
+            width: 50%;
+            height: 80%;
+            background-image: url('assets/images/The_vinyl.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center right;
+            opacity: 0.03;
+            z-index: 0;
+        }
+
+        .situations-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-label {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #28a69a;
+            margin-bottom: 20px;
+        }
+
+        .section-headline {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            line-height: 1.3;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .section-intro {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+        }
+
+        /* Hero Situations */
+        .hero-situations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .hero-situation {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(40, 166, 154, 0.2);
+            border-left: 6px solid #28a69a;
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .hero-situation:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: #28a69a;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(40, 166, 154, 0.2);
+        }
+
+        .hero-situation .category {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #28a69a;
+            margin-bottom: 15px;
+        }
+
+        .hero-situation .title {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.4;
+            color: #ffffff;
+            margin-bottom: 0;
+        }
+
+        /* Expand Button */
+        .expand-button-wrapper {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .expand-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: rgba(40, 166, 154, 0.1);
+            color: #28a69a;
+            border: 2px solid #28a69a;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .expand-button:hover {
+            background: #28a69a;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(40, 166, 154, 0.3);
+        }
+
+        /* Hidden Content */
+        .hidden-situations {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .hidden-situations.expanded {
+            max-height: 3000px;
+        }
+
+        .impact-cluster {
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .hidden-situations.expanded .impact-cluster {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cluster-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            border-left: 4px solid #28a69a;
+        }
+
+        .cluster-subtitle {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 25px;
+            padding-left: 24px;
+            font-weight: 300;
+        }
+
+        .simple-list {
+            list-style: none;
+            padding-left: 24px;
+        }
+
+        .simple-list li {
+            font-size: 16px;
+            line-height: 2.2;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 300;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .simple-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #28a69a;
+            font-size: 20px;
+        }
+
+        /* ========================================
+           VARIANT 3: MINIMALIST LIST
+           ======================================== */
+        .situations-minimalist {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .situations-minimalist::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -10%;
+            transform: translateY(-50%);
+            width: 50%;
+            height: 80%;
+            background-image: url('assets/images/The_vinyl.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center right;
+            opacity: 0.03;
+            z-index: 0;
+        }
+
+        .minimal-cluster {
+            margin-bottom: 70px;
+        }
+
+        .minimal-cluster-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
+
+        .minimal-cluster-subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+
+        .minimal-list {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+        }
+
+        .minimal-list li {
+            font-size: 18px;
+            line-height: 2.5;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+            position: relative;
+            padding-left: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 12px;
+            margin-bottom: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .minimal-list li:last-child {
+            border-bottom: none;
+        }
+
+        .minimal-list li:hover {
+            color: #ffffff;
+            padding-left: 10px;
+        }
+
+        /* Conclusion */
+        .situations-conclusion {
+            text-align: center;
+            padding: 50px 40px;
+            background: rgba(40, 166, 154, 0.1);
+            border-top: 3px solid #28a69a;
+            border-bottom: 3px solid #28a69a;
+            max-width: 900px;
+            margin: 80px auto 0;
+        }
+
+        .situations-conclusion h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .situations-conclusion p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .situations-hero-hidden,
+            .situations-minimalist {
+                padding: 60px 0;
+            }
+
+            .situations-container {
+                padding: 0 24px;
+            }
+
+            .hero-situations-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .minimal-cluster-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========================================
+     VARIANT 2: HERO + HIDDEN GRID
+     ======================================== -->
+<div class="variant-wrapper">
+    <div class="variant-header">
+        <h2>Variant 2: "Hero + Hidden Grid" - Focus met optionele diepgang</h2>
+    </div>
+    <div class="variant-description">
+        <p><strong>Concept:</strong> Toon 6 meest impactvolle vraagstukken. Rest verborgen achter "Bekijk alle vraagstukken" button</p>
+        <p><strong>Voordeel:</strong> Minder overweldigend, rustige eerste indruk, rest optioneel voor wie meer wil</p>
+        <p><strong>Interactie:</strong> Click to reveal animatie, progressive disclosure</p>
+    </div>
+
+    <section class="situations-hero-hidden">
+        <div class="situations-container">
+
+            <div class="section-header">
+                <p class="section-label">Vraagstukken</p>
+                <h2 class="section-headline">Wanneer draagvlak onder druk staat</h2>
+                <p class="section-intro">
+                    Een greep uit de vraagstukken waarop we vandaag werken.
+                </p>
+            </div>
+
+            <!-- Hero Situations - 6 featured -->
+            <div class="hero-situations-grid">
+                <div class="hero-situation">
+                    <div class="category">Mediastorm</div>
+                    <h3 class="title">Nieuwscyclus escaleert ondanks correcte communicatie</h3>
+                </div>
+
+                <div class="hero-situation">
+                    <div class="category">Externe Druk</div>
+                    <h3 class="title">Project geblokkeerd door bezwaarmakers en omwonenden</h3>
+                </div>
+
+                <div class="hero-situation">
+                    <div class="category">Mediastorm</div>
+                    <h3 class="title">Raad draait tegen terwijl beleid procedureel klopt</h3>
+                </div>
+
+                <div class="hero-situation">
+                    <div class="category">Bestuurlijk</div>
+                    <h3 class="title">Coalitie vormen tussen tegengestelde partijen lukt niet</h3>
+                </div>
+
+                <div class="hero-situation">
+                    <div class="category">Externe Druk</div>
+                    <h3 class="title">Actiegroepen mobiliseren sentiment tegen haalbaar plan</h3>
+                </div>
+
+                <div class="hero-situation">
+                    <div class="category">Intern</div>
+                    <h3 class="title">Werknemers blokkeren noodzakelijke reorganisatie</h3>
+                </div>
+            </div>
+
+            <!-- Expand Button -->
+            <div class="expand-button-wrapper">
+                <button class="expand-button" onclick="toggleHidden()">
+                    Bekijk alle vraagstukken
+                </button>
+            </div>
+
+            <!-- Hidden Content -->
+            <div class="hidden-situations" id="hiddenContent">
+                <!-- Externe Druk -->
+                <div class="impact-cluster">
+                    <h3 class="cluster-title">Externe Druk</h3>
+                    <p class="cluster-subtitle">Wanneer de buitenwereld u tegenwerkt</p>
+                    <ul class="simple-list">
+                        <li>Leveranciers en partners zeggen vertrouwen op</li>
+                        <li>Maatschappelijke druk ondermijnt noodzakelijk besluit</li>
+                    </ul>
+                </div>
+
+                <!-- Mediastorm -->
+                <div class="impact-cluster">
+                    <h3 class="cluster-title">Mediastorm</h3>
+                    <p class="cluster-subtitle">Wanneer het publieke debat escaleert</p>
+                    <ul class="simple-list">
+                        <li>Social media storm ondermijnt legitieme actie</li>
+                        <li>Politieke steun verdampt door publieke druk</li>
+                    </ul>
+                </div>
+
+                <!-- Bestuurlijke Onderhandelingen -->
+                <div class="impact-cluster">
+                    <h3 class="cluster-title">Bestuurlijke Onderhandelingen</h3>
+                    <p class="cluster-subtitle">Wanneer stakeholders niet tot overeenstemming komen</p>
+                    <ul class="simple-list">
+                        <li>Onderhandelingen lopen vast op onverenigbare belangen</li>
+                        <li>Bestuurlijke impasse blokkeert noodzakelijke besluitvorming</li>
+                        <li>Verschillende overheidslagen werken elkaar tegen</li>
+                    </ul>
+                </div>
+
+                <!-- Interne Weerstand -->
+                <div class="impact-cluster">
+                    <h3 class="cluster-title">Interne Weerstand</h3>
+                    <p class="cluster-subtitle">Wanneer uw organisatie niet meebeweegt</p>
+                    <ul class="simple-list">
+                        <li>Managementteam verzet zich tegen koerswijziging</li>
+                        <li>OR/vakbond mobiliseert tegen objectief nodig beleid</li>
+                        <li>Fusie-integratie loopt vast op cultuurbotsing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="situations-conclusion">
+                <h3>De overeenkomst</h3>
+                <p>
+                    In alle scenario's klopt uw analyse. Maar zonder draagvlak verandert niets.
+                    Wij zorgen dat uw gelijk ook werkelijkheid wordt.
+                </p>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+<!-- ========================================
+     VARIANT 3: MINIMALIST LIST
+     ======================================== -->
+<div class="variant-wrapper" style="margin-bottom: 80px;">
+    <div class="variant-header">
+        <h2>Variant 3: "Minimalist List" - Maximum rust en elegantie</h2>
+    </div>
+    <div class="variant-description">
+        <p><strong>Concept:</strong> Weg met cards. Simpele lijsten met veel whitespace, subtiele borders</p>
+        <p><strong>Voordeel:</strong> Meest rustig, meest scanbaar, meest elegant, geen visuele noise</p>
+        <p><strong>Stijl:</strong> High-end minimalistisch, laat de content spreken</p>
+    </div>
+
+    <section class="situations-minimalist">
+        <div class="situations-container">
+
+            <div class="section-header">
+                <p class="section-label">Vraagstukken</p>
+                <h2 class="section-headline">Wanneer draagvlak onder druk staat</h2>
+                <p class="section-intro">
+                    Een greep uit de vraagstukken waarop we vandaag werken.
+                </p>
+            </div>
+
+            <!-- Externe Druk -->
+            <div class="minimal-cluster">
+                <h3 class="minimal-cluster-title">Externe Druk</h3>
+                <p class="minimal-cluster-subtitle">Wanneer de buitenwereld u tegenwerkt</p>
+                <ul class="minimal-list">
+                    <li>Project geblokkeerd door bezwaarmakers en omwonenden</li>
+                    <li>Leveranciers en partners zeggen vertrouwen op</li>
+                    <li>Actiegroepen mobiliseren sentiment tegen haalbaar plan</li>
+                    <li>Maatschappelijke druk ondermijnt noodzakelijk besluit</li>
+                </ul>
+            </div>
+
+            <!-- Mediastorm -->
+            <div class="minimal-cluster">
+                <h3 class="minimal-cluster-title">Mediastorm</h3>
+                <p class="minimal-cluster-subtitle">Wanneer het publieke debat escaleert</p>
+                <ul class="minimal-list">
+                    <li>Nieuwscyclus escaleert ondanks correcte communicatie</li>
+                    <li>Social media storm ondermijnt legitieme actie</li>
+                    <li>Raad draait tegen terwijl beleid procedureel klopt</li>
+                    <li>Politieke steun verdampt door publieke druk</li>
+                </ul>
+            </div>
+
+            <!-- Bestuurlijke Onderhandelingen -->
+            <div class="minimal-cluster">
+                <h3 class="minimal-cluster-title">Bestuurlijke Onderhandelingen</h3>
+                <p class="minimal-cluster-subtitle">Wanneer stakeholders niet tot overeenstemming komen</p>
+                <ul class="minimal-list">
+                    <li>Coalitie vormen tussen tegengestelde partijen lukt niet</li>
+                    <li>Onderhandelingen lopen vast op onverenigbare belangen</li>
+                    <li>Bestuurlijke impasse blokkeert noodzakelijke besluitvorming</li>
+                    <li>Verschillende overheidslagen werken elkaar tegen</li>
+                </ul>
+            </div>
+
+            <!-- Interne Weerstand -->
+            <div class="minimal-cluster">
+                <h3 class="minimal-cluster-title">Interne Weerstand</h3>
+                <p class="minimal-cluster-subtitle">Wanneer uw organisatie niet meebeweegt</p>
+                <ul class="minimal-list">
+                    <li>Werknemers blokkeren noodzakelijke reorganisatie</li>
+                    <li>Managementteam verzet zich tegen koerswijziging</li>
+                    <li>OR/vakbond mobiliseert tegen objectief nodig beleid</li>
+                    <li>Fusie-integratie loopt vast op cultuurbotsing</li>
+                </ul>
+            </div>
+
+            <div class="situations-conclusion">
+                <h3>De overeenkomst</h3>
+                <p>
+                    In alle scenario's klopt uw analyse. Maar zonder draagvlak verandert niets.
+                    Wij zorgen dat uw gelijk ook werkelijkheid wordt.
+                </p>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+<div style="padding: 40px; background: #28a69a; color: white; text-align: center;">
+    <h3 style="color: white; margin-bottom: 15px;">Twee Rustige Varianten</h3>
+    <p style="font-size: 16px; max-width: 900px; margin: 0 auto; line-height: 1.7;">
+        Variant 2: Hero + Hidden (6 featured + rest verborgen) • Variant 3: Minimalist List (maximum rust en elegantie)
+    </p>
+</div>
+
+<script>
+function toggleHidden() {
+    const hiddenContent = document.getElementById('hiddenContent');
+    const button = document.querySelector('.expand-button');
+
+    if (hiddenContent.classList.contains('expanded')) {
+        hiddenContent.classList.remove('expanded');
+        button.textContent = 'Bekijk alle vraagstukken';
+    } else {
+        hiddenContent.classList.add('expanded');
+        button.textContent = 'Verberg vraagstukken';
+    }
+}
+</script>
+
+</body>
+</html>

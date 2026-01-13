@@ -18,119 +18,6 @@
         }
 
         /* ============================================
-           HAMBURGER MENU & LANGUAGE TOGGLE
-           ============================================ */
-        .top-nav {
-            position: fixed;
-            top: 30px;
-            right: 30px;
-            z-index: 1000;
-            display: flex;
-            gap: 15px;
-        }
-
-        .language-selector {
-            display: flex;
-            gap: 8px;
-        }
-
-        .language-btn {
-            width: 40px;
-            height: 50px;
-            background: rgba(40, 166, 154, 0.05);
-            border: 1px solid rgba(40, 166, 154, 0.2);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            font-size: 11px;
-            font-weight: 600;
-            color: rgba(40, 166, 154, 0.6);
-            text-transform: uppercase;
-            text-decoration: none;
-        }
-
-        .language-btn:hover {
-            background: rgba(40, 166, 154, 0.1);
-            border-color: rgba(40, 166, 154, 0.4);
-            color: #28a69a;
-        }
-
-        .language-btn.active {
-            background: #28a69a;
-            border-color: #28a69a;
-            color: #ffffff;
-        }
-
-        .hamburger-menu {
-            width: 50px;
-            height: 50px;
-            background: rgba(40, 166, 154, 0.1);
-            border: 1px solid rgba(40, 166, 154, 0.3);
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.3s ease;
-        }
-
-        .hamburger-menu:hover {
-            background: #28a69a;
-            border-color: #28a69a;
-        }
-
-        .hamburger-line {
-            width: 24px;
-            height: 2px;
-            background: #28a69a;
-            transition: all 0.3s ease;
-        }
-
-        .hamburger-menu:hover .hamburger-line {
-            background: #ffffff;
-        }
-
-        .menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 999;
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .menu-overlay.active {
-            display: flex;
-        }
-
-        .menu-content {
-            text-align: center;
-        }
-
-        .menu-content a {
-            display: block;
-            font-size: 32px;
-            color: #ffffff;
-            text-decoration: none;
-            margin: 20px 0;
-            transition: color 0.3s ease;
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-        }
-
-        .menu-content a:hover {
-            color: #28a69a;
-        }
-
-        /* ============================================
            HERO SECTION
            ============================================ */
         .hero {
@@ -191,8 +78,6 @@
             line-height: 1.2;
             margin-bottom: 30px;
             color: #ffffff;
-            text-transform: uppercase;
-            text-wrap: balance;
         }
 
         .hero-subtitle {
@@ -201,7 +86,6 @@
             color: rgba(255, 255, 255, 0.85);
             margin-bottom: 40px;
             font-weight: 300;
-            text-wrap: pretty;
         }
 
         .cta-button {
@@ -271,8 +155,6 @@
             line-height: 1.3;
             color: #ffffff;
             margin-bottom: 20px;
-            text-transform: uppercase;
-            text-wrap: balance;
         }
 
         .notorious-subline {
@@ -281,7 +163,6 @@
             line-height: 1.6;
             color: rgba(255, 255, 255, 0.85);
             margin-bottom: 15px;
-            text-wrap: pretty;
         }
 
         .notorious-cta {
@@ -504,8 +385,6 @@
             line-height: 1.3;
             color: #ffffff;
             margin-bottom: 20px;
-            text-transform: uppercase;
-            text-wrap: balance;
         }
 
         .section-capabilities {
@@ -521,7 +400,6 @@
             color: rgba(255, 255, 255, 0.85);
             line-height: 1.7;
             font-weight: 300;
-            text-wrap: pretty;
         }
 
         .hero-situations-grid {
@@ -561,7 +439,6 @@
             line-height: 1.4;
             color: #ffffff;
             margin-bottom: 0;
-            text-wrap: balance;
         }
 
         .expand-button-wrapper {
@@ -619,7 +496,6 @@
             margin-bottom: 10px;
             padding-left: 20px;
             border-left: 4px solid #28a69a;
-            text-wrap: balance;
         }
 
         .cluster-subtitle {
@@ -650,239 +526,6 @@
             left: 0;
             color: #28a69a;
             font-size: 20px;
-        }
-
-        /* Category Cards Grid */
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 40px;
-            margin-bottom: 80px;
-        }
-
-        .category-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(40, 166, 154, 0.3);
-            padding: 50px 40px;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: #28a69a;
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-        }
-
-        .category-card:hover {
-            transform: translateY(-8px);
-            border-color: #28a69a;
-            background: rgba(40, 166, 154, 0.08);
-            box-shadow: 0 20px 60px rgba(40, 166, 154, 0.2);
-        }
-
-        .category-card:hover::before {
-            transform: translateX(100%);
-        }
-
-        .category-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .category-icon svg {
-            width: 100%;
-            height: 100%;
-            stroke: #28a69a;
-            fill: none;
-            stroke-width: 1.5;
-            transition: all 0.3s ease;
-        }
-
-        .category-card:hover .category-icon svg {
-            stroke: #ffffff;
-            transform: scale(1.1);
-        }
-
-        .category-card h3 {
-            font-size: 24px;
-            color: #ffffff;
-            margin-bottom: 20px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            line-height: 1.2;
-            min-height: 29px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .category-card > p {
-            font-size: 15px;
-            color: rgba(255, 255, 255, 0.75);
-            line-height: 1.5;
-            margin-bottom: 32px;
-            font-weight: 300;
-            min-height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .category-examples {
-            text-align: left;
-            padding-top: 32px;
-            border-top: 1px solid rgba(40, 166, 154, 0.3);
-            margin-top: auto;
-        }
-
-        .category-examples h4 {
-            font-size: 14px;
-            color: #28a69a;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 16px;
-            font-weight: 600;
-        }
-
-        .example-item {
-            font-size: 15px;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 12px;
-            padding-left: 20px;
-            position: relative;
-            line-height: 1.6;
-            font-weight: 300;
-        }
-
-        .example-item::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: #28a69a;
-            font-weight: 600;
-        }
-
-        .cta-section {
-            text-align: center;
-            padding: 60px 0 0 0;
-            border-top: 1px solid rgba(40, 166, 154, 0.3);
-        }
-
-        .cta-section h3 {
-            font-size: clamp(28px, 4vw, 40px);
-            color: #ffffff;
-            margin-bottom: 40px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        /* ============================================
-           INSTITUTE BANNER SECTION
-           ============================================ */
-        .institute-banner {
-            background: #0a0a0a;
-            border-top: 1px solid rgba(40, 166, 154, 0.3);
-            border-bottom: 1px solid rgba(40, 166, 154, 0.3);
-            padding: 60px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .institute-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 40%;
-            height: 100%;
-            background: rgba(40, 166, 154, 0.12);
-            transform: skewX(-10deg);
-            transform-origin: top right;
-        }
-
-        .institute-banner-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .institute-banner-text {
-            flex: 1;
-        }
-
-        .institute-banner-label {
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #28a69a;
-            margin-bottom: 12px;
-        }
-
-        .institute-banner-headline {
-            font-size: clamp(24px, 4vw, 36px);
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            line-height: 1.2;
-        }
-
-        .institute-banner-subtitle {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 300;
-            line-height: 1.6;
-        }
-
-        .institute-banner-cta {
-            flex-shrink: 0;
-        }
-
-        .institute-banner-button {
-            display: inline-block;
-            padding: 18px 40px;
-            background: #28a69a;
-            border: 2px solid #28a69a;
-            color: #ffffff;
-            font-size: 15px;
-            font-weight: 600;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .institute-banner-button:hover {
-            background: #1f8275;
-            border-color: #1f8275;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(40, 166, 154, 0.4);
         }
 
         /* ============================================
@@ -968,10 +611,11 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
+        /* Cinematic Carousel Styling */
         .tl-section {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 100px 0 80px;
+            background: linear-gradient(135deg, #1f8275 0%, #28a69a 100%);
+            color: #ffffff;
+            padding: 100px 0;
             position: relative;
         }
 
@@ -994,7 +638,7 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: #28a69a;
+            color: #000000;
             margin-bottom: 20px;
         }
 
@@ -1002,122 +646,209 @@
             font-size: clamp(32px, 5vw, 48px);
             font-weight: 700;
             line-height: 1.3;
-            color: #000000;
+            color: #ffffff;
             margin-bottom: 20px;
-            text-transform: uppercase;
-            text-wrap: balance;
         }
 
         .tl-intro {
             font-size: 18px;
-            color: #666666;
+            color: rgba(255, 255, 255, 0.9);
             line-height: 1.7;
             font-weight: 300;
-            text-wrap: pretty;
         }
 
-        .tl-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-bottom: 0;
-        }
-
-        .tl-grid-item {
+        .carousel-wrapper {
             position: relative;
+            margin-bottom: 80px;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 35px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            padding: 30px 0 50px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: #000000 rgba(0,0,0,0.2);
+        }
+
+        .carousel-track::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .carousel-track::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+        }
+
+        .carousel-track::-webkit-scrollbar-thumb {
+            background: #000000;
+            border-radius: 10px;
+        }
+
+        .tl-card {
+            min-width: 380px;
+            max-width: 380px;
+            background: #ffffff;
+            scroll-snap-align: center;
+            transition: all 0.4s ease;
             overflow: hidden;
-            background: #f5f5f5;
-            transition: all 0.3s ease;
-            aspect-ratio: 4/5;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
         }
 
-        .tl-grid-item.full-width {
-            aspect-ratio: 16/9;
-            grid-column: span 3;
+        .tl-card:hover {
+            transform: scale(1.05) translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
         }
 
-        .tl-grid-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .tl-grid-image {
+        .tl-card-image {
             width: 100%;
-            height: 100%;
+            height: 450px;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            background: #f5f5f5;
         }
 
-        .tl-grid-item:hover .tl-grid-image {
-            transform: scale(1.05);
+        .tl-card-content {
+            padding: 35px 30px;
+            background: #ffffff;
         }
 
-        .tl-grid-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 60%, transparent 100%);
-            padding: 30px 25px;
-            transform: translateY(0);
-            transition: all 0.3s ease;
-        }
-
-        .tl-grid-item:hover .tl-grid-overlay {
-            background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.8) 80%, transparent 100%);
-            padding-bottom: 35px;
-        }
-
-        .tl-grid-type {
+        .tl-card-type {
             font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: #28a69a;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
-        .tl-grid-title {
-            font-size: 20px;
+        .tl-card-title {
+            font-size: 22px;
             font-weight: 700;
             line-height: 1.3;
-            color: #ffffff;
+            color: #000000;
             margin-bottom: 15px;
         }
 
-        .tl-grid-links {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
+        .tl-card-description {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #666666;
+            font-weight: 300;
+            margin-bottom: 20px;
         }
 
-        .tl-grid-item:hover .tl-grid-links {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .tl-grid-link {
+        .tl-card-link {
             display: inline-flex;
             align-items: center;
             color: #28a69a;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
         }
 
-        .tl-grid-link:hover {
+        .tl-card-link::after {
+            content: ' →';
+            margin-left: 5px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .tl-card-link:hover {
+            color: #1f8275;
+        }
+
+        .tl-card-link:hover::after {
+            margin-left: 10px;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .carousel-nav-btn {
+            width: 50px;
+            height: 50px;
+            background: #000000;
+            border: 2px solid #000000;
             color: #ffffff;
-            padding-left: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .tl-grid-link::before {
-            content: '→';
-            margin-right: 6px;
-            font-size: 14px;
+        .carousel-nav-btn:hover {
+            background: #ffffff;
+            color: #000000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .tl-cta-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .tl-cta-card {
+            background: rgba(0, 0, 0, 0.15);
+            border: 2px solid rgba(0, 0, 0, 0.3);
+            border-left: 6px solid #000000;
+            padding: 50px 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tl-cta-card:hover {
+            background: rgba(0, 0, 0, 0.25);
+            border-color: #000000;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .tl-cta-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .tl-cta-description {
+            font-size: 16px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .tl-cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background-color: #000000;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #000000;
+        }
+
+        .tl-cta-button:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
         }
 
         /* ============================================
@@ -1204,30 +935,6 @@
 
         .footer-contact-item a:hover {
             color: #ffffff;
-        }
-
-        .footer-offices {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-office {
-            font-size: 13px;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.7);
-            font-weight: 300;
-        }
-
-        .footer-office strong {
-            color: #28a69a;
-            font-size: 14px;
-            font-weight: 600;
-            display: block;
-            margin-bottom: 5px;
         }
 
         .footer-column {
@@ -1332,10 +1039,6 @@
            RESPONSIVE
            ============================================ */
         @media (max-width: 1024px) {
-            .tl-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
             .newsletter-container {
                 flex-direction: column;
                 text-align: center;
@@ -1346,6 +1049,13 @@
                 max-width: 500px;
             }
 
+            .tl-card {
+                min-width: 350px;
+                max-width: 350px;
+            }
+        }
+
+        @media (max-width: 1024px) {
             .footer-main {
                 grid-template-columns: 1fr 1fr;
                 gap: 40px;
@@ -1397,59 +1107,6 @@
                 gap: 15px;
             }
 
-            .footer-offices {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .categories-grid {
-                grid-template-columns: 1fr;
-                max-width: 550px;
-                margin: 0 auto 80px;
-            }
-
-            .category-card {
-                padding: 40px 32px;
-            }
-
-            .top-nav {
-                top: 20px;
-                right: 20px;
-            }
-
-            .hamburger-menu {
-                width: 45px;
-                height: 45px;
-            }
-
-            .language-selector {
-                gap: 6px;
-            }
-
-            .language-btn {
-                width: 35px;
-                height: 45px;
-                font-size: 10px;
-            }
-
-            .menu-content a {
-                font-size: 24px;
-                margin: 15px 0;
-            }
-
-            .institute-banner-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .institute-banner {
-                padding: 40px 0;
-            }
-
-            .institute-banner-content {
-                padding: 0 24px;
-            }
-
             .partners-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
@@ -1465,9 +1122,13 @@
                 gap: 25px;
             }
 
-            .tl-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .tl-card {
+                min-width: 300px;
+                max-width: 300px;
+            }
+
+            .tl-card-image {
+                height: 380px;
             }
 
             .newsletter-container {
@@ -1487,60 +1148,35 @@
 </head>
 <body>
 
-<!-- Top Navigation -->
-<div class="top-nav">
-    <div class="language-selector">
-        <a href="complete-site-grid.html" class="language-btn active">NL</a>
-        <a href="complete-site-grid-en.html" class="language-btn">EN</a>
-        <a href="complete-site-grid-de.html" class="language-btn">DE</a>
-    </div>
-    <div class="hamburger-menu" onclick="toggleMenu()">
-        <div class="hamburger-line"></div>
-        <div class="hamburger-line"></div>
-        <div class="hamburger-line"></div>
-    </div>
-</div>
-
-<!-- Menu Overlay -->
-<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()">
-    <div class="menu-content">
-        <a href="#hero">Home</a>
-        <a href="#team">Team</a>
-        <a href="#vraagstukken">Vraagstukken</a>
-        <a href="institute.html">SATA Institute</a>
-        <a href="contact.html">Contact</a>
-    </div>
-</div>
-
 <!-- Hero Section -->
-<section class="hero" id="hero">
+<section class="hero">
     <div class="hero-logo-top">
         <img src="assets/images/Off_the_record_opzwart.png" alt="SUE & The Alchemists">
     </div>
     <div class="vinyl-background"></div>
     <div class="container">
         <div class="hero-content">
-            <h1 class="hero-title">Van gelijk hebben naar gelijk krijgen</h1>
+            <h1 class="hero-title">Van GELIJK HEBBEN naar GELIJK KRIJGEN</h1>
             <p class="hero-subtitle">
-                Boardroom adviesbureau voor bestuurders onder vuur. We bouwen draagvlak waar het ontbreekt. Beschermen het waar het aangevallen wordt. Winnen het terug waar het verloren ging. Voor wie het zich niet kan veroorloven om gelijk te hebben zonder gelijk te krijgen.
+                We bouwen draagvlak waar het ontbreekt. We beschermen het waar het aangevallen wordt. We winnen het terug waar het verloren ging. Voor overheden, bedrijven, NGO's en artiesten die zich niet kunnen veroorloven om gelijk te hebben zonder gelijk te krijgen.
             </p>
-            <a href="contact.html" class="cta-button">Gesprek plannen</a>
+            <a href="#contact" class="cta-button">Gesprek plannen</a>
         </div>
     </div>
 </section>
 
 <!-- Notorious Team Section -->
-<section class="notorious-team-section" id="team">
+<section class="notorious-team-section">
     <div class="notorious-container">
         <div class="notorious-header">
             <h2 class="notorious-headline">
-                Het SATA Team
+                Wanneer het makkelijk is, hoeft u ons niet te bellen.
             </h2>
             <p class="notorious-subline">
-                De boardroom adviseurs die bestuurders bellen in tijden van turbulentie.
+                Wanneer het spannend wordt moet u omringd worden door de beste mensen.
             </p>
             <p class="notorious-cta">
-                Contacteer één van onze partners
+                Dit zijn de mensen die je belt wanneer het spannend wordt.
             </p>
         </div>
 
@@ -1608,9 +1244,9 @@
                 <h3 class="partner-name">Mark Thiessen</h3>
                 <div class="partner-title">Partner</div>
                 <p class="partner-bio">
-                    Oprichter campagnebureau Bureau Meute. Jarenlang strateeg voor de VVD in tijden van
-                    politieke turbulentie. Gespecialiseerd in het Europese politieke vraagstuk waar nationale
-                    belangen botsen.
+                    Jarenlang in de Tweede Kamer, leidde teams van woordvoerders en communicatieadviseurs.
+                    Hoofd bestuursvoorlichting gemeente Den Haag. Woordvoering op meerdere ministeries.
+                    Gespecialiseerd in het Haagse beleidsvraagstuk waar politiek en uitvoering botsen.
                 </p>
             </div>
 
@@ -1631,7 +1267,8 @@
 
         <!-- Team Section -->
         <div class="team-section-title">
-            <h2>Ons team brengt het voor u thuis.</h2>
+            <h3>Het Team</h3>
+            <h2>De mensen die het voor u thuis brengen</h2>
         </div>
 
         <div class="team-grid-notorious">
@@ -1725,226 +1362,97 @@
 </section>
 
 <!-- Situations Section -->
-<section class="situations-section" id="vraagstukken">
+<section class="situations-section">
     <div class="situations-container">
-        <!-- Section Header -->
         <div class="section-header">
-            <h2 class="section-headline">Vraagstukken waarop wij werken</h2>
+            <p class="section-label">Vraagstukken</p>
+            <h2 class="section-headline">Wanneer draagvlak onder druk staat</h2>
+            <p class="section-capabilities">
+                Wij onderzoeken wat er speelt. Ontwerpen de strategie. Voeren de campagne uit. En trainen uw team om het zelf te kunnen.
+            </p>
             <p class="section-intro">
-                SUE & The Alchemists wordt gebeld wanneer draagvlak opgebouwd moet worden,
-                of wanneer het aangevallen wordt. Deze situaties vragen om meer dan goede argumenten alleen.
+                Een greep uit de vraagstukken waarop we vandaag werken.
             </p>
         </div>
 
-        <!-- Category Cards -->
-        <div class="categories-grid">
-            <!-- Card 1: Je eigen mensen winnen -->
-            <div class="category-card">
-                <div class="category-icon">
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="50" cy="35" r="12"/>
-                        <circle cx="30" cy="65" r="12"/>
-                        <circle cx="70" cy="65" r="12"/>
-                        <line x1="50" y1="47" x2="35" y2="58"/>
-                        <line x1="50" y1="47" x2="65" y2="58"/>
-                    </svg>
-                </div>
-                <h3>Je eigen mensen winnen</h3>
-                <p>
-                    Uw eigen organisatie meekrijgen: medewerkers, OR en managementteam.
-                </p>
-                <div class="category-examples">
-                    <h4>Voorbeelden</h4>
-                    <div class="example-item">OR/vakbond mobiliseert tegen objectief nodig beleid</div>
-                    <div class="example-item">Managementteam verzet zich tegen koerswijziging</div>
-                    <div class="example-item">Fusie-integratie loopt vast op cultuurbotsing</div>
-                    <div class="example-item">Werknemers blokkeren financieel noodzakelijke reorganisatie</div>
-                </div>
+        <!-- Hero Situations - 6 featured -->
+        <div class="hero-situations-grid">
+            <div class="hero-situation">
+                <div class="category">Mediastorm</div>
+                <h3 class="title">Nieuwscyclus escaleert ondanks correcte communicatie</h3>
             </div>
-
-            <!-- Card 2: Stakeholders winnen -->
-            <div class="category-card">
-                <div class="category-icon">
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="20" y="20" width="60" height="60" rx="4"/>
-                        <line x1="35" y1="35" x2="65" y2="65"/>
-                        <line x1="65" y1="35" x2="35" y2="65"/>
-                        <circle cx="50" cy="50" r="35"/>
-                    </svg>
-                </div>
-                <h3>Stakeholders winnen</h3>
-                <p>
-                    Leveranciers, partners, bestuurders, belangengroepen en omwonenden meekrijgen.
-                </p>
-                <div class="category-examples">
-                    <h4>Voorbeelden</h4>
-                    <div class="example-item">Gemeenteraad draait tegen voorstel ondanks correcte procedures</div>
-                    <div class="example-item">Bezwaarmakers blokkeren maatschappelijk wenselijk project</div>
-                    <div class="example-item">Leveranciers zeggen vertrouwen op ondanks naleving afspraken</div>
-                    <div class="example-item">Ketenpartners werken niet mee aan transitie</div>
-                </div>
+            <div class="hero-situation">
+                <div class="category">Externe Druk</div>
+                <h3 class="title">Project geblokkeerd door bezwaarmakers en omwonenden</h3>
             </div>
-
-            <!-- Card 3: Publieke opinie winnen -->
-            <div class="category-card">
-                <div class="category-icon">
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M 30 70 Q 30 40 50 40 Q 70 40 70 70"/>
-                        <circle cx="35" cy="35" r="3"/>
-                        <circle cx="50" cy="30" r="3"/>
-                        <circle cx="65" cy="35" r="3"/>
-                        <line x1="35" y1="38" x2="30" y2="65"/>
-                        <line x1="50" y1="33" x2="50" y2="60"/>
-                        <line x1="65" y1="38" x2="70" y2="65"/>
-                    </svg>
-                </div>
-                <h3>Publieke opinie winnen</h3>
-                <p>
-                    Burgers, consumenten en media meekrijgen wanneer sentiment dreigt te kantelen.
-                </p>
-                <div class="category-examples">
-                    <h4>Voorbeelden</h4>
-                    <div class="example-item">Social media storm ondermijnt legitieme actie</div>
-                    <div class="example-item">Nieuwscyclus escaleert ondanks feitelijk correcte communicatie</div>
-                    <div class="example-item">Actiegroepen mobiliseren sentiment tegen haalbaar plan</div>
-                    <div class="example-item">Consumenten boycotten product na misverstand</div>
-                </div>
+            <div class="hero-situation">
+                <div class="category">Bestuurlijk</div>
+                <h3 class="title">Politiek en beleid bedreigt branches</h3>
             </div>
-
-            <!-- Card 4: Politiek draagvlak winnen -->
-            <div class="category-card">
-                <div class="category-icon">
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <polygon points="50,15 61,40 88,40 67,56 74,82 50,65 26,82 33,56 12,40 39,40"/>
-                    </svg>
-                </div>
-                <h3>Politiek draagvlak winnen</h3>
-                <p>
-                    Coalitie vormen, politieke steun opbouwen en bestuurlijke impasses doorbreken.
-                </p>
-                <div class="category-examples">
-                    <h4>Voorbeelden</h4>
-                    <div class="example-item">Coalitie vormen tussen partijen met tegengestelde belangen</div>
-                    <div class="example-item">Politieke steun verdampt door publieke druk</div>
-                    <div class="example-item">Onderhandelingen lopen vast op onverenigbare belangen</div>
-                    <div class="example-item">Verschillende overheidslagen werken elkaar tegen</div>
-                </div>
+            <div class="hero-situation">
+                <div class="category">Bestuurlijk</div>
+                <h3 class="title">Coalitie vormen tussen tegengestelde partijen lukt niet</h3>
+            </div>
+            <div class="hero-situation">
+                <div class="category">Externe Druk</div>
+                <h3 class="title">Actiegroepen mobiliseren sentiment tegen haalbaar plan</h3>
+            </div>
+            <div class="hero-situation">
+                <div class="category">Intern</div>
+                <h3 class="title">Werknemers blokkeren noodzakelijke reorganisatie</h3>
             </div>
         </div>
 
-        <!-- CTA Section -->
-        <div class="cta-section">
-            <a href="contact.html" class="cta-button">Laten we kennismaken</a>
-        </div>
-    </div>
-</section>
-
-<!-- Institute Banner -->
-<section class="institute-banner">
-    <div class="institute-banner-content">
-        <div class="institute-banner-text">
-            <div class="institute-banner-label">SATA Institute</div>
-            <h2 class="institute-banner-headline">Training en leiderschapsontwikkeling</h2>
-            <p class="institute-banner-subtitle">
-                Invloedrijk Leiderschap, Media Training, Het Spel van de Populist,... en meer
-            </p>
-        </div>
-        <div class="institute-banner-cta">
-            <a href="institute.html" class="institute-banner-button">Ontdek programma's</a>
-        </div>
-    </div>
-</section>
-
-<!-- Thought Leadership Section -->
-<section class="tl-section">
-    <div class="tl-container">
-        <div class="tl-header">
-            <p class="tl-label">Thought Leadership</p>
-            <h2 class="tl-headline">Volg SUE & The Alchemists</h2>
-            <p class="tl-intro">
-                Van bestsellers tot podcasts, van keynotes tot theatershows, en van blogs tot columns,... een greep uit de manieren waarop we onze kennis delen over invloed, gedrag en draagvlak.
-            </p>
+        <!-- Expand Button -->
+        <div class="expand-button-wrapper">
+            <button class="expand-button" onclick="toggleHidden()">
+                Bekijk alle vraagstukken
+            </button>
         </div>
 
-        <div class="tl-grid">
-            <!-- Row 1: Boek Het Spel van de Populist -->
-            <div class="tl-grid-item">
-                <img src="documentatie/Thought Leadership Carrousel/boek cover het spel van de populist.png" alt="Het Spel van de Populist" class="tl-grid-image">
-                <div class="tl-grid-overlay">
-                    <div class="tl-grid-type">Boek</div>
-                    <h3 class="tl-grid-title">Het Spel van de Populist</h3>
-                    <div class="tl-grid-links">
-                        <a href="https://www.bol.com/nl/nl/f/het-spel-van-de-populist/9300000206597366/" target="_blank" class="tl-grid-link">Bestel het boek</a>
-                    </div>
-                </div>
+        <!-- Hidden Content -->
+        <div class="hidden-situations" id="hiddenContent">
+            <!-- Externe Druk -->
+            <div class="impact-cluster">
+                <h3 class="cluster-title">Externe Druk</h3>
+                <p class="cluster-subtitle">Wanneer de buitenwereld u tegenwerkt</p>
+                <ul class="simple-list">
+                    <li>Leveranciers en partners zeggen vertrouwen op</li>
+                    <li>Maatschappelijke druk ondermijnt noodzakelijk besluit</li>
+                </ul>
             </div>
 
-            <!-- Row 1: Boek Gamechangers -->
-            <div class="tl-grid-item">
-                <img src="documentatie/Thought Leadership Carrousel/boek cover gamechangers.png" alt="Gamechangers" class="tl-grid-image">
-                <div class="tl-grid-overlay">
-                    <div class="tl-grid-type">Boek</div>
-                    <h3 class="tl-grid-title">Gamechangers</h3>
-                    <div class="tl-grid-links">
-                        <a href="https://www.bol.com/nl/nl/f/gamechangers/9300000212266845/" target="_blank" class="tl-grid-link">Bestel het boek</a>
-                    </div>
-                </div>
+            <!-- Mediastorm -->
+            <div class="impact-cluster">
+                <h3 class="cluster-title">Mediastorm</h3>
+                <p class="cluster-subtitle">Wanneer het publieke debat escaleert</p>
+                <ul class="simple-list">
+                    <li>Social media storm ondermijnt legitieme actie</li>
+                    <li>Politieke steun verdampt door publieke druk</li>
+                </ul>
             </div>
 
-            <!-- Row 1: Podcast Wat gebeurt er eigenlijk in je hoofd -->
-            <div class="tl-grid-item">
-                <img src="documentatie/wat-gebeurt-er.jpg" alt="Wat gebeurt er eigenlijk in je hoofd?" class="tl-grid-image">
-                <div class="tl-grid-overlay">
-                    <div class="tl-grid-type">Podcast</div>
-                    <h3 class="tl-grid-title">Wat gebeurt er eigenlijk in je hoofd?</h3>
-                    <div class="tl-grid-links">
-                        <a href="https://open.spotify.com/show/3DwPBL0Db2pIhmUAU6lvZz" target="_blank" class="tl-grid-link">Beluister op Spotify</a>
-                    </div>
-                </div>
+            <!-- Bestuurlijke Onderhandelingen -->
+            <div class="impact-cluster">
+                <h3 class="cluster-title">Bestuurlijke Onderhandelingen</h3>
+                <p class="cluster-subtitle">Wanneer stakeholders niet tot overeenstemming komen</p>
+                <ul class="simple-list">
+                    <li>Onderhandelingen lopen vast op onverenigbare belangen</li>
+                    <li>Bestuurlijke impasse blokkeert noodzakelijke besluitvorming</li>
+                    <li>Verschillende overheidslagen werken elkaar tegen</li>
+                </ul>
             </div>
 
-            <!-- Row 2: Tom de Bruyne -->
-            <div class="tl-grid-item">
-                <img src="documentatie/personeel/tom de bruyne.jpeg" alt="Tom de Bruyne" class="tl-grid-image">
-                <div class="tl-grid-overlay">
-                    <div class="tl-grid-type">Keynote Speaker</div>
-                    <h3 class="tl-grid-title">Tom de Bruyne</h3>
-                    <div class="tl-grid-links">
-                        <a href="https://www.linkedin.com/in/tomdebruyne/" target="_blank" class="tl-grid-link">Volg Tom op LinkedIn</a>
-                        <a href="https://open.spotify.com/show/3DwPBL0Db2pIhmUAU6lvZz" target="_blank" class="tl-grid-link">Beluister de podcast</a>
-                        <a href="#contact" class="tl-grid-link">Boek Tom als spreker</a>
-                    </div>
-                </div>
+            <!-- Interne Weerstand -->
+            <div class="impact-cluster">
+                <h3 class="cluster-title">Interne Weerstand</h3>
+                <p class="cluster-subtitle">Wanneer uw organisatie niet meebeweegt</p>
+                <ul class="simple-list">
+                    <li>Managementteam verzet zich tegen koerswijziging</li>
+                    <li>OR/vakbond mobiliseert tegen objectief nodig beleid</li>
+                    <li>Fusie-integratie loopt vast op cultuurbotsing</li>
+                </ul>
             </div>
-
-            <!-- Row 2: Klaas Dijkhoff -->
-            <div class="tl-grid-item">
-                <img src="documentatie/personeel/klaas_dijkhoff.jpeg" alt="Klaas Dijkhoff" class="tl-grid-image">
-                <div class="tl-grid-overlay">
-                    <div class="tl-grid-type">Keynote Speaker</div>
-                    <h3 class="tl-grid-title">Klaas Dijkhoff</h3>
-                    <div class="tl-grid-links">
-                        <a href="https://www.linkedin.com/in/klaas-dijkhoff/" target="_blank" class="tl-grid-link">Volg Klaas op LinkedIn</a>
-                        <a href="https://open.spotify.com/show/59EKTmNFbbuUT88Ju6t1ws" target="_blank" class="tl-grid-link">Beluister Dijkhoff & Segers</a>
-                        <a href="#contact" class="tl-grid-link">Boek Klaas als spreker</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Row 2: Bas Erlings -->
-            <div class="tl-grid-item">
-                <img src="documentatie/personeel/bas_erlings.JPG" alt="Bas Erlings" class="tl-grid-image">
-                <div class="tl-grid-overlay">
-                    <div class="tl-grid-type">Keynote Speaker</div>
-                    <h3 class="tl-grid-title">Bas Erlings</h3>
-                    <div class="tl-grid-links">
-                        <a href="https://www.linkedin.com/in/baserlings/" target="_blank" class="tl-grid-link">Volg Bas op LinkedIn</a>
-                        <a href="https://open.spotify.com/show/1234567890" target="_blank" class="tl-grid-link">Luister Achter de Macht</a>
-                        <a href="#contact" class="tl-grid-link">Boek Bas als keynote spreker</a>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 </section>
@@ -1965,6 +1473,116 @@
     </div>
 </section>
 
+<!-- Thought Leadership Section -->
+<section class="tl-section">
+    <div class="tl-container">
+        <div class="tl-header">
+            <p class="tl-label">Thought Leadership</p>
+            <h2 class="tl-headline">Hoe we onze kennis verspreiden</h2>
+            <p class="tl-intro">
+                Van bestsellers tot podcasts, van theaters tot bewegingen—een greep uit de manieren waarop we inzichten delen over invloed, gedrag en draagvlak.
+            </p>
+        </div>
+
+        <!-- Carousel Wrapper -->
+        <div class="carousel-wrapper">
+            <div class="carousel-track" id="carouselTrack">
+
+                <!-- Card 1: Het Spel van de Populist -->
+                <div class="tl-card">
+                    <img src="documentatie/Thought Leadership Carrousel/boek cover het spel van de populist.png" alt="Het Spel van de Populist" class="tl-card-image">
+                    <div class="tl-card-content">
+                        <div class="tl-card-type">Boek</div>
+                        <h3 class="tl-card-title">Het Spel van de Populist</h3>
+                        <p class="tl-card-description">
+                            Bas Erlings' bestseller over hoe populisme werkt en hoe je ermee omgaat. Gebaseerd op acht verkiezingscampagnes.
+                        </p>
+                        <a href="https://www.bol.com/nl/nl/f/het-spel-van-de-populist/9300000206597366/" target="_blank" class="tl-card-link">Bestel het boek</a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Gamechangers -->
+                <div class="tl-card">
+                    <img src="documentatie/Thought Leadership Carrousel/boek cover gamechangers.png" alt="Gamechangers" class="tl-card-image">
+                    <div class="tl-card-content">
+                        <div class="tl-card-type">Boek</div>
+                        <h3 class="tl-card-title">Gamechangers</h3>
+                        <p class="tl-card-description">
+                            Tom De Bruyne's boek over hoe kleine gerichte ingrepen grote veranderingen bewerkstelligen. Voor systemische impact.
+                        </p>
+                        <a href="https://www.bol.com/nl/nl/f/gamechangers/9300000212266845/" target="_blank" class="tl-card-link">Bestel het boek</a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Podcast Wat gebeurt er eigenlijk in je hoofd -->
+                <div class="tl-card">
+                    <img src="documentatie/wat-gebeurt-er.jpg" alt="Wat gebeurt er eigenlijk in je hoofd?" class="tl-card-image">
+                    <div class="tl-card-content">
+                        <div class="tl-card-type">Podcast</div>
+                        <h3 class="tl-card-title">Wat gebeurt er eigenlijk in je hoofd?</h3>
+                        <p class="tl-card-description">
+                            Klaas, Bas en Tom over gedragspsychologie. Waarom doen mensen wat ze doen—en hoe beïnvloed je dat?
+                        </p>
+                        <a href="https://open.spotify.com/show/3DwPBL0Db2pIhmUAU6lvZz" target="_blank" class="tl-card-link">Beluister op Spotify</a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Dijkhoff & Segers -->
+                <div class="tl-card">
+                    <img src="documentatie/personeel/klaas_dijkhoff.jpeg" alt="Dijkhoff & Segers" class="tl-card-image">
+                    <div class="tl-card-content">
+                        <div class="tl-card-type">Podcast</div>
+                        <h3 class="tl-card-title">Dijkhoff & Segers</h3>
+                        <p class="tl-card-description">
+                            Klaas Dijkhoff en Gert-Jan Segers kijken ongefilterd naar de Nederlandse politiek. Wat er écht speelt.
+                        </p>
+                        <a href="https://open.spotify.com/show/59EKTmNFbbuUT88Ju6t1ws" target="_blank" class="tl-card-link">Beluister op Spotify</a>
+                    </div>
+                </div>
+
+                <!-- Card 6: Keynote Speakers -->
+                <div class="tl-card">
+                    <img src="documentatie/personeel/tom de bruyne.jpeg" alt="Keynote Speakers" class="tl-card-image">
+                    <div class="tl-card-content">
+                        <div class="tl-card-type">Keynote</div>
+                        <h3 class="tl-card-title">Boek een keynote</h3>
+                        <p class="tl-card-description">
+                            Nodig Klaas, Bas of Tom uit voor een keynote, workshop of theatercollege bij jouw organisatie.
+                        </p>
+                        <a href="#contact" class="tl-card-link">Plan een gesprek</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="carousel-nav">
+                <button class="carousel-nav-btn" onclick="scrollCarousel('left')">←</button>
+                <button class="carousel-nav-btn" onclick="scrollCarousel('right')">→</button>
+            </div>
+        </div>
+
+        <!-- CTA Cards -->
+        <div class="tl-cta-wrapper">
+            <div class="tl-cta-card">
+                <h3 class="tl-cta-title">Blijf op de hoogte</h3>
+                <p class="tl-cta-description">
+                    Ontvang onze nieuwsbrief met inzichten over invloed, gedrag en draagvlak.
+                </p>
+                <a href="#newsletter" class="tl-cta-button">Abonneer je</a>
+            </div>
+
+            <div class="tl-cta-card">
+                <h3 class="tl-cta-title">Boek een keynote</h3>
+                <p class="tl-cta-description">
+                    Nodig ons uit voor een keynote, workshop of theatercollege bij jouw organisatie.
+                </p>
+                <a href="#contact" class="tl-cta-button">Plan een gesprek</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Footer -->
 <footer class="footer">
     <div class="footer-container">
@@ -1979,51 +1597,55 @@
                 </p>
                 <div class="footer-contact-info">
                     <div class="footer-contact-item">
-                        <strong>Email:</strong> <a href="mailto:info@wearesata.com">info@wearesata.com</a>
+                        <strong>Email:</strong> <a href="mailto:info@sata.nl">info@sata.nl</a>
                     </div>
                     <div class="footer-contact-item">
-                        <strong>Kantoren:</strong> Amsterdam • Den Haag • Breda • Brussel
+                        <strong>Telefoon:</strong> <a href="tel:+31201234567">+31 (0)20 123 45 67</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <strong>Amsterdam</strong> | Nederland
                     </div>
                 </div>
                 <div class="footer-social">
                     <a href="https://www.linkedin.com/company/sue-amsterdam/" target="_blank" class="footer-social-link" aria-label="LinkedIn">in</a>
-                    <a href="https://www.instagram.com/wearesata/" target="_blank" class="footer-social-link" aria-label="Instagram">IG</a>
+                    <a href="https://twitter.com" target="_blank" class="footer-social-link" aria-label="Twitter">𝕏</a>
+                    <a href="https://www.instagram.com" target="_blank" class="footer-social-link" aria-label="Instagram">IG</a>
                 </div>
             </div>
 
-            <!-- Quick Links Column -->
-            <div class="footer-column">
-                <h4 class="footer-column-title">Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="#team">Ons Team</a></li>
-                    <li><a href="#vraagstukken">Vraagstukken</a></li>
-                    <li><a href="#thought-leadership">Thought Leadership</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="/careers">Werken bij SATA</a></li>
-                </ul>
-            </div>
-
-            <!-- Content Column -->
-            <div class="footer-column">
-                <h4 class="footer-column-title">Content</h4>
-                <ul class="footer-links">
-                    <li><a href="/nieuwsbrief">Nieuwsbrief</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="https://www.bol.com/nl/nl/f/het-spel-van-de-populist/9300000206597366/" target="_blank">Boeken</a></li>
-                    <li><a href="https://open.spotify.com/show/3DwPBL0Db2pIhmUAU6lvZz" target="_blank">Podcasts</a></li>
-                    <li><a href="/cases">Cases</a></li>
-                </ul>
-            </div>
-
-            <!-- Diensten Column -->
+            <!-- Services Column -->
             <div class="footer-column">
                 <h4 class="footer-column-title">Diensten</h4>
                 <ul class="footer-links">
-                    <li><a href="/keynote-speakers">Keynote Speakers</a></li>
-                    <li><a href="/contact">Draagvlak Onderzoek</a></li>
-                    <li><a href="/contact">Strategie & Campagnes</a></li>
-                    <li><a href="/contact">Team Training</a></li>
-                    <li><a href="/contact">Crisis Management</a></li>
+                    <li><a href="#draagvlak">Draagvlak Onderzoek</a></li>
+                    <li><a href="#strategie">Strategieontwikkeling</a></li>
+                    <li><a href="#campagnes">Campagne Uitvoering</a></li>
+                    <li><a href="#training">Team Training</a></li>
+                    <li><a href="#crisis">Crisis Management</a></li>
+                </ul>
+            </div>
+
+            <!-- Expertise Column -->
+            <div class="footer-column">
+                <h4 class="footer-column-title">Expertise</h4>
+                <ul class="footer-links">
+                    <li><a href="#thought-leadership">Thought Leadership</a></li>
+                    <li><a href="#boeken">Boeken</a></li>
+                    <li><a href="#podcasts">Podcasts</a></li>
+                    <li><a href="#keynotes">Keynote Speakers</a></li>
+                    <li><a href="#cases">Cases</a></li>
+                </ul>
+            </div>
+
+            <!-- Over Ons Column -->
+            <div class="footer-column">
+                <h4 class="footer-column-title">Over Ons</h4>
+                <ul class="footer-links">
+                    <li><a href="#team">Ons Team</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                    <li><a href="#methode">Onze Methode</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#careers">Werken bij SATA</a></li>
                 </ul>
             </div>
         </div>
@@ -2034,68 +1656,40 @@
                 &copy; 2026 SATA - SUE & The Alchemists. Alle rechten voorbehouden.
             </div>
             <ul class="footer-legal-links">
-                <li><a href="/privacy-policy">Privacy Policy</a></li>
-                <li><a href="/algemene-voorwaarden">Algemene Voorwaarden</a></li>
-                <li><a href="/cookies">Cookie Policy</a></li>
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#algemene-voorwaarden">Algemene Voorwaarden</a></li>
+                <li><a href="#cookies">Cookie Policy</a></li>
             </ul>
         </div>
     </div>
 </footer>
 
 <script>
-// Hamburger menu toggle
-function toggleMenu() {
-    const overlay = document.getElementById('menuOverlay');
-    overlay.classList.toggle('active');
-}
+// Situations toggle
+function toggleHidden() {
+    const hiddenContent = document.getElementById('hiddenContent');
+    const button = document.querySelector('.expand-button');
 
-// Close menu when clicking a link
-document.querySelectorAll('.menu-content a').forEach(link => {
-    link.addEventListener('click', () => {
-        document.getElementById('menuOverlay').classList.remove('active');
-    });
-});
-
-// Language toggle functionality
-function toggleLanguage() {
-    const currentLang = document.getElementById('currentLang');
-    const currentPage = window.location.pathname.split('/').pop().replace('.html', '');
-
-    if (currentLang.textContent === 'NL') {
-        // Switch to English
-        const englishPage = currentPage + '-en.html';
-        // Check if English version exists, otherwise show alert
-        window.location.href = englishPage;
+    if (hiddenContent.classList.contains('expanded')) {
+        hiddenContent.classList.remove('expanded');
+        button.textContent = 'Bekijk alle vraagstukken';
     } else {
-        // Switch to Dutch
-        const dutchPage = currentPage.replace('-en', '') + '.html';
-        window.location.href = dutchPage;
+        hiddenContent.classList.add('expanded');
+        button.textContent = 'Verberg vraagstukken';
     }
 }
 
-// Detect current language from URL
-window.addEventListener('DOMContentLoaded', () => {
-    const currentLang = document.getElementById('currentLang');
-    if (window.location.pathname.includes('-en.html')) {
-        currentLang.textContent = 'EN';
-    } else {
-        currentLang.textContent = 'NL';
-    }
-});
+// Carousel functionality
+function scrollCarousel(direction) {
+    const track = document.getElementById('carouselTrack');
+    const scrollAmount = 415; // card width + gap
 
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
+    if (direction === 'left') {
+        track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else {
+        track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+}
 </script>
 
 </body>
