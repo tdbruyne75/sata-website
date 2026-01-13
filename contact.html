@@ -480,7 +480,7 @@
 
 <!-- Top Navigation -->
 <div class="top-nav">
-    <div class="language-toggle" onclick="toggleLanguage()" title="Switch language / Wissel taal">
+    <div class="language-toggle" onclick="toggleLanguage()" title="Switch language: NL → EN → DE">
         <span id="currentLang">NL</span>
     </div>
     <div class="hamburger-menu" onclick="toggleMenu()">
@@ -642,26 +642,33 @@ document.querySelectorAll('.menu-content a').forEach(link => {
     });
 });
 
-// Language toggle functionality
+// Language toggle functionality (NL/EN/DE cycle)
 function toggleLanguage() {
     const currentLang = document.getElementById('currentLang');
-    const currentPage = window.location.pathname.split('/').pop().replace('.html', '');
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.split('/').pop();
+    const basePage = currentPage.replace('-en.html', '').replace('-de.html', '').replace('.html', '');
 
     if (currentLang.textContent === 'NL') {
-        // Switch to English
-        const englishPage = currentPage + '-en.html';
-        window.location.href = englishPage;
+        // Switch from NL to EN
+        window.location.href = basePage + '-en.html';
+    } else if (currentLang.textContent === 'EN') {
+        // Switch from EN to DE
+        window.location.href = basePage + '-de.html';
     } else {
-        // Switch to Dutch
-        const dutchPage = currentPage.replace('-en', '') + '.html';
-        window.location.href = dutchPage;
+        // Switch from DE to NL
+        window.location.href = basePage + '.html';
     }
 }
 
 // Detect current language from URL
 window.addEventListener('DOMContentLoaded', () => {
     const currentLang = document.getElementById('currentLang');
-    if (window.location.pathname.includes('-en.html')) {
+    const currentPath = window.location.pathname;
+    
+    if (currentPath.includes('-de.html')) {
+        currentLang.textContent = 'DE';
+    } else if (currentPath.includes('-en.html')) {
         currentLang.textContent = 'EN';
     } else {
         currentLang.textContent = 'NL';
