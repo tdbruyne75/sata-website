@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom de Bruyne — Gedragswetenschapper · Strateeg · Auteur</title>
+    <meta name="description" content="Founder · Psycholoog · Nederbelg · Auteur · Spreker · Gedragsexpert · Columnist · Podcaster · Irritant Optimist">
+    <link rel="icon" type="image/png" href="assets/images/The_Label.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        /* HERO SECTION - Version 2 */
+        .hero-v2 {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            background: radial-gradient(circle at 50% 50%, rgba(40, 166, 154, 0.05) 0%, transparent 70%);
+        }
+
+        .hero-v2-content {
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .hero-v2-portrait {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 48px;
+            border: 3px solid rgba(40, 166, 154, 0.4);
+            display: block;
+        }
+
+        .hero-v2-name {
+            font-size: clamp(48px, 6vw, 72px);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #ffffff 0%, rgba(40, 166, 154, 0.9) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-v2-pitch {
+            font-size: 16px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            line-height: 1.8;
+            margin-bottom: 80px;
+        }
+
+        .hero-v2-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .hero-v2-item {
+            background: rgba(40, 166, 154, 0.05);
+            border: 1px solid rgba(40, 166, 154, 0.2);
+            padding: 24px;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .hero-v2-item:hover {
+            background: rgba(40, 166, 154, 0.1);
+            border-color: rgba(40, 166, 154, 0.5);
+            transform: translateY(-4px);
+        }
+
+        .hero-v2-item h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #28a69a;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-v2-item p {
+            font-size: 14px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+
+        .hero-v2-item a {
+            color: #28a69a;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            display: inline-block;
+            margin-top: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .hero-v2-item a:hover {
+            color: #ffffff;
+            transform: translateX(5px);
+        }
+
+        .hero-v2-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .hero-v2-links a {
+            padding: 12px 32px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+        }
+
+        .hero-v2-links a:hover {
+            background: rgba(40, 166, 154, 0.2);
+            border-color: #28a69a;
+        }
+
+        /* GAMECHANGERS SECTION */
+        .gamechangers-section {
+            max-width: 1400px;
+            margin: 80px auto;
+            background: linear-gradient(135deg, #000000 0%, #001a17 100%);
+            border: 1px solid rgba(40, 166, 154, 0.3);
+            overflow: hidden;
+        }
+
+        .gamechangers-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 700px;
+        }
+
+        .gamechangers-content {
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 26, 23, 0.4) 100%);
+        }
+
+        .gamechangers-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #28a69a;
+            line-height: 1.2;
+            margin-bottom: 32px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .gamechangers-pitch {
+            font-size: 16px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .gamechangers-quote {
+            background: rgba(40, 166, 154, 0.08);
+            border-left: 3px solid #28a69a;
+            padding: 24px 28px;
+            margin-bottom: 40px;
+        }
+
+        .gamechangers-quote-text {
+            font-size: 14px;
+            font-weight: 400;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .gamechangers-quote-author {
+            font-size: 13px;
+            font-weight: 600;
+            color: #28a69a;
+            font-style: normal;
+        }
+
+        .gamechangers-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .gamechangers-btn {
+            padding: 16px 36px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid;
+            display: inline-block;
+        }
+
+        .gamechangers-btn-primary {
+            background: #28a69a;
+            color: #000000;
+            border-color: #28a69a;
+        }
+
+        .gamechangers-btn-primary:hover {
+            background: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .gamechangers-btn-secondary {
+            background: transparent;
+            color: #28a69a;
+            border-color: #28a69a;
+        }
+
+        .gamechangers-btn-secondary:hover {
+            background: rgba(40, 166, 154, 0.15);
+            color: #ffffff;
+            border-color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .gamechangers-book {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+            background: radial-gradient(circle at 60% 50%, rgba(40, 166, 154, 0.1) 0%, transparent 70%);
+            position: relative;
+        }
+
+        .gamechangers-book::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(40, 166, 154, 0.3) 20%, rgba(40, 166, 154, 0.3) 80%, transparent 100%);
+        }
+
+        .gamechangers-book-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 580px;
+            filter: drop-shadow(0 20px 60px rgba(40, 166, 154, 0.3));
+            transition: transform 0.4s ease;
+        }
+
+        .gamechangers-book-image:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+
+        /* TOM IN DE MEDIA SECTION */
+        .media-section {
+            max-width: 1400px;
+            margin: 80px auto;
+            background: linear-gradient(135deg, #000000 0%, #001a17 100%);
+            border: 1px solid rgba(40, 166, 154, 0.3);
+            overflow: hidden;
+        }
+
+        .media-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 700px;
+        }
+
+        .media-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+            background: radial-gradient(circle at 40% 50%, rgba(40, 166, 154, 0.1) 0%, transparent 70%);
+            position: relative;
+        }
+
+        .media-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(40, 166, 154, 0.3) 20%, rgba(40, 166, 154, 0.3) 80%, transparent 100%);
+        }
+
+        .media-image-img {
+            max-width: 100%;
+            height: auto;
+            max-height: 580px;
+            filter: drop-shadow(0 20px 60px rgba(40, 166, 154, 0.3));
+            transition: transform 0.4s ease;
+        }
+
+        .media-image-img:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .media-content {
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(0, 26, 23, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
+        }
+
+        .media-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #28a69a;
+            line-height: 1.2;
+            margin-bottom: 32px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .media-pitch {
+            font-size: 16px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .media-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .media-btn {
+            padding: 16px 36px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid;
+            display: inline-block;
+        }
+
+        .media-btn-primary {
+            background: #28a69a;
+            color: #000000;
+            border-color: #28a69a;
+        }
+
+        .media-btn-primary:hover {
+            background: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .media-btn-secondary {
+            background: transparent;
+            color: #28a69a;
+            border-color: #28a69a;
+        }
+
+        .media-btn-secondary:hover {
+            background: rgba(40, 166, 154, 0.15);
+            color: #ffffff;
+            border-color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* KEYNOTES SECTION */
+        .keynotes-section {
+            max-width: 1400px;
+            margin: 80px auto;
+            background: linear-gradient(135deg, #000000 0%, #001a17 100%);
+            border: 1px solid rgba(40, 166, 154, 0.3);
+            overflow: hidden;
+        }
+
+        .keynotes-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 700px;
+        }
+
+        .keynotes-content {
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 26, 23, 0.4) 100%);
+        }
+
+        .keynotes-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #28a69a;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .keynotes-rating {
+            background: rgba(40, 166, 154, 0.08);
+            border-left: 3px solid #28a69a;
+            padding: 20px 28px;
+            margin-bottom: 32px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #28a69a;
+        }
+
+        .keynotes-pitch {
+            font-size: 16px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .keynotes-email {
+            color: #28a69a;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .keynotes-email:hover {
+            color: #ffffff;
+        }
+
+        .keynotes-list-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .keynotes-list {
+            list-style-position: outside;
+            padding-left: 24px;
+            margin: 0;
+        }
+
+        .keynotes-list li {
+            font-size: 15px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+            margin-bottom: 12px;
+            padding-left: 8px;
+        }
+
+        .keynotes-list li::marker {
+            color: #28a69a;
+            font-weight: 600;
+        }
+
+        .keynotes-buttons {
+            display: flex;
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .keynotes-btn {
+            padding: 16px 36px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid;
+            display: inline-block;
+        }
+
+        .keynotes-btn-primary {
+            background: #28a69a;
+            color: #000000;
+            border-color: #28a69a;
+        }
+
+        .keynotes-btn-primary:hover {
+            background: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .keynotes-btn-secondary {
+            background: transparent;
+            color: #28a69a;
+            border-color: #28a69a;
+        }
+
+        .keynotes-btn-secondary:hover {
+            background: rgba(40, 166, 154, 0.15);
+            color: #ffffff;
+            border-color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .keynotes-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+            background: radial-gradient(circle at 60% 50%, rgba(40, 166, 154, 0.1) 0%, transparent 70%);
+            position: relative;
+        }
+
+        .keynotes-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(40, 166, 154, 0.3) 20%, rgba(40, 166, 154, 0.3) 80%, transparent 100%);
+        }
+
+        .keynotes-image-img {
+            max-width: 100%;
+            height: auto;
+            max-height: 580px;
+            filter: drop-shadow(0 20px 60px rgba(40, 166, 154, 0.3));
+            transition: transform 0.4s ease;
+        }
+
+        .keynotes-image-img:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .hero-v2-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gamechangers-split {
+                grid-template-columns: 1fr;
+            }
+
+            .gamechangers-content {
+                padding: 60px 40px;
+            }
+
+            .gamechangers-book {
+                padding: 80px 40px;
+                order: -1;
+            }
+
+            .gamechangers-book::before {
+                width: 100%;
+                height: 1px;
+                top: auto;
+                bottom: 0;
+                background: linear-gradient(to right, transparent 0%, rgba(40, 166, 154, 0.3) 20%, rgba(40, 166, 154, 0.3) 80%, transparent 100%);
+            }
+
+            .gamechangers-title {
+                font-size: 36px;
+            }
+
+            .media-split {
+                grid-template-columns: 1fr;
+            }
+
+            .media-image {
+                padding: 80px 40px;
+                order: -1;
+            }
+
+            .media-image::after {
+                width: 100%;
+                height: 1px;
+                top: auto;
+                bottom: 0;
+                left: 0;
+                right: auto;
+                background: linear-gradient(to right, transparent 0%, rgba(40, 166, 154, 0.3) 20%, rgba(40, 166, 154, 0.3) 80%, transparent 100%);
+            }
+
+            .media-content {
+                padding: 60px 40px;
+            }
+
+            .media-title {
+                font-size: 36px;
+            }
+
+            .keynotes-split {
+                grid-template-columns: 1fr;
+            }
+
+            .keynotes-content {
+                padding: 60px 40px;
+            }
+
+            .keynotes-image {
+                padding: 80px 40px;
+                order: -1;
+            }
+
+            .keynotes-image::before {
+                width: 100%;
+                height: 1px;
+                top: auto;
+                bottom: 0;
+                background: linear-gradient(to right, transparent 0%, rgba(40, 166, 154, 0.3) 20%, rgba(40, 166, 154, 0.3) 80%, transparent 100%);
+            }
+
+            .keynotes-title {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-v2-portrait {
+                width: 200px;
+                height: 200px;
+            }
+
+            .hero-v2-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-v2-links {
+                flex-direction: column;
+            }
+
+            .hero-v2-links a {
+                width: 100%;
+            }
+
+            .gamechangers-content {
+                padding: 40px 24px;
+            }
+
+            .gamechangers-book {
+                padding: 60px 24px;
+            }
+
+            .gamechangers-title {
+                font-size: 28px;
+            }
+
+            .gamechangers-pitch {
+                font-size: 15px;
+            }
+
+            .gamechangers-buttons {
+                flex-direction: column;
+            }
+
+            .gamechangers-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .media-content {
+                padding: 40px 24px;
+            }
+
+            .media-image {
+                padding: 60px 24px;
+            }
+
+            .media-title {
+                font-size: 28px;
+            }
+
+            .media-pitch {
+                font-size: 15px;
+            }
+
+            .media-buttons {
+                flex-direction: column;
+            }
+
+            .media-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .keynotes-content {
+                padding: 40px 24px;
+            }
+
+            .keynotes-image {
+                padding: 60px 24px;
+            }
+
+            .keynotes-title {
+                font-size: 28px;
+            }
+
+            .keynotes-pitch {
+                font-size: 15px;
+            }
+
+            .keynotes-rating {
+                font-size: 16px;
+            }
+
+            .keynotes-list li {
+                font-size: 14px;
+            }
+
+            .keynotes-buttons {
+                flex-direction: column;
+            }
+
+            .keynotes-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer {
+                padding: 60px 0 40px;
+            }
+
+            .footer-container {
+                padding: 0 24px;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                margin-bottom: 40px;
+                padding-bottom: 40px;
+            }
+
+            .footer-brand {
+                max-width: 100%;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-legal-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* FOOTER SECTION */
+        .footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 80px 0 40px;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40%;
+            height: 70%;
+            background-image: url('assets/images/The_vinyl.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.02;
+            z-index: 0;
+        }
+
+        .footer-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-brand {
+            max-width: 400px;
+        }
+
+        .footer-logo {
+            margin-bottom: 25px;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            opacity: 0.95;
+        }
+
+        .footer-tagline {
+            font-size: 16px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .footer-contact-info {
+            margin-top: 25px;
+        }
+
+        .footer-contact-item {
+            font-size: 14px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 8px;
+            font-weight: 300;
+        }
+
+        .footer-contact-item a {
+            color: #28a69a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact-item a:hover {
+            color: #ffffff;
+        }
+
+        .footer-column {
+            min-width: 0;
+        }
+
+        .footer-column-title {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #28a69a;
+            margin-bottom: 25px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 300;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: #28a69a;
+            transform: translateX(3px);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(40, 166, 154, 0.1);
+            border: 1px solid rgba(40, 166, 154, 0.3);
+            color: #28a69a;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social-link:hover {
+            background: #28a69a;
+            border-color: #28a69a;
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-copyright {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 300;
+        }
+
+        .footer-legal-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-legal-links a {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 300;
+        }
+
+        .footer-legal-links a:hover {
+            color: #28a69a;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero-v2">
+        <div class="hero-v2-content">
+            <img src="assets/images/tom-portrait.jpeg" alt="Tom de Bruyne" class="hero-v2-portrait">
+
+            <h1 class="hero-v2-name">TOM DE BRUYNE</h1>
+            <p class="hero-v2-pitch">Founder · Psycholoog · Nederbelg · Auteur · Spreker · Gedragsexpert · Columnist · Podcaster · Irritant Optimist</p>
+
+            <div class="hero-v2-grid">
+                <div class="hero-v2-item">
+                    <h3>Gamechangers</h3>
+                    <p>Auteur "Gamechangers" (2025), Atlas Uitgevers</p>
+                    <a href="https://www.managementboek.nl/magazine/recensie/22906/gamechangers-een-fijn-verdiepend-boek" target="_blank" rel="noopener">Lees recensie / bestel →</a>
+                </div>
+
+                <div class="hero-v2-item">
+                    <h3>F*ck de klimaatverandering</h3>
+                    <p>Co-auteur · Gedragsverandering voor klimaat (2025)</p>
+                    <a href="https://fckdeklimaatverandering.nl" target="_blank" rel="noopener">Bestel →</a>
+                </div>
+
+                <div class="hero-v2-item">
+                    <h3>The Study of Influence</h3>
+                    <p>Mijn Engelstalige blog over invloed en gedragsverandering</p>
+                    <a href="https://tomdebruyne.substack.com" target="_blank" rel="noopener">Abonneer op deze substack →</a>
+                </div>
+
+                <div class="hero-v2-item">
+                    <h3>Podcasts</h3>
+                    <p>"Wat gebeurt er eigenlijk in je hoofd?" · "Gamechangers"</p>
+                    <a href="https://www.linkedin.com/in/tomdebruyne/" target="_blank" rel="noopener">Luister →</a>
+                </div>
+
+                <div class="hero-v2-item">
+                    <h3>Goedemorgen Nederland</h3>
+                    <p>Regelmatige gedragsanalyse op WNL</p>
+                    <a href="#video">Bekijk →</a>
+                </div>
+
+                <div class="hero-v2-item">
+                    <h3>De Telegraaf</h3>
+                    <p>Wekelijkse column gedragswetenschap</p>
+                    <a href="https://www.telegraaf.nl" target="_blank" rel="noopener">Lees →</a>
+                </div>
+
+                <div class="hero-v2-item">
+                    <h3>SUE & The Alchemists</h3>
+                    <p>Co-founder · Boardroom gedragsadvies</p>
+                    <a href="https://sata.nl" target="_blank" rel="noopener">Ontdek →</a>
+                </div>
+
+                <div class="hero-v2-item">
+                    <h3>SUE Behavioural Design Academy</h3>
+                    <p>Bestuurder</p>
+                    <a href="https://suebehaviouraldesign.com" target="_blank" rel="noopener">Bezoek →</a>
+                </div>
+
+                <div class="hero-v2-item">
+                    <h3>51 Algoritmes</h3>
+                    <p>51 overtuigingen die mij definiëren</p>
+                    <a href="https://www.linkedin.com/pulse/51-algoritmes-voor-het-goede-leven-tom-de-bruyne-ghxxe/" target="_blank" rel="noopener">Lees →</a>
+                </div>
+            </div>
+
+            <div class="hero-v2-links">
+                <a href="https://www.linkedin.com/in/tomdebruyne/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://tomdebruyne.substack.com" target="_blank" rel="noopener">Substack</a>
+                <a href="mailto:tom@wearesata.com">Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- GAMECHANGERS SECTION -->
+    <section class="gamechangers-section">
+        <div class="gamechangers-split">
+            <div class="gamechangers-content">
+                <h2 class="gamechangers-title">Gamechangers</h2>
+
+                <div class="gamechangers-pitch">
+                    In zijn nieuwe boek laat Tom de Bruyne zien dat echte verandering niet begint met grote woorden, maar met slimme, kleine ingrepen. Eén zet op het juiste radertje kan een systeem doen kraken – en soms zelfs helemaal openbreken.
+                </div>
+
+                <div class="gamechangers-quote">
+                    <p class="gamechangers-quote-text">"Hoe kleine ingrepen grote verandering ontketenen van Tom de Bruyne is tegelijk een liefdesbrief aan de moed van veranderaars én een vlijmscherpe handleiding voor iedereen die zich begeeft in het mijnenveld van maatschappelijke transitie. Dit is systeemdenken op zijn slimst en meest verhalend. En de sprekende voorbeelden maken dat je het boek niet graag weglegt."</p>
+                    <p class="gamechangers-quote-author">— Claire Thielens, Nederlandse Vereniging Duurzame Energie</p>
+                </div>
+
+                <div class="gamechangers-buttons">
+                    <a href="https://www.managementboek.nl/magazine/recensie/22906/gamechangers-een-fijn-verdiepend-boek" target="_blank" rel="noopener" class="gamechangers-btn gamechangers-btn-primary">Bestel het boek</a>
+                    <a href="https://thenextspeaker.com" target="_blank" rel="noopener" class="gamechangers-btn gamechangers-btn-secondary">Boek keynote</a>
+                </div>
+            </div>
+
+            <div class="gamechangers-book">
+                <img src="assets/images/Bruyne_Gamechangers_PB3D.png" alt="Gamechangers boek cover" class="gamechangers-book-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- TOM IN DE MEDIA SECTION -->
+    <section class="media-section">
+        <div class="media-split">
+            <div class="media-image">
+                <img src="assets/images/tom-wnl1.png" alt="Tom de Bruyne bij WNL" class="media-image-img">
+            </div>
+
+            <div class="media-content">
+                <h2 class="media-title">Tom in de Media</h2>
+
+                <div class="media-pitch">
+                    Tom is een regelmatige gast bij talkshows van WNL waar hij gedragswetenschappelijke duiding geeft over de actualiteit. Of het nu gaat over hoe we naar Trump moeten kijken, welke strategieën voor het sorteren van afval werken, of waarom volkssporten als "vinkenzetten" nog steeds populair zijn.
+                </div>
+
+                <div class="media-buttons">
+                    <a href="https://www.youtube.com/watch?v=sSh5lsRPnAM" target="_blank" rel="noopener" class="media-btn media-btn-primary">Bekijk een fragment</a>
+                    <a href="https://thenextspeaker.com" target="_blank" rel="noopener" class="media-btn media-btn-secondary">Boek als spreker</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POPULAIRSTE KEYNOTES SECTION -->
+    <section class="keynotes-section">
+        <div class="keynotes-split">
+            <div class="keynotes-content">
+                <h2 class="keynotes-title">Populairste Keynotes</h2>
+
+                <div class="keynotes-rating">
+                    Publiekswaardering: 9,5 (december 2025)
+                </div>
+
+                <div class="keynotes-list-title">Top 5 - Populairste keynotes in 2026:</div>
+                <ol class="keynotes-list">
+                    <li>Gelijk hebben versus Gelijk krijgen: Hoe bouw je draagvlak?</li>
+                    <li>Gamechangers: De onzichtbare hefbomen voor grote verandering</li>
+                    <li>Psychologische innovatie: psychologie als bron voor innovatie</li>
+                    <li>De gewoontes van high-performance teams</li>
+                    <li>Leiderschap = Dealing with Shit - beslissingsregel voor wanneer het ertoe doet</li>
+                </ol>
+
+                <div class="keynotes-buttons">
+                    <a href="mailto:tom@wearesata.com" class="keynotes-btn keynotes-btn-primary">Neem contact op</a>
+                    <a href="https://www.athenas.nl/spreker/tom-de-bruyne" target="_blank" rel="noopener" class="keynotes-btn keynotes-btn-secondary">Boek rechtstreeks</a>
+                </div>
+            </div>
+
+            <div class="keynotes-image">
+                <img src="assets/images/tom_spreker.png" alt="Tom de Bruyne als keynote spreker" class="keynotes-image-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <!-- Brand Column -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/images/Off_the_record_opzwart.png" alt="SATA - SUE & The Alchemists">
+                    </div>
+                    <p class="footer-tagline">
+                        Van gelijk hebben naar gelijk krijgen. We bouwen draagvlak waar het ontbreekt, beschermen het waar het aangevallen wordt, en winnen het terug waar het verloren ging.
+                    </p>
+                    <div class="footer-contact-info">
+                        <div class="footer-contact-item">
+                            <strong>Email:</strong> <a href="mailto:info@wearesata.com">info@wearesata.com</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <strong>Kantoren:</strong> Amsterdam • Den Haag • Breda • Brussel
+                        </div>
+                    </div>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/sue-amsterdam/" target="_blank" class="footer-social-link" aria-label="LinkedIn">in</a>
+                        <a href="https://www.instagram.com/wearesata/" target="_blank" class="footer-social-link" aria-label="Instagram">IG</a>
+                    </div>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#vraagstukken">Vraagstukken</a></li>
+                        <li><a href="index.html#team">Team</a></li>
+                        <li><a href="draagvlak-kompas.html">Draagvlak Kompas</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Partners Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Partners</h4>
+                    <ul class="footer-links">
+                        <li><a href="klaas-dijkhoff.html">Klaas Dijkhoff</a></li>
+                        <li><a href="bas-erlings.html">Bas Erlings</a></li>
+                        <li><a href="tom-de-bruyne.html">Tom de Bruyne</a></li>
+                    </ul>
+                </div>
+
+                <!-- Content Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Content</h4>
+                    <ul class="footer-links">
+                        <li><a href="/nieuwsbrief">Nieuwsbrief</a></li>
+                        <li><a href="https://open.spotify.com/show/3DwPBL0Db2pIhmUAU6lvZz" target="_blank">Podcast</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="https://www.linkedin.com/company/sue-amsterdam/" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; 2026 SATA - SUE & The Alchemists. Alle rechten voorbehouden.
+                </div>
+                <ul class="footer-legal-links">
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/algemene-voorwaarden">Algemene Voorwaarden</a></li>
+                    <li><a href="/cookies">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

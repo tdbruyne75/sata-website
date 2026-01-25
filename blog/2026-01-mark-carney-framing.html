@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="De Canadese premier Mark Carney leverde een memorabele speech in Davos. Ontdek de 7 krachtige framing technieken die deze speech zo effectief maakten en leer hoe je framing kunt gebruiken voor draagvlak.">
+    <meta name="author" content="Tom de Bruyne">
+    <meta name="keywords" content="framing, framing technieken, Mark Carney, draagvlak, communicatie, gedragswetenschap, overtuigen, retorica, Davos">
+    <meta property="og:title" content="7 Framing Technieken uit Mark Carney's Davos Speech | SATA Blog">
+    <meta property="og:description" content="De Canadese premier Mark Carney leverde een memorabele speech in Davos. Ontdek de 7 krachtige framing technieken die deze speech zo effectief maakten.">
+    <meta property="og:image" content="https://wearesata.com/assets/images/blog/mark-carney.jpg">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-01-25">
+    <meta property="article:author" content="Tom de Bruyne">
+    <meta property="article:tag" content="framing">
+    <meta property="article:tag" content="communicatie">
+    <meta property="article:tag" content="draagvlak">
+    <title>7 Framing Technieken uit Mark Carney's Davos Speech | SATA Blog</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* TOP NAVIGATION */
+        .top-nav {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            gap: 15px;
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 8px;
+        }
+
+        .language-btn {
+            width: 40px;
+            height: 50px;
+            background: rgba(40, 166, 154, 0.05);
+            border: 1px solid rgba(40, 166, 154, 0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 11px;
+            font-weight: 600;
+            color: rgba(40, 166, 154, 0.6);
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .language-btn:hover {
+            background: rgba(40, 166, 154, 0.1);
+            border-color: rgba(40, 166, 154, 0.4);
+            color: #28a69a;
+        }
+
+        .language-btn.active {
+            background: #28a69a;
+            border-color: #28a69a;
+            color: #ffffff;
+        }
+
+        /* HAMBURGER MENU */
+        .hamburger-menu {
+            width: 50px;
+            height: 50px;
+            background: rgba(40, 166, 154, 0.1);
+            border: 1px solid rgba(40, 166, 154, 0.3);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-menu:hover {
+            background: #28a69a;
+            border-color: #28a69a;
+        }
+
+        .hamburger-line {
+            width: 24px;
+            height: 2px;
+            background: #28a69a;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-menu:hover .hamburger-line {
+            background: #ffffff;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu-overlay.active {
+            display: flex;
+        }
+
+        .menu-content {
+            text-align: center;
+        }
+
+        .menu-content a {
+            display: block;
+            font-size: 32px;
+            color: #ffffff;
+            text-decoration: none;
+            margin: 20px 0;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .menu-content a:hover {
+            color: #28a69a;
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 40px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #28a69a;
+        }
+
+        .breadcrumb-separator {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .breadcrumb-current {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* BLOG ARTICLE CONTAINER */
+        .blog-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        .blog-layout {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 80px;
+            align-items: start;
+        }
+
+        /* MAIN CONTENT */
+        .blog-main {
+            max-width: 100%;
+        }
+
+        .blog-header {
+            margin-bottom: 48px;
+        }
+
+        .blog-categories {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .blog-category {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(40, 166, 154, 0.1);
+            border: 1px solid rgba(40, 166, 154, 0.3);
+            color: #28a69a;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .blog-category:hover {
+            background: rgba(40, 166, 154, 0.2);
+            border-color: #28a69a;
+        }
+
+        .blog-title {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+        }
+
+        .blog-subtitle {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.5;
+            margin-bottom: 32px;
+            color: rgba(255, 255, 255, 0.75);
+            font-style: italic;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(40, 166, 154, 0.2);
+        }
+
+        .blog-author-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .blog-author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid rgba(40, 166, 154, 0.3);
+        }
+
+        .blog-author-name {
+            font-weight: 600;
+            color: #28a69a;
+            font-size: 14px;
+        }
+
+        .blog-date {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .blog-read-time {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .blog-featured-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 48px;
+            border: 1px solid rgba(40, 166, 154, 0.2);
+            filter: drop-shadow(0 20px 60px rgba(40, 166, 154, 0.2));
+        }
+
+        /* VIDEO EMBED */
+        .video-embed {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 40px 0;
+            border: 1px solid rgba(40, 166, 154, 0.2);
+        }
+
+        .video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* BLOG CONTENT TYPOGRAPHY */
+        .blog-content {
+            font-size: 18px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.88);
+            font-weight: 300;
+        }
+
+        .blog-content p {
+            margin-bottom: 28px;
+            font-weight: 300;
+        }
+
+        .blog-content strong {
+            font-weight: 500;
+        }
+
+        .blog-content h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #28a69a;
+            margin-top: 48px;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        .blog-content h3 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .blog-content h4 {
+            font-size: 22px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        .blog-content ul,
+        .blog-content ol {
+            margin-bottom: 28px;
+            padding-left: 32px;
+        }
+
+        .blog-content li {
+            margin-bottom: 12px;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .blog-content li::marker {
+            color: #28a69a;
+        }
+
+        .blog-content a {
+            color: #28a69a;
+            text-decoration: underline;
+            text-decoration-color: rgba(40, 166, 154, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .blog-content a:hover {
+            color: #ffffff;
+            text-decoration-color: #ffffff;
+        }
+
+        .blog-content blockquote {
+            margin: 40px 0;
+            padding: 32px 40px;
+            background: rgba(40, 166, 154, 0.05);
+            border-left: 4px solid #28a69a;
+            font-size: 20px;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .blog-content img {
+            width: 100%;
+            height: auto;
+            margin: 40px 0;
+            border: 1px solid rgba(40, 166, 154, 0.2);
+        }
+
+        /* CTA SECTION */
+        .blog-cta {
+            margin: 80px 0;
+            padding: 60px;
+            background: linear-gradient(135deg, #001a17 0%, #000000 100%);
+            border: 1px solid rgba(40, 166, 154, 0.3);
+        }
+
+        .blog-cta h3 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #28a69a;
+            margin-bottom: 20px;
+        }
+
+        .blog-cta p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+            margin-bottom: 32px;
+            font-weight: 300;
+        }
+
+        .blog-cta-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .blog-cta-btn {
+            padding: 16px 32px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid;
+            display: inline-block;
+        }
+
+        .blog-cta-btn-primary {
+            background: #28a69a;
+            color: #000000;
+            border-color: #28a69a;
+        }
+
+        .blog-cta-btn-primary:hover {
+            background: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .blog-cta-btn-secondary {
+            background: transparent;
+            color: #28a69a;
+            border-color: #28a69a;
+        }
+
+        .blog-cta-btn-secondary:hover {
+            background: rgba(40, 166, 154, 0.1);
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        /* NEWSLETTER SECTION */
+        .newsletter-section {
+            margin: 80px 0;
+            padding: 60px;
+            background: linear-gradient(135deg, #001a17 0%, #000000 100%);
+            border: 1px solid rgba(40, 166, 154, 0.3);
+            text-align: center;
+        }
+
+        .newsletter-title {
+            font-size: 32px;
+            font-weight: 600;
+            color: #28a69a;
+            margin-bottom: 16px;
+        }
+
+        .newsletter-description {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 16px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(40, 166, 154, 0.3);
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 300;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: #28a69a;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .newsletter-submit {
+            padding: 16px 32px;
+            background: #28a69a;
+            border: 2px solid #28a69a;
+            color: #000000;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-submit:hover {
+            background: #ffffff;
+            border-color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* SIDEBAR */
+        .blog-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-section {
+            background: linear-gradient(135deg, #000000 0%, #001a17 100%);
+            border: 1px solid rgba(40, 166, 154, 0.3);
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #28a69a;
+            margin-bottom: 20px;
+        }
+
+        /* AUTHOR SIDEBAR */
+        .sidebar-author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid rgba(40, 166, 154, 0.3);
+            margin-bottom: 16px;
+        }
+
+        .sidebar-author-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .sidebar-author-bio {
+            font-size: 14px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 20px;
+        }
+
+        .sidebar-author-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: transparent;
+            border: 2px solid #28a69a;
+            color: #28a69a;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-author-link:hover {
+            background: rgba(40, 166, 154, 0.15);
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        /* SHARE BUTTONS */
+        .sidebar-share {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .share-button {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: rgba(40, 166, 154, 0.1);
+            border: 1px solid rgba(40, 166, 154, 0.3);
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .share-button:hover {
+            background: rgba(40, 166, 154, 0.2);
+            border-color: #28a69a;
+            color: #ffffff;
+        }
+
+        /* RELATED ARTICLES */
+        .related-article {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(40, 166, 154, 0.15);
+        }
+
+        .related-article:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .related-article-title {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .related-article-title a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .related-article-title a:hover {
+            color: #28a69a;
+        }
+
+        .related-article-meta {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* FOOTER */
+        .footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 80px 0 40px;
+            border-top: 1px solid rgba(40, 166, 154, 0.2);
+            margin-top: 80px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-brand {
+            max-width: 400px;
+        }
+
+        .footer-logo {
+            margin-bottom: 25px;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            opacity: 0.95;
+        }
+
+        .footer-tagline {
+            font-size: 16px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .footer-column-title {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #28a69a;
+            margin-bottom: 25px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 300;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: #28a69a;
+            transform: translateX(3px);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-copyright {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 300;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .blog-layout {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .blog-sidebar {
+                position: static;
+            }
+
+            .blog-title {
+                font-size: 42px;
+            }
+
+            .blog-subtitle {
+                font-size: 20px;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-nav {
+                top: 20px;
+                right: 20px;
+            }
+
+            .hamburger-menu {
+                width: 45px;
+                height: 45px;
+            }
+
+            .language-selector {
+                gap: 6px;
+            }
+
+            .language-btn {
+                width: 35px;
+                height: 45px;
+                font-size: 10px;
+            }
+
+            .menu-content a {
+                font-size: 24px;
+                margin: 15px 0;
+            }
+
+            .breadcrumb {
+                padding: 80px 24px 20px;
+                font-size: 12px;
+            }
+
+            .blog-container {
+                padding: 20px 24px 40px;
+            }
+
+            .blog-title {
+                font-size: 32px;
+            }
+
+            .blog-subtitle {
+                font-size: 18px;
+            }
+
+            .blog-content {
+                font-size: 16px;
+            }
+
+            .blog-content h2 {
+                font-size: 28px;
+            }
+
+            .blog-content h3 {
+                font-size: 22px;
+            }
+
+            .sidebar-section {
+                padding: 24px;
+            }
+
+            .blog-cta {
+                padding: 40px 24px;
+            }
+
+            .blog-cta h3 {
+                font-size: 24px;
+            }
+
+            .blog-cta-buttons {
+                flex-direction: column;
+            }
+
+            .blog-cta-btn {
+                text-align: center;
+                width: 100%;
+            }
+
+            .newsletter-section {
+                padding: 40px 24px;
+            }
+
+            .newsletter-title {
+                font-size: 24px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-submit {
+                width: 100%;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-container {
+                padding: 0 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Navigation -->
+<div class="top-nav">
+    <div class="language-selector">
+        <a href="2026-01-mark-carney-framing.html" class="language-btn active">NL</a>
+        <a href="2026-01-mark-carney-framing-en.html" class="language-btn">EN</a>
+        <a href="2026-01-mark-carney-framing-de.html" class="language-btn">DE</a>
+    </div>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+    </div>
+</div>
+
+<!-- Menu Overlay -->
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()">
+    <div class="menu-content">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Blog</a>
+        <a href="../index.html#team">Team</a>
+        <a href="../index.html#vraagstukken">Vraagstukken</a>
+        <a href="../institute.html">SATA Institute</a>
+        <a href="../draagvlak-kompas.html">Draagvlak Kompas</a>
+        <a href="../contact.html">Contact</a>
+    </div>
+</div>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span class="breadcrumb-separator">›</span>
+    <a href="index.html">Blog</a>
+    <span class="breadcrumb-separator">›</span>
+    <span class="breadcrumb-current">Mark Carney's Framing</span>
+</nav>
+
+    <!-- BLOG ARTICLE -->
+    <div class="blog-container">
+        <div class="blog-layout">
+
+            <!-- MAIN CONTENT -->
+            <main class="blog-main">
+                <article>
+                    <header class="blog-header">
+                        <div class="blog-categories">
+                            <a href="#" class="blog-category">Framing</a>
+                            <a href="#" class="blog-category">Gedragswetenschap</a>
+                            <a href="#" class="blog-category">Draagvlak</a>
+                        </div>
+
+                        <h1 class="blog-title">7 Framing Technieken uit Mark Carney's Davos Speech</h1>
+
+                        <p class="blog-subtitle">Hoe de Canadese premier abstract politiek theater transformeerde naar krachtige, visuele boodschappen die je niet meer vergeet.</p>
+
+                        <div class="blog-meta">
+                            <div class="blog-author-info">
+                                <img src="../assets/images/tom-portrait.jpeg" alt="Tom de Bruyne" class="blog-author-avatar">
+                                <span class="blog-author-name">Tom de Bruyne</span>
+                            </div>
+                            <span class="blog-date">25 januari 2026</span>
+                            <span class="blog-read-time">7 min</span>
+                        </div>
+                    </header>
+
+                    <img src="../assets/images/blog/mark-carney.jpg" alt="Mark Carney in Davos" class="blog-featured-image">
+
+                    <div class="blog-content">
+                        <p><strong>De Canadese premier Mark Carney leverde een memorabele speech in Davos die viraal ging. Niet omdat hij de meest originele inzichten deelde, maar omdat hij bestaande geopolitieke realiteiten opnieuw framede op een manier die onmiddellijk voelbaar was.</strong></p>
+
+                        <p>In de wereld van communicatie gaat het niet altijd om wat je zegt, maar om hoe je het zegt. Framing is de kunst van het vormgeven van perceptie. Het gaat erom welke delen van de realiteit je belicht, welke verbindingen je legt, en welke emoties je activeert.</p>
+
+                        <p>Laten we deze speech ontleden en kijken welke framing technieken hem zo krachtig maakten.</p>
+
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/flsgJe8mN-A?si=owN5DAUjJSMVZYuI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+
+                        <h2>1. Van Abstract naar Visueel</h2>
+
+                        <blockquote>
+                            "Every morning, this shopkeeper places a sign in his window: 'Workers of the world unite'. He doesn't believe it, no-one does, but he places a sign anyway to avoid trouble."
+                        </blockquote>
+
+                        <p>Hier maakt Carney abstract politiek theater plotseling visueel en herkenbaar. Je ziet een concrete winkelier die elke ochtend een ritueel uitvoert dat iedereen doorziet, maar niemand doorbreekt. Dit activeert je eigen herkenning van momenten waarop jij meedeed aan sociale scripts die je privé als onzin beschouwde.</p>
+
+                        <p><strong>Waarom werkt dit?</strong> Ons brein houdt van concrete beelden boven abstracte concepten. Door geopolitieke conformiteit te vertalen naar een herkenbare, dagelijkse handeling wordt het plotseling toegankelijk. Je voelt de leegte van het ritueel, de schaamte van meedoen aan iets dat je niet gelooft.</p>
+
+                        <h2>2. De Kracht van Eenvoudige Acties</h2>
+
+                        <blockquote>
+                            "Friends, it is time for companies and countries to take their signs down."
+                        </blockquote>
+
+                        <p>Een gigantische geopolitieke herpositionering wordt gecomprimeerd tot één simpele fysieke handeling. 'Take down' is iets dat je begrijpt zonder nadenken: je hand grijpt, je trekt. Het voelt plotseling haalbaar en moreel urgent tegelijk.</p>
+
+                        <p><strong>De framing techniek:</strong> Complexe verandering wordt vertaald naar een simpele, uitvoerbare actie. Dit reduceert mentale weerstand. Het is niet "heronderhandel alle handelsakkoorden en herdefinieer je geopolitieke positie" - het is gewoon: trek dat bord naar beneden.</p>
+
+                        <h2>3. Rupture vs. Transition</h2>
+
+                        <blockquote>
+                            "Let me be direct. We are in the midst of a rupture, not a transition."
+                        </blockquote>
+
+                        <p>Dit blokkeert de comfortabele narratief dat we in tijdelijke turbulentie zitten. 'Transition' voelt als tijdelijk ongemak op weg naar stabiliteit. 'Rupture' triggert je alarmsysteem. Hij presenteert een nieuwe tweedeling om naar de wereld te kijken.</p>
+
+                        <p><strong>Waarom dit werkt:</strong> Door expliciet het oude frame ('transition') te benoemen en te vervangen door een nieuw frame ('rupture'), dwingt hij je bewust om je perspectief te verschuiven. Hij laat zien dat het oude denken niet klopt, dat je gevaar loopt als je blijft denken dat dit tijdelijk is.</p>
+
+                        <h2>4. Performance vs. Reality</h2>
+
+                        <blockquote>
+                            "This is not sovereignty. It's the performance of sovereignty while accepting subordination."
+                        </blockquote>
+
+                        <p>Hier ontmaskert hij het theater. Door 'performance' te gebruiken activeert hij je detectie van nep-gedrag: je herkent het patroon van mensen die doen alsof. Het contrasteert het publieke optreden (we zijn autonoom!) met de private realiteit (we doen wat ons gezegd wordt). Dit frame triggert schaamte over zelfbedrog.</p>
+
+                        <p><strong>De psychologie:</strong> Niemand wil een acteur zijn in andermans script. Door soevereiniteit te herdefiniëren als theater, maakt hij het plotseling onacceptabel om te blijven meedoen.</p>
+
+                        <h2>5. Tafel vs. Menu</h2>
+
+                        <blockquote>
+                            "The middle powers must act together, because if we're not at the table, we're on the menu."
+                        </blockquote>
+
+                        <p>Primitieve overlevingsangst wordt geactiveerd door diplomatieke marginalisering te vertalen naar gegeten worden. Je brein snapt direct: tafel = macht = veiligheid, menu = prooi = dood. De kannibalistische beeldspraak maakt het fysiek voelbaar in je lijf.</p>
+
+                        <p><strong>Framing kracht:</strong> Deze metafoor werkt omdat het geopolitieke machtsdynamiek vertaalt naar iets dat ons reptielenbrein onmiddellijk begrijpt. Je voelt de urgentie in je lijf, niet alleen in je hoofd.</p>
+
+                        <h2>6. Sentiment vs. Strategie</h2>
+
+                        <blockquote>
+                            "The old order is not coming back. We shouldn't mourn it. Nostalgia is not a strategy."
+                        </blockquote>
+
+                        <p>Hij diskwalificeert het verlangen naar het verleden door het te herdefiniëren als sentimentaliteit in plaats van plan. 'Nostalgia' triggert associaties met zinloos sentiment en passiviteit. 'Strategy' roept actie en controle op. Verlangen naar vroeger wordt plotseling kinderlijk en machteloos.</p>
+
+                        <p><strong>Waarom dit effectief is:</strong> Hij geeft geen ruimte om te treuren. Hij blokkeert het emotionele pad terug door het te herdefiniëren als zwakte. Je kunt niet langer zeggen "maar vroeger was het beter" zonder jezelf neer te zetten als iemand zonder plan.</p>
+
+                        <h2>7. Authenticiteit als Wapen</h2>
+
+                        <blockquote>
+                            "The powerful have their power. But we have something too: the capacity to stop pretending, to name reality, to build our strength at home and to act together."
+                        </blockquote>
+
+                        <p>Hier wordt 'macht' geherdefinieerd. Grootmachten hebben dwang, maar middelgrote landen hebben iets beters: authenticiteit en waarheid. Door 'stop pretending' te positioneren als strategisch wapen, triggert hij je intuïtie dat mensen die liegen kwetsbaar zijn en mensen die de waarheid spreken kracht hebben.</p>
+
+                        <p><strong>De finale framing shift:</strong> Hij transformeert een zwakte (minder militaire en economische macht) in een kracht (morele autoriteit en waarheid). Dit is klassieke judo: gebruik de kracht van je tegenstander tegen hem.</p>
+
+                        <h2>Wat Maakt Goede Framing?</h2>
+
+                        <p>Deze speech demonstreert enkele universele principes van krachtig framing:</p>
+
+                        <ul>
+                            <li><strong>Maak het visueel</strong> - Van abstracte concepten naar concrete beelden</li>
+                            <li><strong>Maak het voelbaar</strong> - Activeer emoties en fysieke sensaties</li>
+                            <li><strong>Maak het simpel</strong> - Complexe verandering = simpele actie</li>
+                            <li><strong>Creëer contrasten</strong> - Oud frame vs. nieuw frame expliciet benoemen</li>
+                            <li><strong>Gebruik metaforen</strong> - Vertaal het onbekende naar het bekende</li>
+                            <li><strong>Herdefinieer macht</strong> - Transformeer zwakte in kracht</li>
+                            <li><strong>Blokkeer alternatieven</strong> - Maak oude denkwijzen onacceptabel</li>
+                        </ul>
+
+                        <h2>Framing in Jouw Context</h2>
+
+                        <p>Of je nu een verandering doorvoert in je organisatie, draagvlak zoekt voor een nieuw beleid, of een team probeert te overtuigen van een nieuwe richting - framing is altijd relevant.</p>
+
+                        <p>De vraag is niet of je framet. Je framet altijd. De vraag is of je het bewust en effectief doet, of dat je het onbewust en zwak doet.</p>
+
+                        <p>Mark Carney's speech laat zien wat mogelijk is als je framing meesterlijk toepast: je kunt geopolitieke realiteiten hertekenen, urgentie creëren waar apathie was, en mensen mobiliseren om hun bordjes naar beneden te halen.</p>
+
+                    </div>
+
+                    <!-- CTA SECTION -->
+                    <div class="blog-cta">
+                        <h3>Wil je framing gebruiken om draagvlak te creëren?</h3>
+                        <p>Framing is geen trucje - het is een vaardigheid die je kunt leren. Bij SATA trainen we teams en leiders in het toepassen van framing technieken om draagvlak te bouwen voor verandering. Van het herdefiniëren van problemen tot het mobiliseren van mensen: we laten je zien hoe je framing strategisch inzet.</p>
+                        <div class="blog-cta-buttons">
+                            <a href="mailto:tom@wearesata.com" class="blog-cta-btn blog-cta-btn-primary">Boek een Framing Training</a>
+                            <a href="/draagvlak-kompas.html" class="blog-cta-btn blog-cta-btn-secondary">Leer meer over Draagvlak</a>
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- NEWSLETTER SIGNUP -->
+                <section class="newsletter-section">
+                    <h2 class="newsletter-title">Blijf op de hoogte</h2>
+                    <p class="newsletter-description">
+                        Ontvang elke twee weken inzichten over framing, systeemdenken, gedragswetenschap en hoe je echte verandering kunt bewerkstelligen.
+                    </p>
+                    <form class="newsletter-form" action="#" method="post">
+                        <input type="email" class="newsletter-input" placeholder="Je e-mailadres" required>
+                        <button type="submit" class="newsletter-submit">Schrijf je in</button>
+                    </form>
+                </section>
+
+            </main>
+
+            <!-- SIDEBAR -->
+            <aside class="blog-sidebar">
+
+                <!-- ABOUT AUTHOR -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Over de Auteur</h3>
+                    <img src="../assets/images/tom-portrait.jpeg" alt="Tom de Bruyne" class="sidebar-author-avatar">
+                    <div class="sidebar-author-name">Tom de Bruyne</div>
+                    <p class="sidebar-author-bio">
+                        Tom de Bruyne is gedragswetenschapper en expert in framing en draagvlak. Hij helpt organisaties om verandering door te voeren door de kracht van framing strategisch in te zetten.
+                    </p>
+                    <a href="/tom-de-bruyne.html" class="sidebar-author-link">Meer over Tom</a>
+                </div>
+
+                <!-- SHARE -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Deel dit artikel</h3>
+                    <div class="sidebar-share">
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://wearesata.com/blog/2026-01-mark-carney-framing.html" target="_blank" class="share-button">
+                            <span>📱</span> Deel op LinkedIn
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?url=https://wearesata.com/blog/2026-01-mark-carney-framing.html&text=7 Framing Technieken uit Mark Carney's Davos Speech" target="_blank" class="share-button">
+                            <span>🐦</span> Deel op Twitter
+                        </a>
+                        <a href="mailto:?subject=7 Framing Technieken uit Mark Carney's Davos Speech&body=https://wearesata.com/blog/2026-01-mark-carney-framing.html" class="share-button">
+                            <span>✉️</span> Deel via email
+                        </a>
+                    </div>
+                </div>
+
+                <!-- RELATED ARTICLES -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Gerelateerde Artikelen</h3>
+                    <div class="related-article">
+                        <h4 class="related-article-title">
+                            <a href="2026-01-kathedralen-eiffeltorens.html">Wat zijn onze 21e eeuwse kathedralen of Eiffeltorens?</a>
+                        </h4>
+                        <div class="related-article-meta">Tom de Bruyne • 25 jan 2026</div>
+                    </div>
+                    <div class="related-article">
+                        <h4 class="related-article-title">
+                            <a href="#">Van Gelijk Hebben naar Gelijk Krijgen</a>
+                        </h4>
+                        <div class="related-article-meta">Tom de Bruyne • Binnenkort</div>
+                    </div>
+                    <div class="related-article">
+                        <h4 class="related-article-title">
+                            <a href="#">De Psychologie van Weerstand</a>
+                        </h4>
+                        <div class="related-article-meta">Tom de Bruyne • Binnenkort</div>
+                    </div>
+                </div>
+
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <!-- Brand Column -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../assets/images/Off_the_record_opzwart.png" alt="SATA - SUE & The Alchemists">
+                    </div>
+                    <p class="footer-tagline">
+                        Van gelijk hebben naar gelijk krijgen. We bouwen draagvlak waar het ontbreekt, beschermen het waar het aangevallen wordt, en winnen het terug waar het verloren ging.
+                    </p>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#vraagstukken">Vraagstukken</a></li>
+                        <li><a href="../index.html#team">Team</a></li>
+                        <li><a href="../draagvlak-kompas.html">Draagvlak Kompas</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Partners Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Partners</h4>
+                    <ul class="footer-links">
+                        <li><a href="../klaas-dijkhoff.html">Klaas Dijkhoff</a></li>
+                        <li><a href="../bas-erlings.html">Bas Erlings</a></li>
+                        <li><a href="../tom-de-bruyne.html">Tom de Bruyne</a></li>
+                    </ul>
+                </div>
+
+                <!-- Content Column -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Content</h4>
+                    <ul class="footer-links">
+                        <li><a href="/nieuwsbrief">Nieuwsbrief</a></li>
+                        <li><a href="https://open.spotify.com/show/3DwPBL0Db2pIhmUAU6lvZz" target="_blank">Podcast</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="https://www.linkedin.com/company/sue-amsterdam/" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; 2026 SATA - SUE & The Alchemists. Alle rechten voorbehouden.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script>
+function toggleMenu() {
+    const overlay = document.getElementById('menuOverlay');
+    overlay.classList.toggle('active');
+}
+
+// Close menu when clicking a link
+document.querySelectorAll('.menu-content a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('menuOverlay').classList.remove('active');
+    });
+});
+</script>
+
+</body>
+</html>

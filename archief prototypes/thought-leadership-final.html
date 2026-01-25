@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SATA - Thought Leadership</title>
+    <link rel="icon" type="image/png" href="assets/images/The_Label.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #f5f5f5;
+        }
+
+        /* Thought Leadership Section - White Background */
+        .tl-section {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 100px 0 80px;
+            position: relative;
+        }
+
+        .tl-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .tl-header {
+            text-align: center;
+            margin-bottom: 70px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tl-label {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #28a69a;
+            margin-bottom: 20px;
+        }
+
+        .tl-headline {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            line-height: 1.3;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .tl-intro {
+            font-size: 18px;
+            color: #666666;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Grid Layout */
+        .tl-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 0;
+        }
+
+        .tl-grid-item {
+            position: relative;
+            overflow: hidden;
+            background: #f5f5f5;
+            transition: all 0.3s ease;
+            aspect-ratio: 4/5;
+        }
+
+        .tl-grid-item.full-width {
+            aspect-ratio: 3/1;
+        }
+
+        .tl-grid-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .tl-grid-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .tl-grid-item:hover .tl-grid-image {
+            transform: scale(1.05);
+        }
+
+        .tl-grid-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 60%, transparent 100%);
+            padding: 30px 25px;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+
+        .tl-grid-item:hover .tl-grid-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.8) 80%, transparent 100%);
+            padding-bottom: 35px;
+        }
+
+        .tl-grid-type {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #28a69a;
+            margin-bottom: 10px;
+        }
+
+        .tl-grid-title {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .tl-grid-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .tl-grid-item:hover .tl-grid-links {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tl-grid-link {
+            display: inline-flex;
+            align-items: center;
+            color: #28a69a;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .tl-grid-link:hover {
+            color: #ffffff;
+            padding-left: 5px;
+        }
+
+        .tl-grid-link::before {
+            content: '→';
+            margin-right: 6px;
+            font-size: 14px;
+        }
+
+        /* Newsletter Bar - Compact Teal */
+        .newsletter-bar {
+            background: #28a69a;
+            padding: 40px 0;
+            margin-top: 0;
+        }
+
+        .newsletter-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .newsletter-content {
+            flex: 1;
+        }
+
+        .newsletter-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .newsletter-description {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            min-width: 400px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 14px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-size: 15px;
+            font-family: 'Open Sans', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: #ffffff;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .newsletter-button {
+            padding: 14px 30px;
+            background: #000000;
+            color: #ffffff;
+            border: 2px solid #000000;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .newsletter-button:hover {
+            background: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .tl-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .newsletter-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .newsletter-form {
+                min-width: 100%;
+                max-width: 500px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tl-section {
+                padding: 60px 0 60px;
+            }
+
+            .tl-container {
+                padding: 0 24px;
+            }
+
+            .tl-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .newsletter-container {
+                padding: 0 24px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .newsletter-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Newsletter Bar -->
+<section class="newsletter-bar">
+    <div class="newsletter-container">
+        <div class="newsletter-content">
+            <h3 class="newsletter-title">Blijf op de hoogte</h3>
+            <p class="newsletter-description">
+                Ontvang onze nieuwsbrief met inzichten over invloed, gedrag en draagvlak.
+            </p>
+        </div>
+        <form class="newsletter-form" action="#" method="post">
+            <input type="email" class="newsletter-input" placeholder="Je e-mailadres" required>
+            <button type="submit" class="newsletter-button">Abonneer</button>
+        </form>
+    </div>
+</section>
+
+<!-- Thought Leadership Section -->
+<section class="tl-section">
+    <div class="tl-container">
+        <div class="tl-header">
+            <p class="tl-label">Thought Leadership</p>
+            <h2 class="tl-headline">Hoe we onze kennis verspreiden</h2>
+            <p class="tl-intro">
+                Van bestsellers tot podcasts, van theaters tot bewegingen—een greep uit de manieren waarop we inzichten delen over invloed, gedrag en draagvlak.
+            </p>
+        </div>
+
+        <div class="tl-grid">
+            <!-- Row 1: Boek Het Spel van de Populist -->
+            <div class="tl-grid-item">
+                <img src="documentatie/Thought Leadership Carrousel/boek cover het spel van de populist.png" alt="Het Spel van de Populist" class="tl-grid-image">
+                <div class="tl-grid-overlay">
+                    <div class="tl-grid-type">Boek</div>
+                    <h3 class="tl-grid-title">Het Spel van de Populist</h3>
+                    <div class="tl-grid-links">
+                        <a href="https://www.bol.com/nl/nl/f/het-spel-van-de-populist/9300000206597366/" target="_blank" class="tl-grid-link">Bestel het boek</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 1: Boek Gamechangers -->
+            <div class="tl-grid-item">
+                <img src="documentatie/Thought Leadership Carrousel/boek cover gamechangers.png" alt="Gamechangers" class="tl-grid-image">
+                <div class="tl-grid-overlay">
+                    <div class="tl-grid-type">Boek</div>
+                    <h3 class="tl-grid-title">Gamechangers</h3>
+                    <div class="tl-grid-links">
+                        <a href="https://www.bol.com/nl/nl/f/gamechangers/9300000212266845/" target="_blank" class="tl-grid-link">Bestel het boek</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 1: Podcast Wat gebeurt er eigenlijk in je hoofd -->
+            <div class="tl-grid-item">
+                <img src="documentatie/wat-gebeurt-er.jpg" alt="Wat gebeurt er eigenlijk in je hoofd?" class="tl-grid-image">
+                <div class="tl-grid-overlay">
+                    <div class="tl-grid-type">Podcast</div>
+                    <h3 class="tl-grid-title">Wat gebeurt er eigenlijk in je hoofd?</h3>
+                    <div class="tl-grid-links">
+                        <a href="https://open.spotify.com/show/3DwPBL0Db2pIhmUAU6lvZz" target="_blank" class="tl-grid-link">Beluister op Spotify</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Tom de Bruyne -->
+            <div class="tl-grid-item">
+                <img src="documentatie/tom de bruyne.jpeg" alt="Tom de Bruyne" class="tl-grid-image">
+                <div class="tl-grid-overlay">
+                    <div class="tl-grid-type">Keynote Speaker</div>
+                    <h3 class="tl-grid-title">Tom de Bruyne</h3>
+                    <div class="tl-grid-links">
+                        <a href="https://www.linkedin.com/in/tomdebruyne/" target="_blank" class="tl-grid-link">Volg Tom op LinkedIn</a>
+                        <a href="https://open.spotify.com/show/3DwPBL0Db2pIhmUAU6lvZz" target="_blank" class="tl-grid-link">Beluister de podcast</a>
+                        <a href="#contact" class="tl-grid-link">Boek Tom als spreker</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Klaas Dijkhoff -->
+            <div class="tl-grid-item">
+                <img src="documentatie/klaas_dijkhoff.jpeg" alt="Klaas Dijkhoff" class="tl-grid-image">
+                <div class="tl-grid-overlay">
+                    <div class="tl-grid-type">Keynote Speaker</div>
+                    <h3 class="tl-grid-title">Klaas Dijkhoff</h3>
+                    <div class="tl-grid-links">
+                        <a href="https://www.linkedin.com/in/klaas-dijkhoff/" target="_blank" class="tl-grid-link">Volg Klaas op LinkedIn</a>
+                        <a href="https://open.spotify.com/show/59EKTmNFbbuUT88Ju6t1ws" target="_blank" class="tl-grid-link">Beluister Dijkhoff & Segers</a>
+                        <a href="#contact" class="tl-grid-link">Boek Klaas als spreker</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Bas Erlings -->
+            <div class="tl-grid-item">
+                <img src="documentatie/bas_erlings.JPG" alt="Bas Erlings" class="tl-grid-image">
+                <div class="tl-grid-overlay">
+                    <div class="tl-grid-type">Keynote Speaker</div>
+                    <h3 class="tl-grid-title">Bas Erlings</h3>
+                    <div class="tl-grid-links">
+                        <a href="https://www.linkedin.com/in/baserlings/" target="_blank" class="tl-grid-link">Volg Bas op LinkedIn</a>
+                        <a href="https://open.spotify.com/show/1234567890" target="_blank" class="tl-grid-link">Luister Achter de Macht</a>
+                        <a href="#contact" class="tl-grid-link">Boek Bas als keynote spreker</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: Voor Ons Nederland (spanning 3 columns for visual balance) -->
+            <div class="tl-grid-item full-width" style="grid-column: span 3;">
+                <img src="documentatie/voor_ons_nederland_screenshot.png" alt="Voor Ons Nederland" class="tl-grid-image">
+                <div class="tl-grid-overlay">
+                    <div class="tl-grid-type">Beweging</div>
+                    <h3 class="tl-grid-title">Voor Ons Nederland</h3>
+                    <div class="tl-grid-links">
+                        <a href="https://vooronsnederland.nl" target="_blank" class="tl-grid-link">Ga naar de website</a>
+                        <a href="https://vooronsnederland.nl/donateur" target="_blank" class="tl-grid-link">Word donateur</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div style="padding: 40px; background: #f5f5f5; color: #333; text-align: center;">
+    <h3 style="margin-bottom: 15px; font-size: 24px;">✨ Thought Leadership - Final Grid</h3>
+    <p style="font-size: 16px; max-width: 900px; margin: 0 auto; line-height: 1.7;">
+        Witte achtergrond • 3x3 grid (Voor Ons Nederland full-width) • Multiple conversie-opties per item • Compacte groene nieuwsbrief-balk
+    </p>
+</div>
+
+</body>
+</html>

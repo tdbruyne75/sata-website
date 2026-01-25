@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap | SATA - SUE & The Alchemists</title>
+    <link rel="icon" type="image/png" href="assets/images/The_Label.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+           TOP NAVIGATION
+           ============================================ */
+        .top-nav {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            gap: 15px;
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 8px;
+        }
+
+        .language-btn {
+            width: 40px;
+            height: 50px;
+            background: rgba(40, 166, 154, 0.05);
+            border: 1px solid rgba(40, 166, 154, 0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 11px;
+            font-weight: 600;
+            color: rgba(40, 166, 154, 0.6);
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .language-btn:hover {
+            background: rgba(40, 166, 154, 0.1);
+            border-color: rgba(40, 166, 154, 0.4);
+            color: #28a69a;
+        }
+
+        .language-btn.active {
+            background: #28a69a;
+            border-color: #28a69a;
+            color: #ffffff;
+        }
+
+        /* ============================================
+           HAMBURGER MENU
+           ============================================ */
+        .hamburger-menu {
+            width: 50px;
+            height: 50px;
+            background: rgba(40, 166, 154, 0.1);
+            border: 1px solid rgba(40, 166, 154, 0.3);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-menu:hover {
+            background: #28a69a;
+            border-color: #28a69a;
+        }
+
+        .hamburger-line {
+            width: 24px;
+            height: 2px;
+            background: #28a69a;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-menu:hover .hamburger-line {
+            background: #ffffff;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu-overlay.active {
+            display: flex;
+        }
+
+        .menu-content {
+            text-align: center;
+        }
+
+        .menu-content a {
+            display: block;
+            font-size: 32px;
+            color: #ffffff;
+            text-decoration: none;
+            margin: 20px 0;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .menu-content a:hover {
+            color: #28a69a;
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .sitemap-hero {
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 120px 40px 60px;
+        }
+
+        .vinyl-background {
+            position: absolute;
+            top: 50%;
+            right: -15%;
+            transform: translateY(-50%);
+            width: 60%;
+            height: 100%;
+            background-image: url('assets/images/The_vinyl.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center right;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .sitemap-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .sitemap-hero h1 {
+            font-size: clamp(36px, 6vw, 56px);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            text-wrap: balance;
+        }
+
+        .sitemap-hero p {
+            font-size: clamp(16px, 2.5vw, 20px);
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+            font-weight: 300;
+            text-wrap: pretty;
+        }
+
+        /* ============================================
+           SITEMAP CONTENT
+           ============================================ */
+        .sitemap-content {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+        }
+
+        .sitemap-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(40, 166, 154, 0.2);
+            border-left: 4px solid #28a69a;
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .sitemap-section:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: #28a69a;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(40, 166, 154, 0.2);
+        }
+
+        .sitemap-section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #28a69a;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .sitemap-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sitemap-links li {
+            margin-bottom: 15px;
+        }
+
+        .sitemap-links a {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 300;
+            display: inline-block;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .sitemap-links a::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #28a69a;
+            transition: transform 0.3s ease;
+        }
+
+        .sitemap-links a:hover {
+            color: #28a69a;
+            transform: translateX(5px);
+        }
+
+        .sitemap-links a:hover::before {
+            transform: translateX(-3px);
+        }
+
+        .sitemap-description {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        /* ============================================
+           FOOTER SECTION
+           ============================================ */
+        .footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 80px 0 40px;
+            position: relative;
+            margin-top: 80px;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40%;
+            height: 70%;
+            background-image: url('assets/images/The_vinyl.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.02;
+            z-index: 0;
+        }
+
+        .footer-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-brand {
+            max-width: 400px;
+        }
+
+        .footer-logo {
+            margin-bottom: 25px;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            opacity: 0.95;
+        }
+
+        .footer-tagline {
+            font-size: 16px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .footer-contact-info {
+            margin-top: 25px;
+        }
+
+        .footer-contact-item {
+            font-size: 14px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 8px;
+            font-weight: 300;
+        }
+
+        .footer-contact-item a {
+            color: #28a69a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact-item a:hover {
+            color: #ffffff;
+        }
+
+        .footer-column {
+            min-width: 0;
+        }
+
+        .footer-column-title {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #28a69a;
+            margin-bottom: 25px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 300;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: #28a69a;
+            transform: translateX(3px);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(40, 166, 154, 0.1);
+            border: 1px solid rgba(40, 166, 154, 0.3);
+            color: #28a69a;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social-link:hover {
+            background: #28a69a;
+            border-color: #28a69a;
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-copyright {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 300;
+        }
+
+        .footer-legal-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-legal-links a {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 300;
+        }
+
+        .footer-legal-links a:hover {
+            color: #28a69a;
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 1024px) {
+            .sitemap-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-nav {
+                top: 20px;
+                right: 20px;
+            }
+
+            .hamburger-menu {
+                width: 45px;
+                height: 45px;
+            }
+
+            .language-selector {
+                gap: 6px;
+            }
+
+            .language-btn {
+                width: 35px;
+                height: 45px;
+                font-size: 10px;
+            }
+
+            .sitemap-hero {
+                padding: 100px 24px 50px;
+            }
+
+            .sitemap-content {
+                padding: 60px 24px;
+            }
+
+            .sitemap-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .sitemap-section {
+                padding: 30px 24px;
+            }
+
+            .menu-content a {
+                font-size: 24px;
+                margin: 15px 0;
+            }
+
+            .footer {
+                padding: 60px 0 40px;
+            }
+
+            .footer-container {
+                padding: 0 24px;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                margin-bottom: 40px;
+                padding-bottom: 40px;
+            }
+
+            .footer-brand {
+                max-width: 100%;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-legal-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Navigation -->
+<div class="top-nav">
+    <div class="language-selector">
+        <a href="sitemap.html" class="language-btn active">NL</a>
+        <a href="sitemap-en.html" class="language-btn">EN</a>
+        <a href="sitemap-de.html" class="language-btn">DE</a>
+    </div>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+    </div>
+</div>
+
+<!-- Menu Overlay -->
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()">
+    <div class="menu-content">
+        <a href="index.html">Home</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="index.html#team">Team</a>
+        <a href="index.html#vraagstukken">Vraagstukken</a>
+        <a href="institute.html">SATA Institute</a>
+        <a href="draagvlak-kompas.html">Draagvlak Kompas</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<section class="sitemap-hero">
+    <div class="vinyl-background"></div>
+    <div class="sitemap-hero-content">
+        <h1>Sitemap</h1>
+        <p>Overzicht van alle pagina's en content op de SATA website.</p>
+    </div>
+</section>
+
+<!-- Sitemap Content -->
+<section class="sitemap-content">
+    <div class="sitemap-grid">
+        <!-- Main Pages -->
+        <div class="sitemap-section">
+            <h2 class="sitemap-section-title">Hoofdpagina's</h2>
+            <ul class="sitemap-links">
+                <li>
+                    <a href="index.html">Home</a>
+                    <div class="sitemap-description">Hoofdpagina met team, vraagstukken en thought leadership</div>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                    <div class="sitemap-description">Neem contact op en plan een kennismaking</div>
+                </li>
+                <li>
+                    <a href="institute.html">SATA Institute</a>
+                    <div class="sitemap-description">Training & opleiding voor professionals</div>
+                </li>
+                <li>
+                    <a href="draagvlak-kompas.html">Draagvlak Kompas</a>
+                    <div class="sitemap-description">Het eerste draagvlak onderzoek van Nederland</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Partners -->
+        <div class="sitemap-section">
+            <h2 class="sitemap-section-title">Partners</h2>
+            <ul class="sitemap-links">
+                <li>
+                    <a href="tom-de-bruyne.html">Tom de Bruyne</a>
+                    <div class="sitemap-description">Founder, psycholoog, auteur, spreker</div>
+                </li>
+                <li>
+                    <a href="klaas-dijkhoff.html">Klaas Dijkhoff</a>
+                    <div class="sitemap-description">Partner - Politiek strateeg</div>
+                </li>
+                <li>
+                    <a href="bas-erlings.html">Bas Erlings</a>
+                    <div class="sitemap-description">Partner - Campagne specialist</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Blog -->
+        <div class="sitemap-section">
+            <h2 class="sitemap-section-title">Blog & Content</h2>
+            <ul class="sitemap-links">
+                <li>
+                    <a href="blog/index.html">Blog Overzicht</a>
+                    <div class="sitemap-description">Alle blog artikelen en thought leadership</div>
+                </li>
+                <li>
+                    <a href="blog/2026-01-kathedralen-eiffeltorens.html">Kathedralen en Eiffeltorens</a>
+                    <div class="sitemap-description">Over tijdloze waarden vs tijdelijke hypes</div>
+                </li>
+                <li>
+                    <a href="blog/2026-01-mark-carney-framing.html">Mark Carney's Framing Meesterklasse</a>
+                    <div class="sitemap-description">Analyse van effectieve framing in politiek</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Language Versions -->
+        <div class="sitemap-section">
+            <h2 class="sitemap-section-title">Taalversies</h2>
+            <ul class="sitemap-links">
+                <li>
+                    <a href="index.html">Nederlands (NL)</a>
+                    <div class="sitemap-description">Nederlandse versie van de website</div>
+                </li>
+                <li>
+                    <a href="index-en.html">English (EN)</a>
+                    <div class="sitemap-description">Engelse versie van de website</div>
+                </li>
+                <li>
+                    <a href="index-de.html">Deutsch (DE)</a>
+                    <div class="sitemap-description">Duitse versie van de website</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Institute Variants -->
+        <div class="sitemap-section">
+            <h2 class="sitemap-section-title">SATA Institute</h2>
+            <ul class="sitemap-links">
+                <li>
+                    <a href="institute.html">Institute (NL)</a>
+                </li>
+                <li>
+                    <a href="institute-en.html">Institute (EN)</a>
+                </li>
+                <li>
+                    <a href="institute-de.html">Institute (DE)</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Contact Variants -->
+        <div class="sitemap-section">
+            <h2 class="sitemap-section-title">Contact Pagina's</h2>
+            <ul class="sitemap-links">
+                <li>
+                    <a href="contact.html">Contact (NL)</a>
+                </li>
+                <li>
+                    <a href="contact-en.html">Contact (EN)</a>
+                </li>
+                <li>
+                    <a href="contact-de.html">Contact (DE)</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Social & External -->
+        <div class="sitemap-section">
+            <h2 class="sitemap-section-title">Social & Extern</h2>
+            <ul class="sitemap-links">
+                <li>
+                    <a href="https://www.linkedin.com/company/sue-amsterdam/" target="_blank">LinkedIn</a>
+                    <div class="sitemap-description">Volg ons op LinkedIn</div>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/wearesata/" target="_blank">Instagram</a>
+                    <div class="sitemap-description">Volg ons op Instagram</div>
+                </li>
+                <li>
+                    <a href="https://open.spotify.com/show/3DwPBL0Db2pIhmUAU6lvZz" target="_blank">Podcast</a>
+                    <div class="sitemap-description">Luister naar onze podcast</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Legal -->
+        <div class="sitemap-section">
+            <h2 class="sitemap-section-title">Juridisch</h2>
+            <ul class="sitemap-links">
+                <li>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                </li>
+                <li>
+                    <a href="/algemene-voorwaarden">Algemene Voorwaarden</a>
+                </li>
+                <li>
+                    <a href="/cookies">Cookie Policy</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-main">
+            <!-- Brand Column -->
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="assets/images/Off_the_record_opzwart.png" alt="SATA - SUE & The Alchemists">
+                </div>
+                <p class="footer-tagline">
+                    Van gelijk hebben naar gelijk krijgen. We bouwen draagvlak waar het ontbreekt, beschermen het waar het aangevallen wordt, en winnen het terug waar het verloren ging.
+                </p>
+                <div class="footer-contact-info">
+                    <div class="footer-contact-item">
+                        <strong>Email:</strong> <a href="mailto:info@wearesata.com">info@wearesata.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <strong>Kantoren:</strong> Amsterdam • Den Haag • Breda • Brussel
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/company/sue-amsterdam/" target="_blank" class="footer-social-link" aria-label="LinkedIn">in</a>
+                    <a href="https://www.instagram.com/wearesata/" target="_blank" class="footer-social-link" aria-label="Instagram">IG</a>
+                </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="footer-column">
+                <h4 class="footer-column-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html#vraagstukken">Vraagstukken</a></li>
+                    <li><a href="index.html#team">Team</a></li>
+                    <li><a href="draagvlak-kompas.html">Draagvlak Kompas</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Partners Column -->
+            <div class="footer-column">
+                <h4 class="footer-column-title">Partners</h4>
+                <ul class="footer-links">
+                    <li><a href="klaas-dijkhoff.html">Klaas Dijkhoff</a></li>
+                    <li><a href="bas-erlings.html">Bas Erlings</a></li>
+                    <li><a href="tom-de-bruyne.html">Tom de Bruyne</a></li>
+                </ul>
+            </div>
+
+            <!-- Content Column -->
+            <div class="footer-column">
+                <h4 class="footer-column-title">Content</h4>
+                <ul class="footer-links">
+                    <li><a href="/nieuwsbrief">Nieuwsbrief</a></li>
+                    <li><a href="https://open.spotify.com/show/3DwPBL0Db2pIhmUAU6lvZz" target="_blank">Podcast</a></li>
+                    <li><a href="blog/index.html">Blog</a></li>
+                    <li><a href="https://www.linkedin.com/company/sue-amsterdam/" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                &copy; 2026 SATA - SUE & The Alchemists. Alle rechten voorbehouden.
+            </div>
+            <ul class="footer-legal-links">
+                <li><a href="/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/algemene-voorwaarden">Algemene Voorwaarden</a></li>
+                <li><a href="/cookies">Cookie Policy</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<script>
+function toggleMenu() {
+    const overlay = document.getElementById('menuOverlay');
+    overlay.classList.toggle('active');
+}
+
+// Close menu when clicking a link
+document.querySelectorAll('.menu-content a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('menuOverlay').classList.remove('active');
+    });
+});
+</script>
+
+</body>
+</html>

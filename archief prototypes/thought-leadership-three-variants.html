@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SATA - Thought Leadership Carousel Variants</title>
+    <link rel="icon" type="image/png" href="assets/images/The_Label.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #f5f5f5;
+        }
+
+        /* Common Styles */
+        .section-divider {
+            background: #28a69a;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin: 80px 0 0 0;
+        }
+
+        .section-divider h3 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        /* ==================== VARIANT 1: CLASSIC ELEGANT CAROUSEL ==================== */
+        /* Black background, large high-quality images, minimal text overlay */
+
+        .tl-section-v1 {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .tl-section-v1::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -10%;
+            transform: translateY(-50%);
+            width: 50%;
+            height: 80%;
+            background-image: url('assets/images/The_vinyl.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center left;
+            opacity: 0.03;
+            z-index: 0;
+        }
+
+        .tl-container-v1 {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tl-header-v1 {
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tl-label-v1 {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #28a69a;
+            margin-bottom: 20px;
+        }
+
+        .tl-headline-v1 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            line-height: 1.3;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .tl-intro-v1 {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .carousel-wrapper-v1 {
+            position: relative;
+            margin-bottom: 80px;
+        }
+
+        .carousel-track-v1 {
+            display: flex;
+            gap: 40px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            padding: 20px 0 40px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: #28a69a #1a1a1a;
+        }
+
+        .carousel-track-v1::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .carousel-track-v1::-webkit-scrollbar-track {
+            background: #1a1a1a;
+            border-radius: 10px;
+        }
+
+        .carousel-track-v1::-webkit-scrollbar-thumb {
+            background: #28a69a;
+            border-radius: 10px;
+        }
+
+        .tl-card-v1 {
+            min-width: 450px;
+            max-width: 450px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(40, 166, 154, 0.2);
+            scroll-snap-align: center;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .tl-card-v1:hover {
+            border-color: #28a69a;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(40, 166, 154, 0.2);
+        }
+
+        .tl-card-image-v1 {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            background: #1a1a1a;
+        }
+
+        .tl-card-content-v1 {
+            padding: 35px;
+        }
+
+        .tl-card-type-v1 {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #28a69a;
+            margin-bottom: 12px;
+        }
+
+        .tl-card-title-v1 {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .tl-card-description-v1 {
+            font-size: 15px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.75);
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .tl-card-link-v1 {
+            display: inline-flex;
+            align-items: center;
+            color: #28a69a;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .tl-card-link-v1::after {
+            content: ' →';
+            margin-left: 5px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .tl-card-link-v1:hover {
+            color: #ffffff;
+        }
+
+        .tl-card-link-v1:hover::after {
+            margin-left: 10px;
+        }
+
+        .carousel-nav-v1 {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .carousel-nav-btn-v1 {
+            width: 50px;
+            height: 50px;
+            background: rgba(40, 166, 154, 0.1);
+            border: 2px solid #28a69a;
+            color: #28a69a;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-nav-btn-v1:hover {
+            background: #28a69a;
+            color: #000000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(40, 166, 154, 0.4);
+        }
+
+        .tl-cta-wrapper-v1 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .tl-cta-card-v1 {
+            background: rgba(40, 166, 154, 0.05);
+            border: 2px solid rgba(40, 166, 154, 0.3);
+            border-left: 6px solid #28a69a;
+            padding: 50px 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tl-cta-card-v1:hover {
+            background: rgba(40, 166, 154, 0.1);
+            border-color: #28a69a;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(40, 166, 154, 0.2);
+        }
+
+        .tl-cta-title-v1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .tl-cta-description-v1 {
+            font-size: 16px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .tl-cta-button-v1 {
+            display: inline-block;
+            padding: 16px 40px;
+            background-color: #28a69a;
+            color: #000000;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #28a69a;
+        }
+
+        .tl-cta-button-v1:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        /* ==================== VARIANT 2: GRID SHOWCASE ==================== */
+        /* White background, 3-column grid, image-focused with subtle overlays */
+
+        .tl-section-v2 {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .tl-container-v2 {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .tl-header-v2 {
+            text-align: center;
+            margin-bottom: 70px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tl-label-v2 {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #28a69a;
+            margin-bottom: 20px;
+        }
+
+        .tl-headline-v2 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            line-height: 1.3;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .tl-intro-v2 {
+            font-size: 18px;
+            color: #666666;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .tl-grid-v2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 70px;
+        }
+
+        .tl-grid-item-v2 {
+            position: relative;
+            overflow: hidden;
+            background: #f5f5f5;
+            transition: all 0.3s ease;
+            aspect-ratio: 4/5;
+        }
+
+        .tl-grid-item-v2:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .tl-grid-image-v2 {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .tl-grid-item-v2:hover .tl-grid-image-v2 {
+            transform: scale(1.05);
+        }
+
+        .tl-grid-overlay-v2 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 60%, transparent 100%);
+            padding: 30px 25px;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+
+        .tl-grid-item-v2:hover .tl-grid-overlay-v2 {
+            background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.8) 80%, transparent 100%);
+        }
+
+        .tl-grid-type-v2 {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #28a69a;
+            margin-bottom: 10px;
+        }
+
+        .tl-grid-title-v2 {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .tl-grid-link-v2 {
+            display: inline-flex;
+            align-items: center;
+            color: #28a69a;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .tl-grid-item-v2:hover .tl-grid-link-v2 {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tl-grid-link-v2::after {
+            content: ' →';
+            margin-left: 5px;
+        }
+
+        .tl-cta-wrapper-v2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .tl-cta-card-v2 {
+            background: #f8f8f8;
+            border: 2px solid #e0e0e0;
+            border-left: 6px solid #28a69a;
+            padding: 50px 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tl-cta-card-v2:hover {
+            background: #ffffff;
+            border-color: #28a69a;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .tl-cta-title-v2 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .tl-cta-description-v2 {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #666666;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .tl-cta-button-v2 {
+            display: inline-block;
+            padding: 16px 40px;
+            background-color: #28a69a;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #28a69a;
+        }
+
+        .tl-cta-button-v2:hover {
+            background-color: #1f8275;
+            border-color: #1f8275;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 166, 154, 0.3);
+        }
+
+        /* ==================== VARIANT 3: CINEMATIC CARDS ==================== */
+        /* Teal background, large hero cards with dramatic shadows, Netflix-style */
+
+        .tl-section-v3 {
+            background: linear-gradient(135deg, #1f8275 0%, #28a69a 100%);
+            color: #ffffff;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .tl-container-v3 {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .tl-header-v3 {
+            text-align: center;
+            margin-bottom: 70px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tl-label-v3 {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .tl-headline-v3 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            line-height: 1.3;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .tl-intro-v3 {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .carousel-wrapper-v3 {
+            position: relative;
+            margin-bottom: 80px;
+        }
+
+        .carousel-track-v3 {
+            display: flex;
+            gap: 35px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            padding: 30px 0 50px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: #000000 rgba(0,0,0,0.2);
+        }
+
+        .carousel-track-v3::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .carousel-track-v3::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+        }
+
+        .carousel-track-v3::-webkit-scrollbar-thumb {
+            background: #000000;
+            border-radius: 10px;
+        }
+
+        .tl-card-v3 {
+            min-width: 380px;
+            max-width: 380px;
+            background: #ffffff;
+            scroll-snap-align: center;
+            transition: all 0.4s ease;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .tl-card-v3:hover {
+            transform: scale(1.05) translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .tl-card-image-v3 {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            background: #f5f5f5;
+        }
+
+        .tl-card-content-v3 {
+            padding: 35px 30px;
+            background: #ffffff;
+        }
+
+        .tl-card-type-v3 {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #28a69a;
+            margin-bottom: 12px;
+        }
+
+        .tl-card-title-v3 {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #000000;
+            margin-bottom: 15px;
+        }
+
+        .tl-card-description-v3 {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #666666;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .tl-card-link-v3 {
+            display: inline-flex;
+            align-items: center;
+            color: #28a69a;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .tl-card-link-v3::after {
+            content: ' →';
+            margin-left: 5px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .tl-card-link-v3:hover {
+            color: #1f8275;
+        }
+
+        .tl-card-link-v3:hover::after {
+            margin-left: 10px;
+        }
+
+        .carousel-nav-v3 {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .carousel-nav-btn-v3 {
+            width: 50px;
+            height: 50px;
+            background: #000000;
+            border: 2px solid #000000;
+            color: #ffffff;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-nav-btn-v3:hover {
+            background: #ffffff;
+            color: #000000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .tl-cta-wrapper-v3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .tl-cta-card-v3 {
+            background: rgba(0, 0, 0, 0.15);
+            border: 2px solid rgba(0, 0, 0, 0.3);
+            border-left: 6px solid #000000;
+            padding: 50px 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tl-cta-card-v3:hover {
+            background: rgba(0, 0, 0, 0.25);
+            border-color: #000000;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .tl-cta-title-v3 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .tl-cta-description-v3 {
+            font-size: 16px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .tl-cta-button-v3 {
+            display: inline-block;
+            padding: 16px 40px;
+            background-color: #000000;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #000000;
+        }
+
+        .tl-cta-button-v3:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .tl-grid-v2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tl-section-v1,
+            .tl-section-v2,
+            .tl-section-v3 {
+                padding: 60px 0;
+            }
+
+            .tl-container-v1,
+            .tl-container-v2,
+            .tl-container-v3 {
+                padding: 0 24px;
+            }
+
+            .tl-card-v1 {
+                min-width: 320px;
+                max-width: 320px;
+            }
+
+            .tl-card-v3 {
+                min-width: 300px;
+                max-width: 300px;
+            }
+
+            .tl-grid-v2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==================== VARIANT 1: CLASSIC ELEGANT CAROUSEL ==================== -->
+<section class="tl-section-v1">
+    <div class="tl-container-v1">
+        <div class="tl-header-v1">
+            <p class="tl-label-v1">Thought Leadership</p>
+            <h2 class="tl-headline-v1">Hoe we onze kennis verspreiden</h2>
+            <p class="tl-intro-v1">
+                Van bestsellers tot podcasts, van theaters tot bewegingen—een greep uit de manieren waarop we inzichten delen over invloed, gedrag en draagvlak.
+            </p>
+        </div>
+
+        <div class="carousel-wrapper-v1">
+            <div class="carousel-track-v1" id="carouselTrack1">
+                <!-- Card 1 -->
+                <div class="tl-card-v1">
+                    <img src="documentatie/Thought Leadership Carrousel/boek cover het spel van de populist.png" alt="Het Spel van de Populist" class="tl-card-image-v1">
+                    <div class="tl-card-content-v1">
+                        <div class="tl-card-type-v1">Boek</div>
+                        <h3 class="tl-card-title-v1">Het Spel van de Populist</h3>
+                        <p class="tl-card-description-v1">
+                            Bas Erlings' bestseller over hoe populisme werkt en hoe je ermee omgaat. Gebaseerd op acht verkiezingscampagnes.
+                        </p>
+                        <a href="https://www.bol.com/nl/nl/f/het-spel-van-de-populist/9300000206597366/" target="_blank" class="tl-card-link-v1">Bestel het boek</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="tl-card-v1">
+                    <img src="documentatie/Thought Leadership Carrousel/boek cover gamechangers.png" alt="Gamechangers" class="tl-card-image-v1">
+                    <div class="tl-card-content-v1">
+                        <div class="tl-card-type-v1">Boek</div>
+                        <h3 class="tl-card-title-v1">Gamechangers</h3>
+                        <p class="tl-card-description-v1">
+                            Tom De Bruyne's boek over hoe kleine gerichte ingrepen grote veranderingen bewerkstelligen. Voor systemische impact.
+                        </p>
+                        <a href="https://www.bol.com/nl/nl/f/gamechangers/9300000212266845/" target="_blank" class="tl-card-link-v1">Bestel het boek</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="tl-card-v1">
+                    <img src="documentatie/Thought Leadership Carrousel/theatercollege_gamechangers_live_in_tuschinski_800_x_800_px_early_bird_ticket_boek_1_.png.webp" alt="Theatercollege" class="tl-card-image-v1">
+                    <div class="tl-card-content-v1">
+                        <div class="tl-card-type-v1">Keynote</div>
+                        <h3 class="tl-card-title-v1">Theatercollege Gamechangers</h3>
+                        <p class="tl-card-description-v1">
+                            Hoe je verandering ontketent. Klaas, Bas en Tom nemen je mee in de wereld van systematische beïnvloeding.
+                        </p>
+                        <a href="#contact" class="tl-card-link-v1">Boek een keynote</a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="tl-card-v1">
+                    <img src="documentatie/Thought Leadership Carrousel/logo voor ons nederland.png" alt="Voor Ons Nederland" class="tl-card-image-v1">
+                    <div class="tl-card-content-v1">
+                        <div class="tl-card-type-v1">Beweging</div>
+                        <h3 class="tl-card-title-v1">Voor Ons Nederland</h3>
+                        <p class="tl-card-description-v1">
+                            Een beweging voor draagvlak. Verbinden wat verdeeld is. Bouwen aan een Nederland dat werkt voor iedereen.
+                        </p>
+                        <a href="https://vooronsnederland.nl" target="_blank" class="tl-card-link-v1">Ontdek de beweging</a>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="tl-card-v1">
+                    <img src="documentatie/Thought Leadership Carrousel/klaas-dijkhoff-keynote.jpg" alt="Klaas Dijkhoff Keynote" class="tl-card-image-v1">
+                    <div class="tl-card-content-v1">
+                        <div class="tl-card-type-v1">Podcast</div>
+                        <h3 class="tl-card-title-v1">Dijkhoff & Segers</h3>
+                        <p class="tl-card-description-v1">
+                            Klaas Dijkhoff en Gert-Jan Segers kijken ongefilterd naar de Nederlandse politiek. Wat er écht speelt.
+                        </p>
+                        <a href="https://open.spotify.com/show/59EKTmNFbbuUT88Ju6t1ws" target="_blank" class="tl-card-link-v1">Beluister op Spotify</a>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="tl-card-v1">
+                    <img src="documentatie/Thought Leadership Carrousel/TomdeBruyne keynote.jpeg" alt="Tom de Bruyne Keynote" class="tl-card-image-v1">
+                    <div class="tl-card-content-v1">
+                        <div class="tl-card-type-v1">Podcast</div>
+                        <h3 class="tl-card-title-v1">Wat gebeurt er eigenlijk in je hoofd?</h3>
+                        <p class="tl-card-description-v1">
+                            Klaas, Bas en Tom over gedragspsychologie. Waarom doen mensen wat ze doen—en hoe beïnvloed je dat?
+                        </p>
+                        <a href="https://open.spotify.com/show/3DwPBL0Db2pIhmUAU6lvZz" target="_blank" class="tl-card-link-v1">Beluister op Spotify</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-nav-v1">
+                <button class="carousel-nav-btn-v1" onclick="scrollCarousel('carouselTrack1', 'left')">←</button>
+                <button class="carousel-nav-btn-v1" onclick="scrollCarousel('carouselTrack1', 'right')">→</button>
+            </div>
+        </div>
+
+        <div class="tl-cta-wrapper-v1">
+            <div class="tl-cta-card-v1">
+                <h3 class="tl-cta-title-v1">Blijf op de hoogte</h3>
+                <p class="tl-cta-description-v1">
+                    Ontvang onze nieuwsbrief met inzichten over invloed, gedrag en draagvlak.
+                </p>
+                <a href="#newsletter" class="tl-cta-button-v1">Abonneer je</a>
+            </div>
+
+            <div class="tl-cta-card-v1">
+                <h3 class="tl-cta-title-v1">Boek een keynote</h3>
+                <p class="tl-cta-description-v1">
+                    Nodig ons uit voor een keynote, workshop of theatercollege bij jouw organisatie.
+                </p>
+                <a href="#contact" class="tl-cta-button-v1">Plan een gesprek</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider">
+    <h3>✨ Variant 1: Classic Elegant Carousel</h3>
+    <p>Zwarte achtergrond • Grote kaarten (450px) • Horizontal scroll • Subtiele vinyl achtergrond • Consistent met team section</p>
+</div>
+
+<!-- ==================== VARIANT 2: GRID SHOWCASE ==================== -->
+<section class="tl-section-v2">
+    <div class="tl-container-v2">
+        <div class="tl-header-v2">
+            <p class="tl-label-v2">Thought Leadership</p>
+            <h2 class="tl-headline-v2">Hoe we onze kennis verspreiden</h2>
+            <p class="tl-intro-v2">
+                Van bestsellers tot podcasts, van theaters tot bewegingen—een greep uit de manieren waarop we inzichten delen over invloed, gedrag en draagvlak.
+            </p>
+        </div>
+
+        <div class="tl-grid-v2">
+            <div class="tl-grid-item-v2">
+                <img src="documentatie/Thought Leadership Carrousel/boek cover het spel van de populist.png" alt="Het Spel van de Populist" class="tl-grid-image-v2">
+                <div class="tl-grid-overlay-v2">
+                    <div class="tl-grid-type-v2">Boek</div>
+                    <h3 class="tl-grid-title-v2">Het Spel van de Populist</h3>
+                    <a href="https://www.bol.com/nl/nl/f/het-spel-van-de-populist/9300000206597366/" target="_blank" class="tl-grid-link-v2">Bestel het boek</a>
+                </div>
+            </div>
+
+            <div class="tl-grid-item-v2">
+                <img src="documentatie/Thought Leadership Carrousel/boek cover gamechangers.png" alt="Gamechangers" class="tl-grid-image-v2">
+                <div class="tl-grid-overlay-v2">
+                    <div class="tl-grid-type-v2">Boek</div>
+                    <h3 class="tl-grid-title-v2">Gamechangers</h3>
+                    <a href="https://www.bol.com/nl/nl/f/gamechangers/9300000212266845/" target="_blank" class="tl-grid-link-v2">Bestel het boek</a>
+                </div>
+            </div>
+
+            <div class="tl-grid-item-v2">
+                <img src="documentatie/Thought Leadership Carrousel/theatercollege_gamechangers_live_in_tuschinski_800_x_800_px_early_bird_ticket_boek_1_.png.webp" alt="Theatercollege" class="tl-grid-image-v2">
+                <div class="tl-grid-overlay-v2">
+                    <div class="tl-grid-type-v2">Keynote</div>
+                    <h3 class="tl-grid-title-v2">Theatercollege Gamechangers</h3>
+                    <a href="#contact" class="tl-grid-link-v2">Boek een keynote</a>
+                </div>
+            </div>
+
+            <div class="tl-grid-item-v2">
+                <img src="documentatie/Thought Leadership Carrousel/logo voor ons nederland.png" alt="Voor Ons Nederland" class="tl-grid-image-v2">
+                <div class="tl-grid-overlay-v2">
+                    <div class="tl-grid-type-v2">Beweging</div>
+                    <h3 class="tl-grid-title-v2">Voor Ons Nederland</h3>
+                    <a href="https://vooronsnederland.nl" target="_blank" class="tl-grid-link-v2">Ontdek de beweging</a>
+                </div>
+            </div>
+
+            <div class="tl-grid-item-v2">
+                <img src="documentatie/Thought Leadership Carrousel/klaas-dijkhoff-keynote.jpg" alt="Klaas Dijkhoff" class="tl-grid-image-v2">
+                <div class="tl-grid-overlay-v2">
+                    <div class="tl-grid-type-v2">Podcast</div>
+                    <h3 class="tl-grid-title-v2">Dijkhoff & Segers</h3>
+                    <a href="https://open.spotify.com/show/59EKTmNFbbuUT88Ju6t1ws" target="_blank" class="tl-grid-link-v2">Beluister op Spotify</a>
+                </div>
+            </div>
+
+            <div class="tl-grid-item-v2">
+                <img src="documentatie/Thought Leadership Carrousel/TomdeBruyne keynote.jpeg" alt="Tom de Bruyne" class="tl-grid-image-v2">
+                <div class="tl-grid-overlay-v2">
+                    <div class="tl-grid-type-v2">Podcast</div>
+                    <h3 class="tl-grid-title-v2">Wat gebeurt er eigenlijk in je hoofd?</h3>
+                    <a href="https://open.spotify.com/show/3DwPBL0Db2pIhmUAU6lvZz" target="_blank" class="tl-grid-link-v2">Beluister op Spotify</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="tl-cta-wrapper-v2">
+            <div class="tl-cta-card-v2">
+                <h3 class="tl-cta-title-v2">Blijf op de hoogte</h3>
+                <p class="tl-cta-description-v2">
+                    Ontvang onze nieuwsbrief met inzichten over invloed, gedrag en draagvlak.
+                </p>
+                <a href="#newsletter" class="tl-cta-button-v2">Abonneer je</a>
+            </div>
+
+            <div class="tl-cta-card-v2">
+                <h3 class="tl-cta-title-v2">Boek een keynote</h3>
+                <p class="tl-cta-description-v2">
+                    Nodig ons uit voor een keynote, workshop of theatercollege bij jouw organisatie.
+                </p>
+                <a href="#contact" class="tl-cta-button-v2">Plan een gesprek</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider">
+    <h3>✨ Variant 2: Grid Showcase</h3>
+    <p>Witte achtergrond • 3-kolom grid • Grote beelden met gradient overlay • Image-first presentatie • Portfolio-stijl</p>
+</div>
+
+<!-- ==================== VARIANT 3: CINEMATIC CARDS ==================== -->
+<section class="tl-section-v3">
+    <div class="tl-container-v3">
+        <div class="tl-header-v3">
+            <p class="tl-label-v3">Thought Leadership</p>
+            <h2 class="tl-headline-v3">Hoe we onze kennis verspreiden</h2>
+            <p class="tl-intro-v3">
+                Van bestsellers tot podcasts, van theaters tot bewegingen—een greep uit de manieren waarop we inzichten delen over invloed, gedrag en draagvlak.
+            </p>
+        </div>
+
+        <div class="carousel-wrapper-v3">
+            <div class="carousel-track-v3" id="carouselTrack3">
+                <div class="tl-card-v3">
+                    <img src="documentatie/Thought Leadership Carrousel/boek cover het spel van de populist.png" alt="Het Spel van de Populist" class="tl-card-image-v3">
+                    <div class="tl-card-content-v3">
+                        <div class="tl-card-type-v3">Boek</div>
+                        <h3 class="tl-card-title-v3">Het Spel van de Populist</h3>
+                        <p class="tl-card-description-v3">
+                            Bas Erlings' bestseller over hoe populisme werkt en hoe je ermee omgaat.
+                        </p>
+                        <a href="https://www.bol.com/nl/nl/f/het-spel-van-de-populist/9300000206597366/" target="_blank" class="tl-card-link-v3">Bestel het boek</a>
+                    </div>
+                </div>
+
+                <div class="tl-card-v3">
+                    <img src="documentatie/Thought Leadership Carrousel/boek cover gamechangers.png" alt="Gamechangers" class="tl-card-image-v3">
+                    <div class="tl-card-content-v3">
+                        <div class="tl-card-type-v3">Boek</div>
+                        <h3 class="tl-card-title-v3">Gamechangers</h3>
+                        <p class="tl-card-description-v3">
+                            Tom De Bruyne's boek over hoe kleine gerichte ingrepen grote veranderingen bewerkstelligen.
+                        </p>
+                        <a href="https://www.bol.com/nl/nl/f/gamechangers/9300000212266845/" target="_blank" class="tl-card-link-v3">Bestel het boek</a>
+                    </div>
+                </div>
+
+                <div class="tl-card-v3">
+                    <img src="documentatie/Thought Leadership Carrousel/theatercollege_gamechangers_live_in_tuschinski_800_x_800_px_early_bird_ticket_boek_1_.png.webp" alt="Theatercollege" class="tl-card-image-v3">
+                    <div class="tl-card-content-v3">
+                        <div class="tl-card-type-v3">Keynote</div>
+                        <h3 class="tl-card-title-v3">Theatercollege Gamechangers</h3>
+                        <p class="tl-card-description-v3">
+                            Hoe je verandering ontketent. Klaas, Bas en Tom nemen je mee in de wereld van systematische beïnvloeding.
+                        </p>
+                        <a href="#contact" class="tl-card-link-v3">Boek een keynote</a>
+                    </div>
+                </div>
+
+                <div class="tl-card-v3">
+                    <img src="documentatie/Thought Leadership Carrousel/logo voor ons nederland.png" alt="Voor Ons Nederland" class="tl-card-image-v3">
+                    <div class="tl-card-content-v3">
+                        <div class="tl-card-type-v3">Beweging</div>
+                        <h3 class="tl-card-title-v3">Voor Ons Nederland</h3>
+                        <p class="tl-card-description-v3">
+                            Een beweging voor draagvlak. Verbinden wat verdeeld is. Bouwen aan een Nederland dat werkt voor iedereen.
+                        </p>
+                        <a href="https://vooronsnederland.nl" target="_blank" class="tl-card-link-v3">Ontdek de beweging</a>
+                    </div>
+                </div>
+
+                <div class="tl-card-v3">
+                    <img src="documentatie/Thought Leadership Carrousel/klaas-dijkhoff-keynote.jpg" alt="Klaas Dijkhoff" class="tl-card-image-v3">
+                    <div class="tl-card-content-v3">
+                        <div class="tl-card-type-v3">Podcast</div>
+                        <h3 class="tl-card-title-v3">Dijkhoff & Segers</h3>
+                        <p class="tl-card-description-v3">
+                            Klaas Dijkhoff en Gert-Jan Segers kijken ongefilterd naar de Nederlandse politiek.
+                        </p>
+                        <a href="https://open.spotify.com/show/59EKTmNFbbuUT88Ju6t1ws" target="_blank" class="tl-card-link-v3">Beluister op Spotify</a>
+                    </div>
+                </div>
+
+                <div class="tl-card-v3">
+                    <img src="documentatie/Thought Leadership Carrousel/TomdeBruyne keynote.jpeg" alt="Tom de Bruyne" class="tl-card-image-v3">
+                    <div class="tl-card-content-v3">
+                        <div class="tl-card-type-v3">Podcast</div>
+                        <h3 class="tl-card-title-v3">Wat gebeurt er eigenlijk in je hoofd?</h3>
+                        <p class="tl-card-description-v3">
+                            Klaas, Bas en Tom over gedragspsychologie. Waarom doen mensen wat ze doen?
+                        </p>
+                        <a href="https://open.spotify.com/show/3DwPBL0Db2pIhmUAU6lvZz" target="_blank" class="tl-card-link-v3">Beluister op Spotify</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-nav-v3">
+                <button class="carousel-nav-btn-v3" onclick="scrollCarousel('carouselTrack3', 'left')">←</button>
+                <button class="carousel-nav-btn-v3" onclick="scrollCarousel('carouselTrack3', 'right')">→</button>
+            </div>
+        </div>
+
+        <div class="tl-cta-wrapper-v3">
+            <div class="tl-cta-card-v3">
+                <h3 class="tl-cta-title-v3">Blijf op de hoogte</h3>
+                <p class="tl-cta-description-v3">
+                    Ontvang onze nieuwsbrief met inzichten over invloed, gedrag en draagvlak.
+                </p>
+                <a href="#contact" class="tl-cta-button-v3">Abonneer je</a>
+            </div>
+
+            <div class="tl-cta-card-v3">
+                <h3 class="tl-cta-title-v3">Boek een keynote</h3>
+                <p class="tl-cta-description-v3">
+                    Nodig ons uit voor een keynote, workshop of theatercollege bij jouw organisatie.
+                </p>
+                <a href="#contact" class="tl-cta-button-v3">Plan een gesprek</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider">
+    <h3>✨ Variant 3: Cinematic Cards</h3>
+    <p>Teal gradient achtergrond • Netflix-stijl kaarten • Dramatische hover effects • Witte kaarten op kleur • Bold shadows</p>
+</div>
+
+<script>
+function scrollCarousel(trackId, direction) {
+    const track = document.getElementById(trackId);
+    const scrollAmount = trackId === 'carouselTrack1' ? 490 : 415;
+
+    if (direction === 'left') {
+        track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else {
+        track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+}
+</script>
+
+</body>
+</html>
