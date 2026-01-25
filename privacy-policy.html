@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | SATA - SUE & The Alchemists</title>
+    <title>Privacy Statement | SATA - SUE & The Alchemists</title>
     <link rel="icon" type="image/png" href="assets/images/The_Label.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,43 +34,6 @@
             gap: 15px;
         }
 
-        .language-selector {
-            display: flex;
-            gap: 8px;
-        }
-
-        .language-btn {
-            width: 40px;
-            height: 50px;
-            background: rgba(40, 166, 154, 0.05);
-            border: 1px solid rgba(40, 166, 154, 0.2);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            font-size: 11px;
-            font-weight: 600;
-            color: rgba(40, 166, 154, 0.6);
-            text-transform: uppercase;
-            text-decoration: none;
-        }
-
-        .language-btn:hover {
-            background: rgba(40, 166, 154, 0.1);
-            border-color: rgba(40, 166, 154, 0.4);
-            color: #28a69a;
-        }
-
-        .language-btn.active {
-            background: #28a69a;
-            border-color: #28a69a;
-            color: #ffffff;
-        }
-
-        /* ============================================
-           HAMBURGER MENU
-           ============================================ */
         .hamburger-menu {
             width: 50px;
             height: 50px;
@@ -139,268 +102,124 @@
         }
 
         /* ============================================
-           LOGO & CONTACT INFO SECTION
+           LOGO SECTION
            ============================================ */
-        .logo-contact-section {
+        .logo-section {
             padding: 80px 40px 40px;
             max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
 
-        .contact-logo {
+        .page-logo {
             width: 200px;
             height: auto;
             margin: 0 auto 40px;
             display: block;
         }
 
-        .quick-contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            flex-wrap: wrap;
+        /* ============================================
+           PRIVACY CONTENT SECTION
+           ============================================ */
+        .privacy-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px 100px;
+        }
+
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .privacy-header h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .privacy-header p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+        }
+
+        .privacy-content h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #28a69a;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .privacy-content h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .privacy-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .privacy-content ul {
+            list-style: none;
+            padding-left: 0;
             margin-bottom: 20px;
         }
 
-        .contact-info-item {
-            text-align: center;
+        .privacy-content ul li {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 300;
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 10px;
         }
 
-        .contact-info-label {
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+        .privacy-content ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 8px;
+            height: 8px;
+            background: #28a69a;
+        }
+
+        .privacy-content a {
             color: #28a69a;
-            margin-bottom: 8px;
-        }
-
-        .contact-info-value {
-            font-size: 18px;
-            font-weight: 400;
-            color: #ffffff;
-        }
-
-        .contact-info-value a {
-            color: #ffffff;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
-        .contact-info-value a:hover {
-            color: #28a69a;
+        .privacy-content a:hover {
+            color: #ffffff;
         }
 
-        /* ============================================
-           HERO SECTION
-           ============================================ */
-        .contact-hero {
-            min-height: 30vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 40px 40px 60px;
-        }
-
-        .vinyl-background {
-            position: absolute;
-            top: 50%;
-            right: -15%;
-            transform: translateY(-50%);
-            width: 60%;
-            height: 100%;
-            background-image: url('assets/images/The_vinyl.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center right;
-            opacity: 0.05;
-            z-index: 0;
-        }
-
-        .contact-hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-            text-align: center;
-        }
-
-        .contact-hero h1 {
-            font-size: clamp(36px, 6vw, 56px);
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            text-wrap: balance;
-        }
-
-        .contact-hero p {
-            font-size: clamp(16px, 2.5vw, 20px);
-            color: rgba(255, 255, 255, 0.85);
-            line-height: 1.6;
-            font-weight: 300;
-            text-wrap: pretty;
-        }
-
-        /* ============================================
-           OFFICES SECTION
-           ============================================ */
-        .offices-section {
-            padding: 80px 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .offices-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 80px;
-        }
-
-        .office-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(40, 166, 154, 0.2);
-            border-left: 4px solid #28a69a;
-            padding: 30px;
-            transition: all 0.3s ease;
-        }
-
-        .office-card:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: #28a69a;
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(40, 166, 154, 0.2);
-        }
-
-        .office-city {
-            font-size: 24px;
-            font-weight: 700;
-            color: #28a69a;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .office-address {
-            font-size: 16px;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.75);
-            margin-bottom: 20px;
-            font-weight: 300;
-        }
-
-        .office-placeholder {
-            font-style: italic;
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        /* ============================================
-           CONTACT FORM SECTION
-           ============================================ */
-        .form-section {
-            padding: 80px 40px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .form-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .form-header h2 {
-            font-size: clamp(28px, 4vw, 40px);
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            color: #28a69a;
-            text-wrap: balance;
-        }
-
-        .form-header p {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.75);
-            font-weight: 300;
-            text-wrap: pretty;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .form-group label {
-            font-size: 14px;
-            font-weight: 600;
-            color: #28a69a;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.05);
+        .contact-box {
+            background: rgba(40, 166, 154, 0.1);
             border: 1px solid rgba(40, 166, 154, 0.3);
-            color: #ffffff;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 15px;
-            transition: all 0.3s ease;
+            padding: 30px;
+            margin: 30px 0;
         }
 
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.4);
+        .contact-box p {
+            margin-bottom: 10px;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            background: rgba(255, 255, 255, 0.08);
-            border-color: #28a69a;
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .form-group select {
-            cursor: pointer;
-        }
-
-        .form-group select option {
-            background: #000000;
-            color: #ffffff;
-        }
-
-        .submit-button {
-            padding: 18px 45px;
-            background-color: #28a69a;
-            color: #ffffff;
-            border: 2px solid #28a69a;
-            font-size: 16px;
-            font-weight: 600;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            align-self: flex-start;
-        }
-
-        .submit-button:hover {
-            background-color: #1f8275;
-            border-color: #1f8275;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(40, 166, 154, 0.4);
+        .contact-box p:last-child {
+            margin-bottom: 0;
         }
 
         /* ============================================
@@ -411,6 +230,7 @@
             color: #ffffff;
             padding: 80px 0 40px;
             position: relative;
+            border-top: 1px solid rgba(40, 166, 154, 0.2);
         }
 
         .footer::before {
@@ -601,53 +421,29 @@
                 height: 45px;
             }
 
-            .language-selector {
-                gap: 6px;
-            }
-
-            .language-btn {
-                width: 35px;
-                height: 45px;
-                font-size: 10px;
-            }
-
-            .logo-contact-section {
+            .logo-section {
                 padding: 60px 24px 30px;
             }
 
-            .contact-logo {
+            .page-logo {
                 width: 150px;
             }
 
-            .quick-contact-info {
-                flex-direction: column;
-                gap: 30px;
+            .privacy-section {
+                padding: 0 24px 60px;
             }
 
-            .contact-hero {
-                padding: 30px 24px 60px;
+            .privacy-header h1 {
+                font-size: 28px;
             }
 
-            .offices-section {
-                padding: 60px 24px;
-            }
-
-            .offices-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .form-section {
-                padding: 60px 24px;
+            .privacy-content h2 {
+                font-size: 20px;
             }
 
             .menu-content a {
                 font-size: 24px;
                 margin: 15px 0;
-            }
-
-            .submit-button {
-                width: 100%;
             }
 
             .footer {
@@ -685,11 +481,6 @@
 
 <!-- Top Navigation -->
 <div class="top-nav">
-    <div class="language-selector">
-        <a href="contact.html" class="language-btn active">NL</a>
-        <a href="contact-en.html" class="language-btn">EN</a>
-        <a href="contact-de.html" class="language-btn">DE</a>
-    </div>
     <div class="hamburger-menu" onclick="toggleMenu()">
         <div class="hamburger-line"></div>
         <div class="hamburger-line"></div>
@@ -704,128 +495,138 @@
         <a href="blog/index.html">Blog</a>
         <a href="index.html#team">Team</a>
         <a href="index.html#vraagstukken">Vraagstukken</a>
-        <a href="index.html#thought-leadership">Thought Leadership</a>
+        <a href="institute.html">SATA Institute</a>
         <a href="contact.html">Contact</a>
     </div>
 </div>
 
-<!-- Logo & Contact Info Section -->
-<section class="logo-contact-section">
-    <img src="assets/images/Off_the_record_opzwart.png" alt="SATA - SUE & The Alchemists" class="contact-logo">
-
-    <div class="quick-contact-info">
-        <div class="contact-info-item">
-            <div class="contact-info-label">Telefoon</div>
-            <div class="contact-info-value">
-                <a href="tel:+31851302113">+31 85 130 21 13</a>
-            </div>
-        </div>
-        <div class="contact-info-item">
-            <div class="contact-info-label">E-mail</div>
-            <div class="contact-info-value">
-                <a href="mailto:info@wearesata.com">info@wearesata.com</a>
-            </div>
-        </div>
-    </div>
+<!-- Logo Section -->
+<section class="logo-section">
+    <img src="assets/images/Off_the_record_opzwart.png" alt="SATA - SUE & The Alchemists" class="page-logo">
 </section>
 
-<!-- Hero Section -->
-<section class="contact-hero">
-    <div class="vinyl-background"></div>
-    <div class="contact-hero-content">
-        <h1>Plan een kennismaking</h1>
-        <p>Neem contact op via telefoon, mail of onderstaand formulier en we brengen u zsm in contact met de juiste persoon.</p>
-    </div>
-</section>
-
-<!-- Offices Section -->
-<section class="offices-section">
-    <div class="offices-grid">
-        <div class="office-card">
-            <div class="office-city">Amsterdam</div>
-            <div class="office-address">
-                's Gravenhekje 1a<br>
-                1011TG Amsterdam<br>
-                Nederland
-            </div>
-        </div>
-
-        <div class="office-card">
-            <div class="office-city">Den Haag</div>
-            <div class="office-address">
-                Kwikstraatlaan 19<br>
-                2566 TR Den Haag<br>
-                Nederland
-            </div>
-        </div>
-
-        <div class="office-card">
-            <div class="office-city">Breda</div>
-            <div class="office-address">
-                Tulpenstraat 75a<br>
-                4818GT Breda<br>
-                Nederland
-            </div>
-        </div>
-
-        <div class="office-card">
-            <div class="office-city">Brussel</div>
-            <div class="office-address office-placeholder">
-                [Adres volgt binnenkort]
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact Form Section -->
-<section class="form-section">
-    <div class="form-header">
-        <h2>Plan een gesprek</h2>
-        <p>Vul onderstaand formulier in en we nemen zo spoedig mogelijk contact met u op.</p>
+<!-- Privacy Content Section -->
+<section class="privacy-section">
+    <div class="privacy-header">
+        <h1>Privacy Statement</h1>
+        <p>Laatst bijgewerkt: januari 2026</p>
     </div>
 
-    <form class="contact-form" action="#" method="POST">
-        <div class="form-group">
-            <label for="name">Naam *</label>
-            <input type="text" id="name" name="name" placeholder="Uw volledige naam" required>
+    <div class="privacy-content">
+        <h2>1. Inleiding</h2>
+        <p>Dit privacy statement beschrijft hoe SUE & The Alchemists persoonsgegevens verzamelt van klanten, prospects, studenten en websitebezoekers. Alle persoonsgegevens worden verwerkt onder de bepalingen van de AVG (Algemene Verordening Persoonsgegevens)/GDPR.</p>
+        <p>Voor vragen over dit privacy statement kunt u contact opnemen via <a href="mailto:privacy@wearesata.com">privacy@wearesata.com</a>.</p>
+
+        <h2>2. Wie zijn wij?</h2>
+        <p>SUE & The Alchemists is een gedragspsychologie- en designadviesbureau.</p>
+        <div class="contact-box">
+            <p><strong>Adres:</strong> 's-Gravenhekje 1a, 1011 TG Amsterdam, Nederland</p>
+            <p><strong>Email:</strong> <a href="mailto:info@wearesata.com">info@wearesata.com</a></p>
+            <p><strong>Telefoon:</strong> +31 85 130 21 13</p>
+            <p><strong>Website:</strong> <a href="https://wearesata.com" target="_blank">https://wearesata.com</a></p>
         </div>
 
-        <div class="form-group">
-            <label for="organization">Organisatie *</label>
-            <input type="text" id="organization" name="organization" placeholder="Uw organisatie" required>
-        </div>
+        <h2>3. Verwerkingsdoeleinden</h2>
 
-        <div class="form-group">
-            <label for="email">E-mail *</label>
-            <input type="email" id="email" name="email" placeholder="uw.email@organisatie.nl" required>
-        </div>
+        <h3>3.1 Wettelijke verplichtingen</h3>
+        <p>Gegevensverwerking die wettelijk vereist is voor belastingdoeleinden.</p>
 
-        <div class="form-group">
-            <label for="phone">Telefoon</label>
-            <input type="tel" id="phone" name="phone" placeholder="+31 6 12 34 56 78">
-        </div>
+        <h3>3.2 CRM-administratie</h3>
+        <p>Het bijhouden van prospect- en organisatiegegevens om onze diensten te leveren.</p>
 
-        <div class="form-group">
-            <label for="subject">Onderwerp *</label>
-            <select id="subject" name="subject" required>
-                <option value="">Selecteer een onderwerp</option>
-                <option value="draagvlak">Draagvlak Onderzoek</option>
-                <option value="strategie">Strategieontwikkeling</option>
-                <option value="campagne">Campagne Uitvoering</option>
-                <option value="training">Team Training</option>
-                <option value="crisis">Crisis Management</option>
-                <option value="keynote">Keynote Speaker Boeken</option>
-                <option value="anders">Iets anders</option>
-            </select>
-        </div>
+        <h3>3.3 Overeenkomsten</h3>
+        <p>Verwerking van gegevens voor zakelijke overeenkomsten en contractuele verplichtingen.</p>
 
-        <div class="form-group">
-            <label for="message">Bericht *</label>
-            <textarea id="message" name="message" placeholder="Beschrijf uw vraagstuk of verzoek..." required></textarea>
-        </div>
+        <h3>3.4 Dienstverlening verbeteren</h3>
+        <p>Gebruik van gegevens om onze producten en diensten te verbeteren.</p>
 
-        <button type="submit" class="submit-button">Verstuur bericht</button>
-    </form>
+        <h3>3.5 Fraudepreventie</h3>
+        <p>Detectie van criminele activiteiten en juridische overtredingen.</p>
+
+        <h3>3.6 Communicatie</h3>
+        <p>Verwerking van contactgegevens via meerdere kanalen.</p>
+
+        <h3>3.7 Nieuwsbrieven</h3>
+        <p>Aanbieden van abonnementsdiensten met uitschrijfmogelijkheden.</p>
+
+        <h3>3.8 Privacy-audits</h3>
+        <p>Verwerking van gegevens voor nalevingsverificatie.</p>
+
+        <h3>3.9 Marketing</h3>
+        <p>Acquisitieactiviteiten met targeting en gepersonaliseerde advertenties.</p>
+
+        <h3>3.10 Dienstverlening verbeteren</h3>
+        <p>Analyse van gebruikersgedrag en betrokkenheidsmetingen.</p>
+
+        <h2>4. Soorten persoonsgegevens die worden verwerkt</h2>
+        <p>Wij verzamelen de volgende gegevens:</p>
+        <ul>
+            <li>Naam</li>
+            <li>Werkgerelateerde informatie (functie, functieomschrijving)</li>
+            <li>E-mailadres</li>
+            <li>Telefoonnummer</li>
+            <li>Medische informatie (indien relevant voor dienstverlening)</li>
+        </ul>
+        <p>Wij verwerken <strong>geen</strong> gegevens met betrekking tot ras, seksuele geaardheid, politieke overtuigingen, religieuze overtuigingen, vakbondslidmaatschap, genetische gegevens, biometrische gegevens, gezondheidsgegevens of strafrechtelijke gegevens.</p>
+
+        <h2>5. Rechten van betrokkenen</h2>
+
+        <h3>5.1 Informatie en inzage</h3>
+        <p>U kunt opvragen welke gegevens wij over u bewaren en waarom.</p>
+
+        <h3>5.2 Rectificatie</h3>
+        <p>U kunt onjuiste of verouderde informatie laten corrigeren.</p>
+
+        <h3>5.3 Verwijdering</h3>
+        <p>U kunt verzoeken om verwijdering van uw persoonsgegevens.</p>
+
+        <h3>5.4 Beperking</h3>
+        <p>U kunt gegevensverwerking beperken die u als oneigenlijk of onrechtmatig beschouwt.</p>
+
+        <h3>5.5 Bezwaar</h3>
+        <p>U kunt bezwaar maken tegen gegevensverwerkingsactiviteiten.</p>
+
+        <h3>5.6 Gegevensoverdracht</h3>
+        <p>U kunt verzoeken om overdracht van persoonsgegevens onder de GDPR-bepalingen.</p>
+
+        <h3>5.7 Aanvullende rechten</h3>
+        <p>U kunt uw toestemming intrekken en klachten indienen bij de Autoriteit Persoonsgegevens (AP).</p>
+
+        <p>Verzoeken kunnen worden verzonden naar <a href="mailto:privacy@wearesata.com">privacy@wearesata.com</a> met duidelijke specificaties. Wij reageren doorgaans binnen een maand, met een mogelijke verlenging tot maximaal drie maanden.</p>
+
+        <h2>6. Bewaartermijnen</h2>
+        <ul>
+            <li>Gegevens worden alleen bewaard zolang nodig voor de gestelde doelen</li>
+            <li>Bewaring na overeenkomst: tot een jaar na voltooiing van de dienst</li>
+            <li>Wettelijke verplichtingsbasis: bewaring volgens wettelijke vereisten</li>
+            <li>Geschilsituaties: bewaring beperkt tot geschilbeslechting</li>
+        </ul>
+
+        <h2>7. Rechtmatigheid van verwerking</h2>
+        <p>Verwerking is gebaseerd op:</p>
+        <ul>
+            <li>Toestemming</li>
+            <li>Contractvoorbereiding of -uitvoering</li>
+            <li>Wettelijke naleving</li>
+            <li>Gerechtvaardigde organisatiebelangen (marketing, juridische procedures, werving)</li>
+        </ul>
+
+        <h2>8. Derden</h2>
+        <p>Wij werken samen met dienstverleners waaronder betalingsverwerkers, verzendingsbedrijven, IT-providers en marketingbedrijven. Deze leveranciers mogen uw persoonsgegevens alleen verwerken voor zover dat nodig is om dergelijke functies namens ons uit te voeren.</p>
+        <p>Gegevensdeling met andere partijen vereist toestemming, hoewel wettelijke verplichtingen openbaarmaking kunnen vereisen.</p>
+
+        <h2>9. Social media</h2>
+        <p>De website bevat knoppen voor Facebook, LinkedIn, Instagram en X (Twitter). Wij zijn niet verantwoordelijk voor de privacypraktijken van deze platforms of het plaatsen van cookies door hen.</p>
+
+        <h2>10. Externe links</h2>
+        <p>Wij zijn niet verantwoordelijk voor privacypraktijken op gekoppelde externe websites.</p>
+
+        <h2>11. Geautomatiseerde besluitvorming</h2>
+        <p>SUE & The Alchemists verwerkt geen persoonsgegevens op een manier waarbij geautomatiseerde besluitvorming en profilering plaatsvindt zoals gedefinieerd in de AVG/GDPR.</p>
+
+        <h2>12. Wijzigingen in dit statement</h2>
+        <p>Wij behouden ons het recht voor om dit statement op elk moment te wijzigen. Wijzigingen worden op deze pagina gepubliceerd.</p>
+    </div>
 </section>
 
 <!-- FOOTER -->
@@ -845,7 +646,7 @@
                         <strong>Email:</strong> <a href="mailto:info@wearesata.com">info@wearesata.com</a>
                     </div>
                     <div class="footer-contact-item">
-                        <strong>Kantoren:</strong> Amsterdam • Den Haag • Breda • Brussel
+                        <strong>Kantoren:</strong> Amsterdam - Den Haag - Breda - Brussel
                     </div>
                 </div>
                 <div class="footer-social">
@@ -869,8 +670,8 @@
             <div class="footer-column">
                 <h4 class="footer-column-title">Partners</h4>
                 <ul class="footer-links">
-                    <li><a href="klaas-dijkhoff.html">Klaas Dijkhoff</a></li>
-                    <li><a href="bas-erlings.html">Bas Erlings</a></li>
+                    <li><a href="#">Klaas Dijkhoff</a></li>
+                    <li><a href="#">Bas Erlings</a></li>
                     <li><a href="tom-de-bruyne.html">Tom de Bruyne</a></li>
                 </ul>
             </div>
@@ -879,7 +680,7 @@
             <div class="footer-column">
                 <h4 class="footer-column-title">Content</h4>
                 <ul class="footer-links">
-                    <li><a href="/nieuwsbrief">Nieuwsbrief</a></li>
+                    <li><a href="#">Nieuwsbrief</a></li>
                     <li><a href="https://open.spotify.com/show/3DwPBL0Db2pIhmUAU6lvZz" target="_blank">Podcast</a></li>
                     <li><a href="blog/index.html">Blog</a></li>
                     <li><a href="https://www.linkedin.com/company/sue-amsterdam/" target="_blank">LinkedIn</a></li>
@@ -894,8 +695,8 @@
             </div>
             <ul class="footer-legal-links">
                 <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="/algemene-voorwaarden">Algemene Voorwaarden</a></li>
-                <li><a href="/cookies">Cookie Policy</a></li>
+                <li><a href="#">Algemene Voorwaarden</a></li>
+                <li><a href="#">Cookie Policy</a></li>
             </ul>
         </div>
     </div>
@@ -912,15 +713,6 @@ document.querySelectorAll('.menu-content a').forEach(link => {
     link.addEventListener('click', () => {
         document.getElementById('menuOverlay').classList.remove('active');
     });
-});
-
-// Language buttons are now direct links with .active class styling
-
-// Form submission (placeholder - replace with actual backend)
-document.querySelector('.contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Bedankt voor uw bericht! We nemen zo spoedig mogelijk contact met u op.\n\n(Let op: Dit is een demo. Verbind met een backend voor echte verzending.)');
-    // Here you would normally send the form data to your backend
 });
 </script>
 
