@@ -7,6 +7,7 @@
     <meta property="og:title" content="SATA Blog">
     <meta property="og:description" content="Inzichten over systeemdenken, gedragswetenschap en draagvlak">
     <title>Blog | SATA - SUE & The Alchemists</title>
+    <link rel="stylesheet" href="../assets/css/fonts-founders-grotesk.css">
 
     <style>
         * {
@@ -16,7 +17,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Founders Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background-color: #000000;
             color: #ffffff;
             line-height: 1.6;
@@ -324,8 +325,9 @@
         .newsletter-title {
             font-size: 36px;
             font-weight: 600;
-            color: #28a69a;
+            color: #ffffff;
             margin-bottom: 16px;
+            text-transform: uppercase;
         }
 
         .newsletter-description {
@@ -925,6 +927,32 @@ function toggleMenu() {
 document.querySelectorAll('.menu-content a').forEach(link => {
     link.addEventListener('click', () => {
         document.getElementById('menuOverlay').classList.remove('active');
+    });
+});
+
+// Category filtering
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Update active state
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.textContent.toLowerCase().trim();
+        const cards = document.querySelectorAll('.blog-card');
+
+        cards.forEach(card => {
+            if (filter === 'alle artikelen') {
+                card.style.display = 'flex';
+            } else {
+                const categories = Array.from(card.querySelectorAll('.blog-card-category'))
+                    .map(cat => cat.textContent.toLowerCase().trim());
+                if (categories.some(cat => cat.includes(filter) || filter.includes(cat))) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            }
+        });
     });
 });
 </script>
